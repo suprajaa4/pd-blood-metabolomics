@@ -1,0 +1,19 @@
+study_id,repository,phase,mode,matrix,n_entities_with_any_data,n_log2fc,n_up,n_down,n_p_lt_0_05,median_abs_log2fc,median_mz
+MTBLS11904,MetaboLights,Reverse phase/C18,Negative,plasma,2733,2687,1669,1018,0,0.192837926,334.29455
+24167579,pubmed,Reverse phase/C18,Positive,serum,352,220,113,91,42,0.3755676835,359.702
+38720721,pubmed,Reverse phase/C18,Not reported,serum,255,208,110,98,229,0.672190426,NA
+37755270,pubmed,Reverse phase/C18,Not reported,serum,295,166,79,87,272,0.485426827,NA
+ST003159,Metabolomics Workbench,Reverse phase/C18,Negative,serum,105,104,63,41,0,0.8033917,258.02734999999996
+ST001814,Metabolomics Workbench,GC-MS,Positive,plasma,60,60,51,9,0,0.070665402,NA
+33485385,pubmed,LC-MS/unspecified,Positive,plasma,49,49,7,42,49,0.358453971,301.2165
+28880465,Pubmed | pubmed,LC-MS/unspecified,Positive,serum,96,34,15,19,42,0.582529623,162.10985
+37335671,pubmed,LC-MS/unspecified,Not reported,serum,30,30,0,0,0,0,NA
+38516193,pubmed,LC-MS/unspecified,Positive,plasma,33,30,0,17,30,1.4645352495,NA
+24058461,pubmed,LC-MS/unspecified,Not reported,plasma,22,21,21,0,16,1.06994,NA
+34577635,pubmed,LC-MS/unspecified,Not reported,serum,18,18,13,5,0,0.2936944225,NA
+29518718,pubmed,LC-MS/unspecified,Positive,plasma,17,17,11,6,17,1.722466024,199.1943
+ACS1517,ACS Chem. Neurosci.,Reverse phase/C18,Positive,serum,15,15,4,6,14,1.371833001,312.218
+37589832,pubmed,LC-MS/unspecified,Not reported,plasma,6,6,3,2,0,0.253801326,NA
+25390405,pubmed,LC-MS/unspecified,Not reported,serum,3,0,0,0,0,NA,136.4
+35829770,pubmed,HILIC,Positive,plasma,504,0,0,0,0,NA,184.0942
+MTBLS1219,Metabolights,HILIC,Negative,plasma,5,0,0,0,0,NA,217.1445

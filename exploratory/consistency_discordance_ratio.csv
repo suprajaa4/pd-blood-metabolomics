@@ -1,0 +1,4 @@
+consistency_category,n,percent
+Not recurrent with Log2FC,3182,0.9447743467933492
+Recurrent consistent,94,0.027909738717339667
+Recurrent discordant,92,0.027315914489311165
