@@ -1,0 +1,840 @@
+---
+title: "Parkinson's Disease Metabolomics: Integrated PD Score & Multi-Layer Characterization"
+subtitle: "Chemical + Analytical + Biological evidence integration across independent studies"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: true
+    theme: flatly
+    code_folding: hide
+    fig_width: 10
+    fig_height: 7
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                       fig.align = "center", dpi = 150)
+
+suppressPackageStartupMessages({
+  library(readxl); library(dplyr); library(tidyr); library(stringr); library(purrr)
+  library(ggplot2); library(forcats); library(ggrepel); library(patchwork)
+  library(viridis); library(pheatmap); library(scales); library(openxlsx)
+  library(uwot); library(UpSetR); library(corrplot); library(igraph)
+  library(plotly); library(htmlwidgets) })
+
+# ---- EDIT THIS: path to the source workbook ----
+data_path <- "data/raw/pd_with_adducts.xlsx"
+
+dir.create("figs", showWarnings = FALSE)
+theme_set(theme_minimal(base_size = 11))
+```
+
+# Overview
+
+an integrated **PD score** for every metabolite in the dataset by combining:
+
+* **Chemical evidence** — identifier completeness (HMDB / KEGG / PubChem / SMILES / formula), ClassyFire chemical class
+* **Analytical evidence** — retention time, m/z, adduct, ionization mode, matrix
+* **Biological evidence** — fold-change, direction, significance, and cross-study reproducibility, penalized for age/sex confounds
+
+```{r evidence-schematic, fig.height=5}
+schematic <- "
+                   PD SCORE
+                      |
+        Biological Evidence (FC, p-value,
+             plasma/serum, direction)
+                      |
+  Chemical Evidence ----+---- Analytical Evidence
+  (HMDB, KEGG, SMILES,  |      (RT, m/z, adduct,
+   formula, InChIKey)   |       ionization mode)
+                      |
+        Cross-study reproducibility
+              (consistency, coverage)
+"
+cat(schematic)
+```
+
+The full pipeline is organized into four parts:
+
+1. **Data processing + PD score + Excel export**
+2. **Chemical characterization** (ClassyFire distributions, enrichment, annotation coverage, chemical space)
+3. **Biological characterization** (heatmap, forest plot, volcano plot, PD score ranking, confounding checks)
+4. **Advanced analyses** (PCA, UMAP, hierarchical clustering, UpSet, network)
+
+---
+
+# Part 1 — Data processing, PD score, and Excel export
+
+## 1.1 Load all sheets
+
+```{r load-data}
+sheets <- excel_sheets(data_path)
+sheets
+
+main       <- read_excel(data_path, sheet = "pd-with-adducts")
+classyfire <- read_excel(data_path, sheet = "class of compounds")
+```
+
+## 1.2 Harmonize the 18 per-study column blocks into one long table
+
+The source sheet stores one wide row per metabolite with a repeated block of ~40 columns per
+study (prefixed `S_<pmid>__`, `ACS1517__`, `MTBLS####__`, `ST######__`). Several cells contain
+multiple `|`-delimited values (e.g. two adduct matches within the same study), and different
+studies report fold-change on different native scales (some already log2, some linear ratios up
+to >200x). The helpers below parse and harmonize all of this.
+
+```{r harmonize-helpers}
+studies <- c('S_24058461','S_24167579','S_25390405','S_28880465','S_29518718','S_33485385',
+             'S_34577635','S_35829770','S_37335671','S_37589832','S_37755270','S_38516193',
+             'S_38720721','ACS1517','MTBLS1219','MTBLS11904','ST001814','ST003159')
+
+id_cols <- c('entity_group','entity_id','canonical_metabolite','all_metabolite_names',
+             'n_studies','studies_present','InChIKey','formula','SMILES','HMDB ID','KEGG ID',
+             'PubChem CID','annotation_score','has_formula','has_SMILES','has_HMDB','has_KEGG','has_PubChem')
+
+parse_num_mean <- function(x) map_dbl(x, function(v) {
+  if (is.na(v)) return(NA_real_)
+  if (is.numeric(v)) return(as.numeric(v))
+  nums <- suppressWarnings(as.numeric(str_trim(str_split(as.character(v), "\\|")[[1]])))
+  nums <- nums[!is.na(nums)]
+  if (length(nums) == 0) NA_real_ else mean(nums)
+})
+
+parse_num_min <- function(x) map_dbl(x, function(v) {
+  if (is.na(v)) return(NA_real_)
+  if (is.numeric(v)) return(as.numeric(v))
+  nums <- suppressWarnings(as.numeric(str_trim(str_split(as.character(v), "\\|")[[1]])))
+  nums <- nums[!is.na(nums)]
+  if (length(nums) == 0) NA_real_ else min(nums)
+})
+
+parse_cat_first <- function(x) map_chr(x, function(v) {
+  if (is.na(v)) return(NA_character_)
+  str_trim(str_split(as.character(v), "\\|")[[1]][1])
+})
+
+parse_direction <- function(x) map_chr(x, function(v) {
+  if (is.na(v)) return(NA_character_)
+  parts <- str_trim(tolower(str_split(as.character(v), "\\|")[[1]]))
+  norm <- case_when(str_detect(parts, "up") ~ "up", str_detect(parts, "down") ~ "down",
+                     str_detect(parts, "no change") ~ "no_change", TRUE ~ parts)
+  u <- unique(norm)
+  if (setequal(u, "up")) return("up")
+  if (setequal(u, "down")) return("down")
+  if (setequal(u, "no_change")) return("no_change")
+  if (setequal(u, c("up","no_change"))) return("up")
+  if (setequal(u, c("down","no_change"))) return("down")
+  if (all(c("up","down") %in% u)) return("conflicting_within_study")
+  norm[1]
+})
+
+build_long_for_study <- function(s) {
+  cols_needed <- c(id_cols, paste0(s, c('__repository','__phase','__mode','__matrix','__mz','__RT_min',
+                    '__n_control','__n_PD','__p_value','__fold_change','__Log2FC','__direction',
+                    '__matched_adduct','__control_female_ratio','__PD_female_ratio',
+                    '__median_age_control','__median_age_PD')))
+  if (!all(cols_needed %in% colnames(main))) return(NULL)
+  sub <- main[, cols_needed]
+  colnames(sub) <- c(id_cols, 'repository','phase','mode','matrix','mz','RT_min','n_control','n_PD',
+                      'p_value','fold_change','Log2FC','direction','matched_adduct',
+                      'control_female_ratio','PD_female_ratio','median_age_control','median_age_PD')
+  keep <- !is.na(sub$direction) | !is.na(sub$p_value) | !is.na(sub$fold_change)
+  sub <- sub[keep, ]
+  if (nrow(sub) == 0) return(NULL)
+  sub$study_id <- s
+  sub$mode <- parse_cat_first(sub$mode); sub$matrix <- parse_cat_first(sub$matrix)
+  sub$mz <- parse_num_mean(sub$mz); sub$RT_min <- parse_num_mean(sub$RT_min)
+  sub$n_control <- parse_num_mean(sub$n_control); sub$n_PD <- parse_num_mean(sub$n_PD)
+  sub$p_value <- parse_num_min(sub$p_value)
+  sub$fold_change <- parse_num_mean(sub$fold_change); sub$Log2FC <- parse_num_mean(sub$Log2FC)
+  sub$direction_raw <- sub$direction; sub$direction <- parse_direction(sub$direction)
+  sub$matched_adduct <- parse_cat_first(sub$matched_adduct)
+  sub$control_female_ratio <- parse_num_mean(sub$control_female_ratio)
+  sub$PD_female_ratio <- parse_num_mean(sub$PD_female_ratio)
+  sub$median_age_control <- parse_num_mean(sub$median_age_control)
+  sub$median_age_PD <- parse_num_mean(sub$median_age_PD)
+  sub
+}
+
+long_df <- bind_rows(map(studies, build_long_for_study))
+
+need_fc <- is.na(long_df$Log2FC) & !is.na(long_df$fold_change) & long_df$fold_change > 0
+long_df$Log2FC[need_fc] <- log2(long_df$fold_change[need_fc])
+
+long_df <- long_df %>%
+  mutate(age_delta_PD_minus_control = median_age_PD - median_age_control,
+         female_ratio_delta_PD_minus_control = PD_female_ratio - control_female_ratio)
+
+classyfire_dedup <- classyfire %>% select(InChIKey, Kingdom, Superclass, Class, Subclass) %>%
+  distinct(InChIKey, .keep_all = TRUE)
+long_df <- long_df %>% left_join(classyfire_dedup, by = "InChIKey")
+
+cat("Long-format rows:", nrow(long_df), "\n")
+table(long_df$direction, useNA = "ifany")
+```
+
+## 1.3 Compute PD score components and the final PD score
+
+**Formula:**
+
+```
+PD_score = w1*study_coverage + w2*consistency + w3*effect_magnitude + w4*significance
+           + w5*identifier_completeness - w6*age_confound_risk - w7*gender_confound_risk
+```
+
+Each component is normalized to 0-1 before weighting; the weighted sum is itself min-max
+rescaled to a 0-100 `PD_score`.
+
+**Weights (documented rationale):**
+
+| Component | Weight | Why |
+|---|---|---|
+| `study_coverage` | 0.15 | rewards replication across independent studies |
+| `consistency` | 0.20 | rewards agreement on direction of change |
+| `effect_magnitude` | 0.20 | rewards larger, within-study-normalized \|Log2FC\| |
+| `significance` | 0.20 | rewards lower average p-value |
+| `identifier_completeness` | 0.10 | rewards complete chemical annotation (kept low - reflects DB luck more than biology) |
+| `age_confound_risk` | −0.075 | penalizes metabolites whose evidence comes from age-imbalanced studies |
+| `gender_confound_risk` | −0.075 | penalizes metabolites whose evidence comes from sex-imbalanced studies |
+| `drug_penalty` | −0.15 | penalizes metabolites that are known drugs/prodrugs/drug metabolites rather than endogenous PD biology |
+
+Consistency and effect size use **within-study percentile ranks** rather than raw values,
+because different studies in this dataset report fold-change on very different native scales.
+
+```{r pd-score}
+long_df <- long_df %>%
+  mutate(direction_final = case_when(
+    !is.na(Log2FC) & Log2FC >  0.01 ~ "up",
+    !is.na(Log2FC) & Log2FC < -0.01 ~ "down",
+    !is.na(Log2FC) ~ "no_change",
+    TRUE ~ direction)) %>%
+  mutate(abs_log2fc = abs(Log2FC)) %>%
+  group_by(study_id) %>%
+  mutate(effect_percentile = percent_rank(abs_log2fc)) %>%
+  ungroup() %>%
+  mutate(neglog10p = -log10(pmax(p_value, 1e-300)))
+
+minmax <- function(x) {
+  rng <- range(x, na.rm = TRUE)
+  if (diff(rng) == 0) return(rep(0, length(x)))
+  (x - rng[1]) / diff(rng)
+}
+
+ent <- long_df %>%
+  group_by(entity_id) %>%
+  summarise(
+    canonical_metabolite = first(canonical_metabolite), InChIKey = first(InChIKey),
+    formula = first(formula), SMILES = first(SMILES), `HMDB ID` = first(`HMDB ID`),
+    `KEGG ID` = first(`KEGG ID`), `PubChem CID` = first(`PubChem CID`),
+    Kingdom = first(Kingdom), Superclass = first(Superclass), Class = first(Class), Subclass = first(Subclass),
+    annotation_score = first(annotation_score),
+    has_formula = first(has_formula), has_SMILES = first(has_SMILES), has_HMDB = first(has_HMDB),
+    has_KEGG = first(has_KEGG), has_PubChem = first(has_PubChem),
+    n_studies_detected = n_distinct(study_id),
+    studies_present = paste(sort(unique(study_id)), collapse = ";"),
+    matrices = paste(sort(unique(na.omit(matrix))), collapse = ";"),
+    modes = paste(sort(unique(na.omit(mode))), collapse = ";"),
+    n_dir_up = sum(direction_final == "up", na.rm = TRUE),
+    n_dir_down = sum(direction_final == "down", na.rm = TRUE),
+    n_conflicting_within_study = sum(direction == "conflicting_within_study", na.rm = TRUE),
+    mean_effect_percentile = mean(effect_percentile, na.rm = TRUE),
+    mean_abs_log2fc = mean(abs_log2fc, na.rm = TRUE),
+    median_log2fc_signed = median(Log2FC, na.rm = TRUE),
+    mean_neglog10p = mean(neglog10p, na.rm = TRUE),
+    n_studies_with_pvalue = sum(!is.na(p_value)),
+    frac_studies_sig_p05 = ifelse(n_studies_with_pvalue > 0, mean(p_value < 0.05, na.rm = TRUE), NA_real_),
+    mean_age_delta_PD_minus_control = mean(age_delta_PD_minus_control, na.rm = TRUE),
+    mean_female_ratio_delta_PD_minus_control = mean(female_ratio_delta_PD_minus_control, na.rm = TRUE),
+    .groups = "drop") %>%
+  mutate(consistency_frac = ifelse((n_dir_up + n_dir_down) > 0, pmax(n_dir_up, n_dir_down) / (n_dir_up + n_dir_down), NA_real_),
+         majority_direction = case_when(is.na(consistency_frac) ~ NA_character_, n_dir_up >= n_dir_down ~ "up", TRUE ~ "down"))
+
+ent <- ent %>%
+  mutate(comp_study_coverage = minmax(n_studies_detected),
+         comp_consistency = ifelse(n_studies_detected <= 1, 0.5, ifelse(is.na(consistency_frac), 0.5, consistency_frac)),
+         comp_effect_magnitude = ifelse(is.na(mean_effect_percentile), median(mean_effect_percentile, na.rm = TRUE), mean_effect_percentile),
+         comp_identifier_completeness = (as.integer(has_formula)+as.integer(has_SMILES)+as.integer(has_HMDB)+as.integer(has_KEGG)+as.integer(has_PubChem))/5)
+
+sig_norm <- minmax(ent$mean_neglog10p); fillval <- quantile(sig_norm, 0.25, na.rm = TRUE)
+ent$comp_significance <- ifelse(is.na(sig_norm), fillval, sig_norm)
+age_risk <- minmax(abs(ent$mean_age_delta_PD_minus_control))
+ent$comp_age_confound_risk <- ifelse(is.na(age_risk), median(age_risk, na.rm = TRUE), age_risk)
+gender_risk <- minmax(abs(ent$mean_female_ratio_delta_PD_minus_control))
+ent$comp_gender_confound_risk <- ifelse(is.na(gender_risk), median(gender_risk, na.rm = TRUE), gender_risk)
+```
+
+### Drug / xenobiotic penalty
+
+Some entries in the dataset are known drugs, prodrugs, or drug metabolites rather than
+endogenous PD biology (the source workbook's `drug` sheet flags 245 such compounds). These
+get an extra penalty component, `comp_drug_penalty`, weighted by how "purely pharmaceutical"
+the match is:
+
+* **1.0** — parent drug / active compound, prodrug/ester/salt formulation, or veterinary drug
+  (essentially certain to be a medication or contamination artifact, not PD biology)
+* **0.5** — a labelled drug *metabolite/conjugate* (still downstream of a real physiological
+  process, so a little less certain to be pure noise)
+* **0.5 (manual override)** — a short hand-picked list of dual-purpose endogenous/pharmaceutical
+  compounds, where the matched name is also a hormone/vitamin the body makes on its own
+  (e.g. hydrocortisone = endogenous cortisol, nicotinamide = vitamin B3). These are downgraded
+  from the automatic 1.0 because flagging them as "purely a drug" would likely be wrong.
+
+```{r drug-penalty}
+drug_sheet <- read_excel(data_path, sheet = "drug")
+
+## The sheet's first column has no real header - its name IS the first drug
+## entry ("drostanolone"), so recover it before building the lookup table.
+drug_lookup <- bind_rows(
+  tibble(drug_name = colnames(drug_sheet)[1], item_type = "Parent drug / active compound"),
+  drug_sheet %>% transmute(drug_name = .[[1]], item_type = item_type)
+) %>%
+  filter(!is.na(drug_name)) %>%
+  mutate(drug_name_clean = str_trim(str_to_lower(drug_name)))
+
+drug_severity <- c(
+  "Parent drug / active compound" = 1.00,
+  "Drug, prodrug, ester, or salt/formulation" = 1.00,
+  "Veterinary / non-routine human-use drug" = 1.00,
+  "Metabolite / degradation or conjugated form" = 0.50
+)
+
+drug_lookup <- drug_lookup %>%
+  mutate(severity = drug_severity[item_type]) %>%
+  group_by(drug_name_clean) %>%
+  summarise(severity = max(severity, na.rm = TRUE), .groups = "drop")
+
+## Hand-picked dual-purpose endogenous/pharmaceutical compounds: these are
+## hormones/vitamins the body produces on its own that also happen to be
+## manufactured as drugs. Flagging them at full (1.0) drug-penalty severity
+## would likely be wrong, so they're capped at 0.5 regardless of item_type.
+## Extend this vector if you spot others worth the same treatment.
+endogenous_dual_purpose <- str_to_lower(c(
+  "Hydrocortisone",   # = endogenous cortisol
+  "Cortisone",        # endogenous cortisol metabolite
+  "Nicotinamide",     # vitamin B3, dietary/endogenous
+  "Pyridoxine"        # vitamin B6, dietary/endogenous
+))
+drug_lookup <- drug_lookup %>%
+  mutate(severity = ifelse(drug_name_clean %in% endogenous_dual_purpose, 0.5, severity))
+
+## Match against canonical_metabolite (exact, case-insensitive). Substring
+## matching is deliberately NOT used - it would flag things like "Hippuric
+## acid" as a match for a drug fragment and create false positives.
+ent <- ent %>%
+  mutate(.match_key = str_trim(str_to_lower(canonical_metabolite))) %>%
+  left_join(drug_lookup, by = c(".match_key" = "drug_name_clean")) %>%
+  mutate(is_known_drug = !is.na(severity),
+         comp_drug_penalty = ifelse(is.na(severity), 0, severity)) %>%
+  select(-.match_key, -severity)
+
+cat("Flagged as known drug / drug-derived:", sum(ent$is_known_drug), "of", nrow(ent), "metabolites\n")
+ent %>% filter(is_known_drug) %>% count(comp_drug_penalty)
+```
+
+```{r pd-score-weights}
+W <- list(study_coverage=0.15, consistency=0.20, effect_magnitude=0.20, significance=0.20,
+          identifier_completeness=0.10, age_confound_risk=0.075, gender_confound_risk=0.075,
+          drug_penalty=0.15)
+
+ent <- ent %>%
+  mutate(PD_score_raw = W$study_coverage*comp_study_coverage + W$consistency*comp_consistency +
+           W$effect_magnitude*comp_effect_magnitude + W$significance*comp_significance +
+           W$identifier_completeness*comp_identifier_completeness -
+           W$age_confound_risk*comp_age_confound_risk - W$gender_confound_risk*comp_gender_confound_risk -
+           W$drug_penalty*comp_drug_penalty,
+         PD_score = 100 * minmax(PD_score_raw),
+         consistently_altered = (n_studies_detected >= 2) & (!is.na(consistency_frac) & consistency_frac >= 0.7)) %>%
+  arrange(desc(PD_score))
+
+cat("Scored metabolites:", nrow(ent), " | Consistently altered:", sum(ent$consistently_altered), "\n")
+ent %>% select(canonical_metabolite, n_studies_detected, consistency_frac, PD_score, consistently_altered) %>% head(15)
+```
+
+> **Data-quality notes:** ~21% of study x metabolite rows had a usable p-value; metabolites with
+> no p-value anywhere get a conservative default. 473 rows in the source sheet had no usable
+> per-study measurement at all (mostly `UNKNOWN_ROW__*` placeholders) and are exported separately
+> rather than scored. `r sum(ent$is_known_drug)` metabolites (`r sum(ent$comp_drug_penalty==1)`
+> at full penalty, `r sum(ent$comp_drug_penalty==0.5)` at half penalty) matched a known
+> drug/prodrug/drug-metabolite name and were down-weighted via `comp_drug_penalty` rather than
+> removed outright, so you can still see and audit them in `PD_scores`.
+
+## 1.4 Export the scored workbook
+
+```{r export-excel}
+out_cols <- c('canonical_metabolite','PD_score','consistently_altered','majority_direction',
+              'is_known_drug','comp_drug_penalty',
+              'n_studies_detected','n_studies_with_pvalue','consistency_frac','frac_studies_sig_p05',
+              'mean_abs_log2fc','median_log2fc_signed','mean_neglog10p','comp_study_coverage',
+              'comp_consistency','comp_effect_magnitude','comp_significance','comp_identifier_completeness',
+              'comp_age_confound_risk','comp_gender_confound_risk','mean_age_delta_PD_minus_control',
+              'mean_female_ratio_delta_PD_minus_control','Kingdom','Superclass','Class','Subclass',
+              'InChIKey','formula','SMILES','HMDB ID','KEGG ID','PubChem CID','annotation_score',
+              'studies_present','matrices','modes','entity_id')
+scores_df <- ent[, out_cols] %>% mutate(across(where(is.numeric), ~ifelse(is.nan(.), NA, .)))
+
+wb <- createWorkbook()
+hs <- createStyle(fgFill = "#1F4E78", fontColour = "white", textDecoration = "bold",
+                   halign = "center", valign = "center", wrapText = TRUE, fontName = "Arial")
+bodyStyle <- createStyle(fontName = "Arial", fontSize = 10)
+addSheetDf <- function(wb, name, df, freeze_col = 2) {
+  addWorksheet(wb, name); writeData(wb, name, df, headerStyle = hs)
+  addStyle(wb, name, bodyStyle, rows = 2:(nrow(df)+1), cols = 1:ncol(df), gridExpand = TRUE)
+  freezePane(wb, name, firstActiveRow = 2, firstActiveCol = freeze_col)
+  setColWidths(wb, name, cols = 1:ncol(df), widths = "auto")
+}
+addWorksheet(wb, "README")
+writeData(wb, "README", data.frame(x = c(
+  "PD score methodology - see this Rmd Part 1.3 for full formula and weight rationale.",
+  "'Consistently altered' = detected in >=2 studies AND >=70% direction agreement.")), colNames = FALSE)
+setColWidths(wb, "README", cols = 1, widths = 110)
+addSheetDf(wb, "PD_scores", scores_df)
+conditionalFormatting(wb, "PD_scores", cols = 2, rows = 2:(nrow(scores_df)+1),
+                       type = "colourScale", style = c("#F8696B", "#FFEB84", "#63BE7B"))
+missing_df <- main[!(main$entity_id %in% ent$entity_id),
+                   c('entity_id','canonical_metabolite','InChIKey','formula','SMILES','HMDB ID','KEGG ID',
+                     'PubChem CID','annotation_score','has_formula','has_SMILES','has_HMDB','has_KEGG',
+                     'has_PubChem','n_studies','studies_present')]
+addSheetDf(wb, "Unmeasured_entities", as.data.frame(missing_df))
+dir.create("results/pd_score", recursive = TRUE, showWarnings = FALSE)
+saveWorkbook(wb, "results/pd_score/pd_scores.xlsx", overwrite = TRUE)
+cat("Saved PD_results.xlsx with", nrow(scores_df), "scored metabolites.\n")
+```
+
+---
+
+# Part 2 — Chemical characterization
+
+## 2.1 ClassyFire class enrichment (Fisher's exact + BH-FDR)
+
+```{r class-enrichment}
+classed <- ent %>% filter(!is.na(Class))
+total_n <- nrow(classed); altered_n <- sum(classed$consistently_altered)
+
+class_enrich <- bind_rows(lapply(unique(classed$Class), function(cls) {
+  grp <- classed %>% filter(Class == cls)
+  a <- sum(grp$consistently_altered); b <- nrow(grp) - a
+  c_ <- altered_n - a; d <- (total_n - nrow(grp)) - c_
+  ft <- tryCatch(fisher.test(matrix(c(a,c_,b,d), nrow=2), alternative="greater"), error=function(e) NULL)
+  p <- if (!is.null(ft)) ft$p.value else NA_real_
+  data.frame(Class=cls, n_total_in_class=nrow(grp), n_altered_in_class=a,
+             expected_altered_in_class = nrow(grp)*(altered_n/total_n),
+             fold_enrichment = a/(nrow(grp)*(altered_n/total_n)),
+             odds_ratio = if(!is.null(ft)) unname(ft$estimate) else NA_real_,
+             p_value_fisher = p,
+             up_fraction_among_altered = if(a>0) mean(grp$majority_direction[grp$consistently_altered]=="up", na.rm=TRUE) else NA_real_)
+}))
+class_enrich$neglog10p <- -log10(pmax(class_enrich$p_value_fisher, 1e-300))
+class_enrich$fdr_bh <- p.adjust(class_enrich$p_value_fisher, method = "BH")
+class_enrich <- class_enrich %>% arrange(p_value_fisher)
+
+comp_all <- classed %>% count(Class, name="n_metabolites") %>% arrange(desc(n_metabolites)) %>%
+  mutate(pct_of_classified = 100*n_metabolites/sum(n_metabolites))
+comp_altered <- classed %>% filter(consistently_altered) %>% count(Class, name="n_metabolites") %>%
+  arrange(desc(n_metabolites)) %>% mutate(pct_of_altered = 100*n_metabolites/sum(n_metabolites))
+
+knitr::kable(head(class_enrich, 10), digits = 4, caption = "Top 10 enriched ClassyFire classes among consistently-altered metabolites")
+```
+
+> With only 132 consistently-altered metabolites split across ~100 chemical classes, treat
+> this as **hypothesis-generating** — most classes will not survive FDR correction at this
+> sample size (typical for a meta-analysis of independently-collected metabolomics studies).
+
+## 2.2 Class composition: all metabolites vs. consistently altered
+
+```{r fig-class-composition, fig.width=14, fig.height=6.5}
+p1 <- ggplot(comp_all %>% head(15), aes(x = fct_reorder(Class, n_metabolites), y = n_metabolites)) +
+  geom_col(fill = "#4C72B0") + geom_text(aes(label = n_metabolites), hjust = -0.15, size = 3) + coord_flip() +
+  labs(title = paste0("ClassyFire composition\n(all annotated metabolites, n=", total_n, ")"), x=NULL, y="Number of metabolites") +
+  theme(plot.title = element_text(face="bold")) + expand_limits(y = max(comp_all$n_metabolites)*1.15)
+
+p2 <- ggplot(comp_altered %>% head(15), aes(x = fct_reorder(Class, n_metabolites), y = n_metabolites)) +
+  geom_col(fill = "#C44E52") + geom_text(aes(label = n_metabolites), hjust = -0.3, size = 3) + coord_flip() +
+  labs(title = paste0("ClassyFire composition\n(consistently altered, n=", altered_n, ")"), x=NULL, y="Number of metabolites") +
+  theme(plot.title = element_text(face="bold")) + expand_limits(y = max(comp_altered$n_metabolites)*1.25)
+
+p1 + p2
+```
+
+## 2.3 Enrichment dot plot
+
+```{r fig-enrichment-dot, fig.width=10, fig.height=8}
+sub <- class_enrich %>% filter(n_total_in_class >= 5) %>% arrange(p_value_fisher) %>% head(20) %>%
+  mutate(direction_col = ifelse(up_fraction_among_altered >= 0.5, "Majority up in PD", "Majority down in PD"))
+
+ggplot(sub, aes(x = neglog10p, y = fct_reorder(Class, neglog10p), size = n_altered_in_class, color = direction_col)) +
+  geom_point(alpha = 0.85) +
+  geom_vline(xintercept = -log10(0.05), linetype = "dashed", color = "gray40") +
+  scale_color_manual(values = c("Majority up in PD"="#C44E52", "Majority down in PD"="#4C72B0")) +
+  scale_size_continuous(range = c(3, 14), name = "n metabolites") +
+  labs(title = "Chemical class enrichment among consistently altered PD metabolites\n(vs. full dataset background)",
+       x = "-log10(Fisher exact p-value)", y = NULL, color = NULL) +
+  theme(plot.title = element_text(face = "bold"))
+
+
+class_fc <- ent %>%
+  filter(consistently_altered, !is.na(Class), !is.na(median_log2fc_signed)) %>%
+  group_by(Class) %>%
+  summarise(mean_log2fc = mean(median_log2fc_signed, na.rm = TRUE),
+            n_altered = n(), .groups = "drop")
+
+sub <- class_fc %>%
+  left_join(class_enrich %>% select(Class, p_value_fisher, neglog10p, n_total_in_class), by = "Class") %>%
+  filter(n_total_in_class >= 5) %>%     # same rare-class filter as the original enrichment plot
+  arrange(p_value_fisher) %>%
+  head(20) %>%
+  mutate(direction_col = ifelse(mean_log2fc >= 0, "Up in PD", "Down in PD"))
+
+ggplot(sub, aes(x = mean_log2fc, y = fct_reorder(Class, mean_log2fc),
+                size = n_altered, color = neglog10p)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray40") +
+  geom_point(alpha = 0.85) +
+  scale_color_viridis_c(name = "-log10(p)\nclass enrichment", option = "plasma") +
+  scale_size_continuous(range = c(3, 14), name = "n altered\nmetabolites") +
+  labs(title = "Chemical class effect size among consistently altered PD metabolites",
+       subtitle = "x = mean Log2FC across metabolites in class; color = enrichment strength",
+       x = "Mean Log2 fold-change (PD vs control)", y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(face = "bold", size = 12),
+        plot.subtitle = element_text(size = 9, color = "gray30"))
+
+```
+
+## 2.4 KEGG ID annotation coverage by class (pathway-analysis proxy)
+
+> **Caveat:** true KEGG *pathway* enrichment (as opposed to ClassyFire chemical-class
+> enrichment) requires querying KEGG's compound-to-pathway mapping database, which is
+> restricted to academic use and rate-limited — impractical to query reliably for a full
+> dataset in a reproducible script. This panel instead shows what fraction of each chemical
+> class already carries a KEGG compound ID, i.e. how *pathway-ready* each class is. If you
+> have a compound-to-pathway mapping table (or KEGG API access), swap this section for a
+> hypergeometric pathway-enrichment test using the same contingency-table logic as 2.1.
+
+```{r fig-kegg-coverage, fig.width=10, fig.height=8}
+kegg_cov <- classed %>% group_by(Class) %>%
+  summarise(n_total = n(), n_with_kegg = sum(has_KEGG), .groups = "drop") %>%
+  mutate(pct_with_kegg = 100*n_with_kegg/n_total) %>% arrange(desc(n_total)) %>% filter(n_total >= 10)
+kegg_cov$Class <- factor(kegg_cov$Class, levels = kegg_cov$Class[order(kegg_cov$n_total)])
+long_kegg <- kegg_cov %>% select(Class, n_total, n_with_kegg) %>%
+  pivot_longer(c(n_total, n_with_kegg), names_to="metric", values_to="n") %>%
+  mutate(metric = recode(metric, n_total="Total metabolites in class", n_with_kegg="With a KEGG compound ID"))
+
+ggplot() +
+  geom_col(data = long_kegg %>% filter(metric=="Total metabolites in class"), aes(x=Class,y=n,fill=metric)) +
+  geom_col(data = long_kegg %>% filter(metric=="With a KEGG compound ID"), aes(x=Class,y=n,fill=metric)) +
+  geom_text(data = kegg_cov, aes(x=Class, y=n_total, label=paste0(round(pct_with_kegg),"%")), hjust=-0.15, size=3) +
+  scale_fill_manual(values = c("Total metabolites in class"="#DDDDDD","With a KEGG compound ID"="#55A868"), name=NULL) +
+  coord_flip() + labs(title="KEGG compound-ID coverage by ClassyFire class", x=NULL, y="Number of metabolites") +
+  theme(plot.title=element_text(face="bold"), legend.position="bottom") + expand_limits(y=max(kegg_cov$n_total)*1.15)
+```
+
+## 2.5 Interactive ClassyFire sunburst
+
+```{r fig-sunburst, fig.width=9, fig.height=9}
+d <- ent %>% filter(!is.na(Kingdom)) %>%
+  mutate(Superclass = ifelse(is.na(Superclass), "Unclassified", Superclass),
+         Class = ifelse(is.na(Class), "Unclassified", Class))
+lvl1 <- d %>% count(Kingdom, name="value") %>% transmute(ids=Kingdom, labels=Kingdom, parents="", value)
+lvl2 <- d %>% count(Kingdom, Superclass, name="value") %>%
+  transmute(ids=paste(Kingdom,Superclass,sep="-"), labels=Superclass, parents=Kingdom, value)
+lvl3 <- d %>% count(Kingdom, Superclass, Class, name="value") %>%
+  transmute(ids=paste(Kingdom,Superclass,Class,sep="-"), labels=Class, parents=paste(Kingdom,Superclass,sep="-"), value)
+sb_data <- bind_rows(lvl1, lvl2, lvl3)
+
+plot_ly(sb_data, ids=~ids, labels=~labels, parents=~parents, values=~value, type="sunburst", branchvalues="total") %>%
+  layout(title = list(text = "ClassyFire hierarchy (Kingdom \u2192 Superclass \u2192 Class)", x = 0.5))
+```
+
+## 2.6 Chemical space coverage: RT vs. m/z
+
+```{r fig-rt-mz, fig.width=15, fig.height=6.5}
+rep_df <- long_df %>% group_by(entity_id) %>%
+  summarise(mz = median(mz, na.rm=TRUE), RT_min = median(RT_min, na.rm=TRUE),
+            n_studies_detected = n_distinct(study_id),
+            mode = {t<-table(mode); if(length(t)==0) NA_character_ else names(sort(t,decreasing=TRUE))[1]},
+            matrix = {t<-table(matrix); if(length(t)==0) NA_character_ else names(sort(t,decreasing=TRUE))[1]},
+            .groups="drop") %>%
+  filter(!is.na(mz), !is.na(RT_min), RT_min < 30)
+
+p1 <- ggplot(rep_df, aes(x=RT_min, y=mz, color=n_studies_detected)) + geom_point(alpha=0.75, size=1.3) +
+  scale_color_viridis(name="# studies\ndetecting") +
+  labs(title="RT vs m/z\ncolored by detection frequency", x="Retention time (min)", y="m/z") +
+  theme(plot.title=element_text(face="bold"))
+
+p2 <- ggplot(rep_df %>% filter(!is.na(mode), !is.na(matrix)), aes(x=RT_min, y=mz, color=matrix, shape=mode)) +
+  geom_point(alpha=0.7, size=1.3) + scale_color_manual(values=c(plasma="#4C72B0", serum="#C44E52")) +
+  labs(title="RT vs m/z\ncolored by matrix, shaped by ionization mode", x="Retention time (min)", y="m/z",
+       color="Matrix", shape="Mode") + theme(plot.title=element_text(face="bold"))
+p1 + p2
+```
+
+## 2.7 Adduct distribution
+
+```{r fig-adduct-distribution, fig.width=9, fig.height=6}
+adducts <- read_excel(data_path, sheet = "list of adducts")
+ggplot(adducts %>% arrange(desc(count)) %>% head(15),
+       aes(x = fct_reorder(`matched adduct`, count), y = count)) +
+  geom_col(fill = "#8172B2") + geom_text(aes(label = count), hjust = -0.2, size = 3) + coord_flip() +
+  labs(title = "Most frequently matched adducts across the dataset", x = NULL, y = "Count") +
+  theme(plot.title = element_text(face = "bold")) + expand_limits(y = max(adducts$count) * 1.15)
+```
+
+---
+
+# Part 3 — Biological characterization
+
+## 3.1 Metabolite x study heatmap (top 60 consistently altered)
+
+```{r fig-heatmap, fig.width=10, fig.height=15}
+top60 <- ent %>% filter(consistently_altered) %>% arrange(desc(PD_score)) %>% head(60)
+sub <- long_df %>% filter(entity_id %in% top60$entity_id)
+id_to_name <- setNames(top60$canonical_metabolite, top60$entity_id)
+sub$met_name <- id_to_name[sub$entity_id]
+
+mat <- sub %>% group_by(met_name, study_id) %>% summarise(Log2FC = mean(Log2FC, na.rm=TRUE), .groups="drop") %>%
+  pivot_wider(names_from = study_id, values_from = Log2FC) %>% as.data.frame()
+rownames(mat) <- mat$met_name; mat$met_name <- NULL
+mat <- mat[top60$canonical_metabolite[top60$canonical_metabolite %in% rownames(mat)], , drop=FALSE]
+
+pmat <- sub %>% group_by(met_name, study_id) %>%
+  summarise(p_value = ifelse(all(is.na(p_value)), NA_real_, min(p_value, na.rm=TRUE)), .groups="drop") %>%
+  pivot_wider(names_from = study_id, values_from = p_value) %>% as.data.frame()
+rownames(pmat) <- pmat$met_name; pmat$met_name <- NULL
+pmat <- pmat[rownames(mat), colnames(mat), drop=FALSE]
+
+disp <- matrix("", nrow=nrow(mat), ncol=ncol(mat), dimnames=dimnames(mat))
+for (i in seq_len(nrow(mat))) for (j in seq_len(ncol(mat))) {
+  p <- suppressWarnings(as.numeric(pmat[i,j])); if (!is.na(p) && p < 0.05) disp[i,j] <- "*"
+}
+mat_num <- as.matrix(mat)
+vmax <- max(quantile(abs(mat_num), 0.95, na.rm=TRUE), 0.5, na.rm=TRUE)
+mat_num[mat_num > vmax] <- vmax; mat_num[mat_num < -vmax] <- -vmax
+breaks <- seq(-vmax, vmax, length.out=101)
+colors <- colorRampPalette(c("#2166AC","#F7F7F7","#B2182B"))(100)
+
+pheatmap(mat_num, color=colors, breaks=breaks, cluster_rows=FALSE, cluster_cols=FALSE,
+         display_numbers=disp, fontsize_number=10, number_color="black", na_col="grey85",
+         fontsize_row=8, fontsize_col=9, angle_col=45,
+         main="Top 60 consistently-altered metabolites\ncolor = Log2FC, * = p<0.05, grey = not measured")
+```
+
+## 3.2 Forest plot: most-replicated metabolites
+
+```{r fig-forest, fig.width=9, fig.height=10}
+N <- 20
+topN <- ent %>% arrange(desc(n_studies_detected), desc(PD_score)) %>% head(N)
+id_to_name2 <- setNames(topN$canonical_metabolite, topN$entity_id)
+subf <- long_df %>% filter(entity_id %in% topN$entity_id, !is.na(Log2FC), abs(Log2FC) < 20) %>%
+  mutate(met_name = id_to_name2[entity_id], sig = ifelse(!is.na(p_value) & p_value<0.05, "p < 0.05", "n.s. / unknown"))
+summary_df <- subf %>% group_by(met_name) %>%
+  summarise(mean_log2fc=mean(Log2FC,na.rm=TRUE), sd_log2fc=sd(Log2FC,na.rm=TRUE), .groups="drop") %>%
+  mutate(lo = mean_log2fc - ifelse(is.na(sd_log2fc),0,sd_log2fc), hi = mean_log2fc + ifelse(is.na(sd_log2fc),0,sd_log2fc))
+lvl <- topN$canonical_metabolite[order(topN$n_studies_detected)]
+subf$met_name <- factor(subf$met_name, levels = lvl); summary_df$met_name <- factor(summary_df$met_name, levels = lvl)
+
+ggplot() +
+  geom_vline(xintercept=0, linetype="dashed", color="gray50") +
+  geom_jitter(data=subf, aes(x=Log2FC, y=met_name, color=sig), width=0, height=0.15, size=2, alpha=0.8) +
+  geom_segment(data=summary_df, aes(x=lo, xend=hi, y=met_name, yend=met_name), linewidth=1, alpha=0.6) +
+  geom_point(data=summary_df, aes(x=mean_log2fc, y=met_name), shape=18, size=4) +
+  scale_color_manual(values=c("p < 0.05"="#C44E52","n.s. / unknown"="#4C72B0"), name=NULL) +
+  labs(title=paste0("Forest plot: top ", N, " most-replicated metabolites"),
+       x="Log2 fold-change (PD vs control) per study", y=NULL) +
+  theme(plot.title=element_text(face="bold"))
+```
+
+*(Optional extension: for a publication-grade forest plot with proper confidence intervals,
+swap the mean±SD summary above for a random-effects meta-analysis via `metafor::rma()` per
+metabolite — see the commented-out block in Section 4.5 for a working template.)*
+
+## 3.3 Volcano plot
+
+```{r fig-volcano, fig.width=10, fig.height=8}
+v <- ent %>% filter(!is.na(median_log2fc_signed), !is.na(mean_neglog10p), n_studies_with_pvalue > 0) %>%
+  mutate(sig_cat = case_when(
+    mean_neglog10p >= -log10(0.05) & median_log2fc_signed > 0.25 ~ "Up, significant",
+    mean_neglog10p >= -log10(0.05) & median_log2fc_signed < -0.25 ~ "Down, significant",
+    TRUE ~ "Not significant / small effect"))
+top_label <- v %>% filter(sig_cat != "Not significant / small effect") %>% arrange(desc(mean_neglog10p)) %>% head(15)
+
+ggplot(v, aes(x=median_log2fc_signed, y=mean_neglog10p, color=sig_cat)) +
+  geom_point(alpha=0.65, size=1.6) +
+  geom_hline(yintercept=-log10(0.05), linetype="dashed", color="gray40") +
+  geom_vline(xintercept=c(-0.25,0.25), linetype="dashed", color="gray40") +
+  geom_text_repel(data=top_label, aes(label=canonical_metabolite), size=2.8, max.overlaps=20, color="black") +
+  scale_color_manual(values=c("Up, significant"="#C44E52","Down, significant"="#4C72B0","Not significant / small effect"="grey70"), name=NULL) +
+  labs(title="Volcano plot: median Log2FC vs. mean significance across studies",
+       x="Median Log2 fold-change (PD vs control)", y="Mean -log10(p-value) across studies") +
+  theme(plot.title=element_text(face="bold"), legend.position="bottom")
+```
+
+## 3.4 Age & gender confounding
+
+```{r fig-age-confound, fig.width=15, fig.height=6.5}
+suba <- long_df %>% filter(!is.na(Log2FC), !is.na(age_delta_PD_minus_control), abs(Log2FC)<20) %>%
+  mutate(sig = ifelse(!is.na(p_value) & p_value<0.05, "p < 0.05", "not significant / unknown"))
+r_age <- cor(suba$age_delta_PD_minus_control, suba$Log2FC); rs_age <- cor(suba$age_delta_PD_minus_control, suba$Log2FC, method="spearman")
+
+p1 <- ggplot(suba, aes(x=age_delta_PD_minus_control, y=Log2FC)) +
+  geom_point(aes(color=sig), alpha=0.55, size=1.3) + geom_smooth(method="lm", se=TRUE, color="black") +
+  geom_hline(yintercept=0, color="gray50") + geom_vline(xintercept=0, color="gray50") +
+  scale_color_manual(values=c("p < 0.05"="#C44E52","not significant / unknown"="grey60"), name=NULL) +
+  labs(title=paste0("Fold-change vs. study age imbalance\nPearson r=",round(r_age,2)," Spearman rho=",round(rs_age,2)),
+       x="\u0394 age (PD - control), years", y="Log2FC") + theme(plot.title=element_text(face="bold"), legend.position="bottom")
+
+study_sum <- long_df %>% group_by(study_id) %>%
+  summarise(mean_abs_log2fc=mean(abs(Log2FC),na.rm=TRUE), age_delta=mean(age_delta_PD_minus_control,na.rm=TRUE), n=n(), .groups="drop") %>%
+  filter(!is.na(mean_abs_log2fc), !is.na(age_delta))
+r2 <- suppressWarnings(cor(study_sum$age_delta, study_sum$mean_abs_log2fc))
+
+p2 <- ggplot(study_sum, aes(x=age_delta, y=mean_abs_log2fc)) +
+  geom_point(aes(size=n), color="#4C72B0", alpha=0.75) + geom_smooth(method="lm", se=TRUE, color="black") +
+  geom_text_repel(aes(label=study_id), size=3) + geom_vline(xintercept=0, color="gray50") +
+  labs(title=paste0("Study-level effect size vs. age imbalance\nPearson r=",round(r2,2)),
+       x="\u0394 age (PD - control), years", y="Mean |Log2FC|", size="n metabolites") +
+  theme(plot.title=element_text(face="bold"))
+p1 + p2
+```
+
+```{r fig-gender-confound, fig.width=8, fig.height=6.5}
+subg <- long_df %>% filter(!is.na(Log2FC), !is.na(female_ratio_delta_PD_minus_control), abs(Log2FC)<20)
+lm_g <- lm(Log2FC ~ female_ratio_delta_PD_minus_control, data=subg); sm <- summary(lm_g)
+
+ggplot(subg, aes(x=female_ratio_delta_PD_minus_control, y=Log2FC)) +
+  geom_point(alpha=0.5, size=1.2, color="#55A868") + geom_smooth(method="lm", se=TRUE, color="black") +
+  geom_hline(yintercept=0, color="gray50") + geom_vline(xintercept=0, color="gray50") +
+  labs(title=paste0("Fold-change vs. sex-ratio imbalance\nslope=",signif(coef(lm_g)[2],3),", p=",signif(sm$coefficients[2,4],3)),
+       x="\u0394 female ratio (PD - control)", y="Log2FC") + theme(plot.title=element_text(face="bold"))
+```
+
+## 3.5 PD score ranking & the Biomarker Landscape
+
+```{r fig-pd-ranking, fig.width=9, fig.height=9}
+top30 <- ent %>% arrange(desc(PD_score)) %>% head(30)
+ggplot(top30, aes(x=fct_reorder(canonical_metabolite, PD_score), y=PD_score, fill=majority_direction)) +
+  geom_col() + coord_flip() +
+  scale_fill_manual(values=c(up="#C44E52", down="#4C72B0"), na.value="grey60", name="Majority\ndirection") +
+  labs(title="Top 30 metabolites by PD score", x=NULL, y="PD score (0-100)") +
+  theme(plot.title=element_text(face="bold", size=13))
+```
+
+```{r fig-biomarker-landscape, fig.width=12, fig.height=9}
+land <- ent %>% filter(!is.na(Superclass))
+top_sc <- land %>% count(Superclass, sort=TRUE) %>% head(6) %>% pull(Superclass)
+land <- land %>% mutate(Superclass_grp = ifelse(Superclass %in% top_sc, Superclass, "Other"))
+label_set <- land %>% filter(n_studies_detected>=3, consistency_frac>=0.7) %>% arrange(desc(PD_score)) %>% head(12)
+
+ggplot(land, aes(x=n_studies_detected, y=consistency_frac)) +
+  geom_jitter(aes(size=mean_abs_log2fc, color=PD_score, shape=Superclass_grp), width=0.15, height=0.02, alpha=0.75) +
+  geom_text_repel(data=label_set, aes(label=canonical_metabolite), size=2.9, max.overlaps=25) +
+  scale_color_viridis_c(name="PD score", option="plasma") +
+  scale_size_continuous(name="Mean |Log2FC|", range=c(1,8)) +
+  scale_shape_manual(values=c(16,17,15,18,3,8,4), name="ClassyFire\nsuperclass") +
+  labs(title="PD Biomarker Landscape",
+       subtitle="Top-right = strongest candidates: replicated, consistent, large effect, high PD score",
+       x="Study coverage (# studies detecting metabolite)", y="Direction consistency across studies") +
+  theme(plot.title=element_text(face="bold", size=15), plot.subtitle=element_text(size=10, color="gray30"))
+```
+
+---
+
+# Part 4 — Advanced analyses
+
+## 4.1 PCA of studies (shared metabolite Log2FC profile)
+
+```{r fig-pca, fig.width=9, fig.height=7}
+keep_ent <- ent %>% filter(n_studies_detected >= 2) %>% pull(entity_id)
+mat_df <- long_df %>% filter(entity_id %in% keep_ent) %>%
+  group_by(entity_id, study_id) %>% summarise(Log2FC=mean(Log2FC, na.rm=TRUE), .groups="drop") %>%
+  pivot_wider(names_from=study_id, values_from=Log2FC) %>% as.data.frame()
+rownames(mat_df) <- mat_df$entity_id; mat_df$entity_id <- NULL
+mat2 <- as.matrix(mat_df); mat_imp <- mat2; mat_imp[is.na(mat_imp)] <- 0
+study_mat <- t(mat_imp)
+
+pca <- prcomp(study_mat, scale.=TRUE)
+pve <- round(100*summary(pca)$importance[2,1:2],1)
+pca_df <- as.data.frame(pca$x[,1:2]); pca_df$study_id <- rownames(pca_df)
+pca_df$n_metabolites_used <- colSums(mat_imp != 0)
+
+ggplot(pca_df, aes(x=PC1, y=PC2, label=study_id)) +
+  geom_point(aes(size=n_metabolites_used), color="#4C72B0", alpha=0.8) + geom_text_repel(size=3.2) +
+  labs(title=paste0("PCA of studies (",ncol(study_mat)," shared metabolites, missing=0)"),
+       x=paste0("PC1 (",pve[1],"%)"), y=paste0("PC2 (",pve[2],"%)"), size="# metabolites\nmeasured") +
+  theme(plot.title=element_text(face="bold"))
+```
+
+## 4.2 UMAP (same feature space, non-linear alternative to PCA)
+
+```{r fig-umap, fig.width=9, fig.height=7}
+set.seed(42)
+if (nrow(study_mat) >= 4) {
+  um <- umap(study_mat, n_neighbors=min(5, nrow(study_mat)-1), metric="euclidean", n_components=2)
+  umap_df <- data.frame(UMAP1=um[,1], UMAP2=um[,2], study_id=rownames(study_mat), n=colSums(mat_imp!=0))
+  ggplot(umap_df, aes(x=UMAP1,y=UMAP2,label=study_id)) +
+    geom_point(aes(size=n), color="#C44E52", alpha=0.8) + geom_text_repel(size=3.2) +
+    labs(title="UMAP of studies", size="# metabolites\nmeasured") + theme(plot.title=element_text(face="bold"))
+}
+```
+
+## 4.3 Study similarity: Jaccard overlap, dendrogram, network & UpSet
+
+```{r fig-study-similarity, fig.width=9, fig.height=6}
+study_ids <- colnames(mat2)
+jacc <- matrix(0, length(study_ids), length(study_ids), dimnames=list(study_ids, study_ids))
+for (i in seq_along(study_ids)) for (j in seq_along(study_ids)) {
+  a <- !is.na(mat2[,study_ids[i]]); b <- !is.na(mat2[,study_ids[j]])
+  jacc[i,j] <- ifelse(sum(a|b)==0, 0, sum(a&b)/sum(a|b))
+}
+d <- as.dist(1 - jacc); hc <- hclust(d, method="average")
+plot(hc, main="Hierarchical clustering of studies\n(distance = 1 - Jaccard similarity)", xlab="", sub="", cex=0.9)
+```
+
+```{r fig-jaccard-heatmap, fig.width=8, fig.height=8}
+corrplot(jacc, method="color", type="upper", order="hclust", addCoef.col="black",
+         number.cex=0.55, tl.col="black", tl.cex=0.8, col=colorRampPalette(c("white","#4C72B0"))(100),
+         title="Study similarity (Jaccard index)", mar=c(0,0,2,0))
+```
+
+```{r fig-network, fig.width=8, fig.height=7}
+g <- graph_from_adjacency_matrix(jacc, mode="undirected", weighted=TRUE, diag=FALSE)
+g <- delete_edges(g, E(g)[weight < 0.05])
+deg <- strength(g)
+set.seed(1)
+plot(g, vertex.size=8+25*deg/max(deg), vertex.label.cex=0.9, vertex.color="#87BFFF",
+     edge.width=E(g)$weight*8, edge.color=adjustcolor("gray40",alpha.f=0.6),
+     layout=layout_with_fr(g), main="Study similarity network\n(edge width = Jaccard overlap)")
+```
+
+```{r fig-upset, fig.width=12, fig.height=7}
+membership <- long_df %>% distinct(entity_id, study_id) %>% mutate(present=1) %>%
+  pivot_wider(names_from=study_id, values_from=present, values_fill=0) %>% as.data.frame()
+rownames(membership) <- membership$entity_id; membership$entity_id <- NULL
+upset(membership, sets=colnames(membership), order.by="freq", nsets=ncol(membership),
+      mainbar.y.label="# metabolites shared", sets.x.label="Total metabolites detected", text.scale=1.1)
+```
+
+
+
+## 4.5 (Template) Random-effects meta-analysis per metabolite
+
+Uncomment and adapt if you have (or can derive) a standard error per study x metabolite
+estimate — this upgrades the forest plot in 3.2 into a proper DerSimonian-Laird / REML
+random-effects summary with pooled estimate and I² heterogeneity statistic.
+
+```{r meta-template, eval=FALSE}
+library(metafor)
+# example for one metabolite, assuming columns yi (Log2FC) and sei (SE) per study:
+# res <- rma(yi = yi, sei = sei, data = one_metabolite_df, method = "REML")
+# forest(res, slab = one_metabolite_df$study_id)
+# summary(res)  # gives pooled estimate, CI, I^2, tau^2
+```
+
+---
+
+# Session info
+
+```{r session-info}
+sessionInfo()
+```

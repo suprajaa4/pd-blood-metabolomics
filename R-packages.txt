@@ -1,0 +1,11 @@
+tidyverse
+dplyr
+tidyr
+stringr
+purrr
+readxl
+readr
+ggplot2
+uwot
+openxlsx
+scales

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large generated graph layers (regenerate with script 05)
+data/processed/edges_study.csv
+data/processed/edges_platform.csv
+
+# Temporary model files
+*.pkl
