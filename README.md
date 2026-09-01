@@ -16,7 +16,6 @@ PD-metabolomics-github/
 │   ├── graph/                 # graph predictions and graph figures
 │   ├── vae/                   # multimodal VAE outputs
 │   └── model_comparison/      # graph-vs-VAE evaluation figures
-├── archive/                   # older experimental model variants
 ├── requirements.txt
 ├── R-packages.txt
 └── .gitignore
@@ -24,7 +23,6 @@ PD-metabolomics-github/
 
 ## Pipeline
 
-Run commands from the repository root.
 
 | Step | File | Purpose |
 |---|---|---|
@@ -45,7 +43,7 @@ Run commands from the repository root.
 | 14 | `scripts/13_multimodal_vae.py` | Train/evaluate the missing-modality-aware multimodal VAE. |
 | 15 | `scripts/16_plot_train_test_representativeness.py` | Check training/holdout label representativeness. |
 
-`14_compute_metrics.py` and `15_plot_pr_roc.py` are retained because they were used for an earlier probability-file comparison workflow. The current multimodal VAE already writes its main evaluation metrics directly to `results/vae/`.
+
 
 ## Setup
 
