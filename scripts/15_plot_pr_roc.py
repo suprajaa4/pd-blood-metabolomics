@@ -12,9 +12,7 @@ with open("curves.pkl", "rb") as f:
     curves = pickle.load(f)
 summary = pd.read_csv("metrics_summary.csv")
 
-# ============================================================
-# FIGURE A: PR curves + ROC curves, both tasks, both models
-# ============================================================
+
 fig, axes = plt.subplots(2, 2, figsize=(13, 11))
 colors = {"VAE": "#4C72B0", "Graph": "#C44E52"}
 
@@ -39,10 +37,7 @@ plt.savefig("fig6_pr_roc_curves.png", dpi=200, bbox_inches='tight')
 plt.close()
 print("saved fig6")
 
-# ============================================================
-# FIGURE B: metric comparison bars - accuracy, macro-F1, weighted-F1, AUC
-# side by side for both models, both tasks - the key "which wins where" chart
-# ============================================================
+
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 metrics_to_plot = ["accuracy", "f1_macro", "f1_weighted", "auc_macro_ovr"]
 metric_labels = ["Accuracy", "F1 (macro)\n<- rare-class sensitive", "F1 (weighted)", "ROC-AUC\n(macro OvR)"]
