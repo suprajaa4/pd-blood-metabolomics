@@ -8,10 +8,8 @@ out_dir    <- "results/exploratory"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(file.path(out_dir, "plots_png"), showWarnings = FALSE, recursive = TRUE)
 
-## ---- 1. Helper functions ----------------------------------------------------
+
 read_final_met <- function(path) {
-  ## FINAL_MET.csv contains special characters from copied metabolite names.
-  ## Windows-1252 is the safest default from this file inspection.
   readr::read_csv(
     file = path,
     locale = readr::locale(encoding = "Windows-1252"),
@@ -72,9 +70,7 @@ plot_theme <- theme_bw(base_size = 12) +
     strip.background = element_rect(fill = "#F1F3F5", colour = "#D0D7DE")
   )
 
-## Simple, non-complex colour palette used across the report.
-## Teal/blue/orange/red/green are intentionally reused so the plots stay colourful
-## without becoming visually noisy.
+
 col_teal   <- "#2A9D8F"
 col_blue   <- "#457B9D"
 col_orange <- "#F4A261"
@@ -92,7 +88,7 @@ discord_palette   <- c("FALSE" = col_green, "TRUE" = col_red, "Consistent" = col
 mode_palette      <- c("Positive" = col_red, "Negative" = col_blue, "Mixed" = col_purple, "Dual" = col_purple, "Not Reported" = col_grey, "Not reported" = col_grey)
 matrix_palette    <- c("serum" = col_teal, "plasma" = col_orange, "csf" = col_purple, "Not reported" = col_grey, "not reported" = col_grey)
 
-## ---- 2. Read wide dataset ---------------------------------------------------
+
 wide <- read_final_met(input_file)
 
 base_cols <- c(
@@ -110,14 +106,8 @@ study_ids <- str_remove(study_prefixes, "^S_")
 message("Rows/entities: ", nrow(wide))
 message("Study prefixes detected: ", length(study_prefixes), " -> ", paste(study_ids, collapse = ", "))
 
-## ---- 3. Convert wide study columns to long format ---------------------------
-## This is the key step. It preserves study IDs with letters, e.g. MTBLS11904,
-## ST003159, ACS1517. Numeric PubMed IDs originally stored as S_12345678 are
-## displayed without the S_ prefix in study_id.
-## IMPORTANT: study-specific columns include both character fields, such as
-## repository/mode/phase, and numeric fields, such as n_control/Log2FC.
-## pivot_longer() must coerce all values to character first; otherwise tidyr
-## tries to combine character and double columns and stops with a type error.
+
+
 long <- wide %>%
   select(any_of(base_cols), all_of(study_cols)) %>%
   pivot_longer(
@@ -136,12 +126,12 @@ long <- wide %>%
   summarise(value = paste_unique(value), .groups = "drop") %>%
   pivot_wider(names_from = measure, values_from = value)
 
-## Drop blank study rows where no study-specific values are present.
+
 study_measure_cols <- setdiff(names(long), c(base_cols, "study_prefix", "study_id"))
 long <- long %>%
   filter(if_any(all_of(study_measure_cols), ~ !is.na(.x) & .x != ""))
 
-## Numeric conversion for analysis.
+## numeric conversion
 numeric_cols <- intersect(c(
   "mz", "RT_min", "n_control", "int_mean_control", "int_median_control",
   "log_control_mean", "log_control_median", "z_control", "n_PD",
@@ -186,7 +176,7 @@ long <- long %>%
     )
   )
 
-## ---- 4. Entity-level consistency tables ------------------------------------
+
 fc_long <- long %>%
   filter(!is.na(Log2FC), direction_from_log2fc %in% c("Up in PD", "Down in PD"))
 
@@ -257,10 +247,9 @@ write_csv(annotation_summary, file.path(out_dir, "annotation_summary.csv"))
 write_csv(entity_consistency %>% filter(recurrent, discordant), file.path(out_dir, "discordant_recurrent_entities.csv"))
 write_csv(entity_consistency %>% filter(recurrent, !discordant), file.path(out_dir, "consistent_recurrent_entities.csv"))
 
-## ---- 5. Plot data prep ------------------------------------------------------
+
 top_studies <- study_summary %>% slice_max(n_log2fc, n = 12, with_ties = FALSE) %>% pull(study_id)
 
-## For heatmaps, keep recurrent entities observed in >=2 studies and rank by recurrence and effect size.
 heatmap_entities <- entity_consistency %>%
   filter(recurrent) %>%
   arrange(desc(n_studies_with_log2fc), desc(max_abs_log2fc)) %>%
@@ -277,7 +266,7 @@ heatmap_df <- fc_long %>%
   ) %>%
   mutate(label = str_trunc(canonical_metabolite, 38))
 
-## ---- 6. Plots ---------------------------------------------------------------
+
 plots <- list()
 
 plots$entity_group_counts <- wide %>%
@@ -661,8 +650,8 @@ plots$top_recurrent_down_by_mean_log2fc <- if (nrow(top_recurrent_down) > 0) {
     plot_theme
 } else blank_plot("Top recurrent down-regulated entities")
 
-## E. Ratio of non-recurrent, consistent recurrent, and discordant recurrent entities.
-consistency_ratio_all <- entity_consistency %>%
+
+consistency_ratio_all <- entity_consistency %>% ## non-recurrent, consistent recurrent, and discordant recurrent entities
   mutate(consistency_category = case_when(
     !recurrent ~ "Not recurrent with Log2FC",
     recurrent & discordant ~ "Recurrent discordant",
@@ -685,7 +674,7 @@ plots$consistency_discordance_ratio <- consistency_ratio_all %>%
        x = NULL, y = "Number of entities") +
   plot_theme
 
-## F. Top discordant entities: show up-study and down-study counts directly.
+
 top_discordant_counts <- entity_consistency %>%
   filter(recurrent, discordant) %>%
   arrange(desc(n_studies_with_log2fc), consistency_score, desc(max_abs_log2fc)) %>%
@@ -715,15 +704,7 @@ plots$top_discordant_up_down_counts <- if (nrow(top_discordant_long) > 0) {
     plot_theme
 } else blank_plot("Top discordant recurrent entities", "No recurrent discordant entities found")
 
-## G. PCA and MDS of metabolite-study observations.
-## Points are entity-study observations. Features are curated effect/measurement variables.
-## -------------------------------
-## PCA/MDS ordination
-## -------------------------------
-## Main biological/effect ordination:
-## Uses only effect-size/statistical-strength variables.
-## m/z and RT are excluded here because they mainly reflect analytical
-## feature properties and platform/study-method differences.
+
 
 effect_features <- c(
   "Log2FC",
@@ -772,9 +753,7 @@ if (nrow(ordination_df) >= 10 && length(effect_features) >= 2) {
     X <- X[keep_rows, , drop = FALSE]
     ord_meta <- ordination_df[keep_rows, , drop = FALSE]
     
-    ## -------------------------------
-    ## PCA
-    ## -------------------------------
+
     pca_fit <- prcomp(X, center = FALSE, scale. = FALSE)
     
     pca_scores <- as_tibble(pca_fit$x[, 1:2, drop = FALSE]) %>%
@@ -820,11 +799,7 @@ if (nrow(ordination_df) >= 10 && length(effect_features) >= 2) {
       plot_theme +
       theme(axis.text.x = element_text(angle = 0))
     
-    ## -------------------------------
-    ## MDS
-    ## -------------------------------
-    ## MDS uses Euclidean distance on the scaled effect matrix.
-    ## Sampling is capped to avoid very large distance matrices.
+
     
     set.seed(7)
     mds_max_n <- 2500
@@ -1079,7 +1054,7 @@ if (all(c("mz", "RT_min") %in% names(tech_df))) {
     )
   }
 }
-## ---- 7. Save plots ----------------------------------------------------------
+
 pdf(file.path(out_dir, "pd_met_plos_exploratory_plots.pdf"), width = 12, height = 8)
 for (nm in names(plots)) {
   print(plots[[nm]])
@@ -1087,8 +1062,8 @@ for (nm in names(plots)) {
 }
 dev.off()
 
-## ---- 8. Console summary -----------------------------------------------------
-message("\nDone.")
+
+
 message("Output directory: ", normalizePath(out_dir))
 message("PDF: ", file.path(out_dir, "pd_met_plos_exploratory_plots.pdf"))
 message("Core tables:")
