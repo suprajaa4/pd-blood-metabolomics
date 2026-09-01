@@ -1,0 +1,646 @@
+entity_id,canonical_metabolite,primary_pathway
+IK_AADLTHQNYQJHQV-SVLGDMRNSA-N,SM d38:1,Sphingolipid metabolism
+IK_ABFZMYIIUREPLL-ASWJIRIHSA-N,Glycochenodeoxycholic acid 3-glucuronide,Ascorbate and aldarate metabolism
+IK_ABOLXXZAJIAUGR-JPMMFUSZSA-N,Ibuprofen glucuronide,Ascorbate and aldarate metabolism
+IK_ACSFOIGNUQUIGE-AIPUTVCKSA-N,Dihydrocortisol,Steroid hormone biosynthesis
+IK_ADQUXZRKOKKULD-CZOXBATISA-N,"15-Hydroxynorandrostene-3,17-dione glucuronide",Ascorbate and aldarate metabolism
+IK_AEAMHDRXCYEOCU-HTDYWKJCSA-N,PC(18:0/18:1(11Z)),Linoleic acid metabolism
+IK_AERBNCYCJBRYDG-KSZLIROESA-N,Phytosphingosine,Sphingolipid metabolism
+IK_AERBNCYCJBRYDG-RGBJRUIASA-N,4-hydroxysphinganine,Sphingolipid metabolism
+IK_AFENDNXGAFYKQO-UHFFFAOYSA-N,2-hydroxybutyric acid,Propanoate metabolism
+IK_AGPKZVBTJJNPAG-UHFFFAOYNA-N,Isoleucine,"Valine, leucine and isoleucine biosynthesis"
+IK_AGPKZVBTJJNPAG-WHFBIAKZSA-N,L-Isoleucine,"Valine, leucine and isoleucine biosynthesis"
+IK_AHLPHDHHMVZTML-SCSAIBSYSA-N,D-Ornithine,D-Amino acid metabolism
+IK_AHWXJDWBIIDPKS-TZUVPVEASA-N,GPCho(22:6/18:0),Linoleic acid metabolism
+IK_AJTJVNKPLZTLHV-RJJHQZCFSA-N,"PE(18:2(9Z,12Z)/20:5(5Z,8Z,11Z,14Z,17Z))",Glycerophospholipid metabolism
+IK_AKCRVYNORCOYQT-UHFFFAOYSA-N,N-Methylvaline,Lysine degradation
+IK_ANRKEHNWXKCXDB-BHFWLYLHSA-N,PE 38:4,Glycerophospholipid metabolism
+IK_AODPIQQILQLWGS-GXBDJPPSSA-N,Tetrahydrocortisol,Steroid hormone biosynthesis
+IK_ARBHXJXXVVHMET-UHFFFAOYSA-N,2-Oxoarginine,D-Amino acid metabolism
+IK_ASCFNMCAHFUBCO-UHFFFAOYSA-N,Phosphoglycolic acid,Glyoxylate and dicarboxylate metabolism
+IK_ASWBNKHCZGQVJV-HSZRJFAPSA-N,LysoPC(16:0),Glycerophospholipid metabolism
+IK_ASWVTGNCAZCNNR-UHFFFAOYSA-N,Sulfadimidine,Pentose and glucuronate interconversions
+IK_ATHGHQPFGPMSJY-UHFFFAOYSA-N,Spermidine,Arginine and proline metabolism
+IK_ATHVAWFAEPLPPQ-VRDBWYNSSA-N,PC 36:1,Linoleic acid metabolism
+IK_AURCBSWGPREGRQ-VGNRXBDKSA-N,3-O-Sulfogalactosylceramide (d18:1/20:0),Sphingolipid metabolism
+IK_AXZGUCXCTZMPTR-UVGACIQRSA-N,"PC(18:0/22:4(7Z,10Z,13Z,16Z))",Linoleic acid metabolism
+IK_AYFVYJQAPQTCCC-GBXIJSLDSA-N,L-Threonine,"Valine, leucine and isoleucine biosynthesis"
+IK_AYFVYJQAPQTCCC-UHFFFAOYNA-N,Threonine,"Valine, leucine and isoleucine biosynthesis"
+IK_BAQMYDQNMFBZNA-MNXVOIDGSA-N,Biocytin,Biotin metabolism
+IK_BCDGQXUMWHRQCB-UHFFFAOYSA-N,Aminoacetone,"Glycine, serine and threonine metabolism"
+IK_BDKXLTOHYQEAIO-RSLHMRQOSA-N,L-Cystathionine - Isomer,"Glycine, serine and threonine metabolism"
+IK_BETFSIOJEATXGY-WOCLASLBSA-N,"PC(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/P-18:1(9Z))",Linoleic acid metabolism
+IK_BFZDKPVWJYFECC-OFCLATOASA-N,PC aa C34:4,Linoleic acid metabolism
+IK_BHQCQFFYRZLCQQ-OELDTZBJSA-N,Cholic Acid,Primary bile acid biosynthesis
+IK_BHWGKAVGUMMQIW-UVZRHDGTSA-N,PC 40:7|PC 20:3_20:4,Linoleic acid metabolism
+IK_BHYOQNUELFTYRT-DPAQBDIFSA-N,cholesterol 3-sulfate,Steroid hormone biosynthesis
+IK_BIEOSECQPGGZMF-NAIWXXGBSA-N,PC(22:5/0:0),Glycerophospholipid metabolism
+IK_BJEPYKJPYRNKOW-UHFFFAOYSA-N,malic acid,Citrate cycle (TCA cycle)
+IK_BKAJNAXTPSGJCU-UHFFFAOYSA-N,4-Methyl-2-oxovaleric Acid,"Valine, leucine and isoleucine biosynthesis"
+IK_BLHQFTDZMFXXHV-LLPREHSBSA-N,GPEtn(22:5/16:0),Glycerophospholipid metabolism
+IK_BMVUIWJCUQSHLZ-YFZGBAIXSA-N,Glycerophosphoinositol,Glycerophospholipid metabolism
+IK_BNLANPMAYYCMLY-LCXZALMSSA-N,PC(18:1(9Z)/P-18:1(9Z)),Linoleic acid metabolism
+IK_BPYKTIZUTYGOLE-IFADSCNNSA-N,Bilirubin,Porphyrin metabolism
+IK_BPZXYEUJBFHASJ-UUOKFMHZSA-N,6-Thioguanosine monophosphate,Drug metabolism - other enzymes
+IK_BRMWTNUJHUMWMS-LURJTMIESA-N,1-Methylhistidine,Histidine metabolism
+IK_BTCSSZJGUNDROE-UHFFFAOYSA-N,Gamma Aminobutyric acid,Arginine and proline metabolism
+IK_BTNKSMIZKSHDNT-UHFFFAOYSA-N,Trans-4-Hydroxyl L-Proline,Arginine and proline metabolism
+IK_BTNMPGBKDVTSJY-UHFFFAOYSA-N,Phenylpyruvic Acid,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+IK_BWHGMFYTDQEALD-UHFFFAOYSA-N,5-Amino-2-oxopentanoic acid,D-Amino acid metabolism
+IK_CBMYJHIOYJEBSB-JBDJBKRMSA-N,"Androstan-3alpha,17beta-diol",Steroid hormone biosynthesis
+IK_CCVYRRGZDBSHFU-UHFFFAOYSA-N,2-Hydroxyphenylacetic Acid,Phenylalanine metabolism
+IK_CDAISMWEOUEBRE-GPIVLXJGSA-N,myo-inositol,Ascorbate and aldarate metabolism
+IK_CDAISMWEOUEBRE-UHFFFAOYSA-N,Myoinositol,Ascorbate and aldarate metabolism
+IK_CEJUIQBITPKHHY-OWEZASBCSA-N,"PC(20:4(8Z,11Z,14Z,17Z)/18:2(9Z,12Z))",Linoleic acid metabolism
+IK_CFFZDZCDUFSOFZ-UHFFFAOYSA-N,"3,4-dihydroxyphenylacetic Acid",Tyrosine metabolism
+IK_CGGKIILOLKTYHS-LJGQSTEHSA-N,GPEtn(16:1/22:5),Glycerophospholipid metabolism
+IK_CGQCWMIAEPEHNQ-UHFFFAOYSA-N,Vanillylmandelic acid,Tyrosine metabolism
+IK_CGVOQSQIYSUXAT-PPLFXBRHSA-N,SM(d18:0/16:1(9Z)),Sphingolipid metabolism
+IK_CIKGWCTVFSRMJU-KVQBGUIXSA-N,DGDP,Purine metabolism
+IK_CJGVDSGIQZDLDO-BMYWYRRPSA-N,3-O-Sulfogalactosylceramide (d18:1/16:0),Sphingolipid metabolism
+IK_CKLJMWTZIZZHCS-REOHCLBHSA-N,L-Aspartic Acid,Arginine biosynthesis
+IK_CKTSBUTUHBMZGZ-SHYZEUOFSA-N,Deoxycytidine,Pyrimidine metabolism
+IK_COCMFMBNEAMQMA-VGKGADPCSA-N,"3a,6b,7a,12a-Tetrahydroxy-5b-cholanoic acid",Fructose and mannose metabolism
+IK_COCNDHOPIHDTHK-UHFFFAOYSA-N,Methoxyindoleacetic acid,Tryptophan metabolism
+IK_COJBGNAUUSNXHX-UHFFFAOYSA-N,2-Keto-glutaramic acid,"Alanine, aspartate and glutamate metabolism"
+IK_COLNVLDHVKWLRT-QMMMGPOBSA-N,L-Phenylalanine,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+IK_COLNVLDHVKWLRT-UHFFFAOYNA-N,Phenylalanine,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+IK_CQOQDQWUFQDJMK-SSTWWWIQSA-N,2-methoxyestradiol (2-ME2),Steroid hormone biosynthesis
+IK_CVSVTCORWBXHQV-UHFFFAOYSA-N,Creatine,Arginine and proline metabolism
+IK_CZMRCDWAGMRECN-UGDNZRGBSA-N,Sucrose,Starch and sucrose metabolism
+IK_CZOSTDZGCCEZTJ-WMHOIYFHSA-N,PE 16:0_16::1,Glycerophospholipid metabolism
+IK_CZWCKYRVOZZJNM-USOAJAOKSA-N,dehydroepiandrosterone sulfate,Steroid hormone biosynthesis
+IK_DCXYFEDJOCDNAF-REOHCLBHSA-N,L-Asparagine,"Alanine, aspartate and glutamate metabolism"
+IK_DDUHZTYCFQRHIY-UHFFFAOYSA-N,Gris-PEG,One carbon pool by folate
+IK_DFELABABMXOKTD-IYFIADHGSA-N,GlcCer(d18:1/20:0),Sphingolipid metabolism
+IK_DFPAKSUCGFBDDF-UHFFFAOYSA-N,Nicotinamide,Nicotinate and nicotinamide metabolism
+IK_DGBYUHHIADYUMU-UESLNCBNSA-N,GPCho(15:0/18:2),Linoleic acid metabolism
+IK_DHMQDGOQFOQNFH-UHFFFAOYSA-N,Glycine,"Glycine, serine and threonine metabolism"
+IK_DIJBBUIOWGGQOP-QGVNFLHTSA-N,Pregnenolone sulfate,Steroid hormone biosynthesis
+IK_DILDHNKDVHLEQB-XSSYPUMDSA-N,2-hydroxyestradiol (2-OH-E2),Steroid hormone biosynthesis
+IK_DIVQKHQLANKJQO-UHFFFAOYSA-N,3-Methoxytyramine,Tyrosine metabolism
+IK_DLQYHMAWCJLUJE-DLZQOPQVSA-N,Maltose B,Starch and sucrose metabolism
+IK_DLRVVLDZNNYCBX-ABXHMFFYSA-N,Melibiose,Galactose metabolism
+IK_DLZPSAPMHALIOA-YNCVDBFYSA-N,GPCho(20:0/18:3),Linoleic acid metabolism
+IK_DNPZYIPMAWRQQE-BVILWSOJSA-N,"(+/-)-11,12-Dihydroxy-5Z,8Z,14Z,17Z-eicosatetraenoic acid",Arachidonic acid metabolism
+IK_DNXHEGUUPJUMQT-CBZIJGRNSA-N,estron (E1),Steroid hormone biosynthesis
+IK_DPEYXLDDNACOGV-ANVMUZGGSA-N,"PC(18:1(11Z)/18:3(9Z,12Z,15Z))",Linoleic acid metabolism
+IK_DRBBFCLWYRJSJZ-UHFFFAOYSA-N,Phosphocreatine,Arginine and proline metabolism
+IK_DRIVXEVMDWCWLI-CAQMIEAISA-N,"PE(16:0/20:4(5Z,8Z,11Z,14Z))",Glycerophospholipid metabolism
+IK_DRTQHJPVMGBUCF-XVFCMESISA-N,Uridine,Pyrimidine metabolism
+IK_DSLZVSRJTYRBFB-LLEIAEIESA-N,saccharic acid,Ascorbate and aldarate metabolism
+IK_DTBNBXWJWCWCIK-UHFFFAOYSA-N,Phosphoenolpyruvate,Citrate cycle (TCA cycle)
+IK_DTOSIQBPPRVQHS-PDBXOOCHSA-N,Linolenic Acid,Biosynthesis of unsaturated fatty acids
+IK_DTUQWGWMVIHBKE-UHFFFAOYSA-N,Phenylacetaldehyde,Phenylalanine metabolism
+IK_DUQDVNACTOXOJA-KTKXOIIHSA-N,PE 36:4,Glycerophospholipid metabolism
+IK_DUUGKQCEGZLZNO-UHFFFAOYSA-N,5-Hydroxyindole-3-acetic acid,Tryptophan metabolism
+IK_DUYSYHSSBDVJSM-KRWOKUGFSA-N,Sphingosine-1-phosphate,Sphingolipid metabolism
+IK_DWAKNKKXGALPNW-UHFFFAOYSA-N,1-Pyrroline-5-carboxylic acid,Arginine and proline metabolism
+IK_DWKUKQRKVCMOLP-UHFFFAOYSA-N,1-Piperideine,Lysine degradation
+IK_DZGWFCGJZKJUFP-UHFFFAOYSA-N,Tyramine,Tyrosine metabolism
+IK_DZPKSVTWWIZUMS-FPUNCOTOSA-N,"PC(18:2(9Z,12Z)/18:0)",Linoleic acid metabolism
+IK_FAUYAENFVCNTAL-PFFNLMTBSA-N,"PC(18:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))",Linoleic acid metabolism
+IK_FBCNXALHPSQUQY-WKABSKOFSA-N,"PC(20:4(8Z,11Z,14Z,17Z)/18:0)",Linoleic acid metabolism
+IK_FDGQSTZJBFJUBT-UHFFFAOYSA-N,Hypoxanthine,Purine metabolism
+IK_FDJOLVPMNUYSCM-SYUKHSAKSA-L,vitamin B12,Porphyrin metabolism
+IK_FERIUCNNQQJTOY-UHFFFAOYSA-N,Butyric acid,One carbon pool by folate
+IK_FFDGPVCHZBVARC-UHFFFAOYSA-N,"N,N-dimethylglycine","Glycine, serine and threonine metabolism"
+IK_FFEARJCKVFRZRR-BYPYZUCNSA-N,L-Methionine,One carbon pool by folate
+IK_FFEARJCKVFRZRR-UHFFFAOYNA-N,Methionine,Arginine and proline metabolism
+IK_FFFHZYDWPBMWHY-VKHMYHEASA-N,Homocysteine,One carbon pool by folate
+IK_FHENRYRLCPXONH-LDLOPFEMSA-N,PC 33:0,Linoleic acid metabolism
+IK_FHKRUUVTZNTHKJ-NRNNPPJOSA-N,dIDP,Purine metabolism
+IK_FHQVHHIBKUMWTI-OTMQOFQLSA-N,PE 34:1,Glycerophospholipid metabolism
+IK_FHUAYOMRHXZKHT-JUGJLYODSA-N,PC 40:4,Linoleic acid metabolism
+IK_FJAZVHYPASAQKM-JBAURARKSA-N,Estrone glucuronide,Steroid hormone biosynthesis
+IK_FJKROLUGYXJWQN-UHFFFAOYSA-N,4-Hydroxybenzoic acid,Ubiquinone and other terpenoid-quinone biosynthesis
+IK_FKEIHZHIVAFDLO-RYPYTVSESA-N,"PC(22:1(13Z)/22:5(4Z,7Z,10Z,13Z,16Z))",Linoleic acid metabolism
+IK_FLWFZAGAZMHZQM-IVWGLPAOSA-N,PE(24:1(15Z)/15:0),Glycerophospholipid metabolism
+IK_FMBYBTSZVHUJMV-DIVFMYBRSA-N,"PC(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/P-18:0)",Linoleic acid metabolism
+IK_FONAXCRWZQFJHY-JCGOJSMZSA-N,SM(d18:0/22:0),Sphingolipid metabolism
+IK_FORFDCPQKJHEBF-HUESYALOSA-N,"PC(18:0/18:2(9Z,12Z))",Linoleic acid metabolism
+IK_FQVFGIZCMMQDNV-NQQLFREJSA-N,PC(18:1(9Z)/P-16:0),Linoleic acid metabolism
+IK_FQYGGFDZJFIDPU-JRSYHJKYSA-N,Estriol-16-Glucuronide,Steroid hormone biosynthesis
+IK_FVXDQWZBHIXIEJ-LNDKUQBDSA-N,"PC(18:2(9Z,12Z)/18:2(9Z,12Z))",Linoleic acid metabolism
+IK_FWMYJLDHIVCJCT-RRHRGVEJSA-N,"PC(18:2(9Z,12Z)/16:0)",Linoleic acid metabolism
+IK_FXGOEHDEIHUMCP-XNGCGXPYSA-N,"PE(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/18:1(9Z))",Glycerophospholipid metabolism
+IK_FXYFFYOQPWNFJZ-XGKJNDTMSA-N,"PE(15:0/20:2(11Z,14Z))",Glycerophospholipid metabolism
+IK_GCIVSXAHMONYLO-HMAFJQTKSA-N,6-Dehydrotestosterone glucuronide,Pyrimidine metabolism
+IK_GFFGJBXGBJISGV-UHFFFAOYSA-N,Adenine,Nicotinate and nicotinamide metabolism
+IK_GFNYAPAJUNPMGH-QNEBEIHSSA-N,"5,6-dihydroxy-8Z,11Z,14Z-eicosatrienoic acid",Arachidonic acid metabolism
+IK_GFXYTQPNNXGICT-YFKPBYRVSA-N,Allysine,Lysine degradation
+IK_GHCZAUBVMUEKKP-GYPHWSFCSA-N,glycochenodeoxycholic acid,Primary bile acid biosynthesis
+IK_GHCZAUBVMUEKKP-PNNZQWTHSA-N,chenodeoxycholic acid glycine conjugate,Primary bile acid biosynthesis
+IK_GHOKWGTUZJEAQD-ZETCQYMHSA-N,Pantothenic acid,Pantothenate and CoA biosynthesis
+IK_GHVNFZFCNZKVNT-UHFFFAOYSA-N,Capric acid,Fatty acid biosynthesis
+IK_GIPZQCAVEQRWOM-IKJFKDIMSA-N,PC aa C38:1,Linoleic acid metabolism
+IK_GIQXKAXWRLHLDD-VYACWCJYSA-N,Lithocholate 3-O-glucuronide,Ascorbate and aldarate metabolism
+IK_GJBXIPOYHVMPQJ-UHFFFAOYSA-N,3-hydroxyanthranilic acid,Tryptophan metabolism
+IK_GJRXIEGNAMFGOV-VEOGPPBOSA-N,"PC(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/P-16:0)",Linoleic acid metabolism
+IK_GLONBVCUAVPJFV-PCDHEYSGSA-N,Dehydroisoandrosterone 3-glucuronide,Ascorbate and aldarate metabolism
+IK_GOLXRNDWAUTYKT-UHFFFAOYSA-N,3-Indolepropionic acid,Pyrimidine metabolism
+IK_GOMVPVRDBLLHQC-VEJNOCSESA-N,LPC 20:4,Glycerophospholipid metabolism
+IK_GOQGGGANVKPMNH-UHFFFAOYSA-N,3-Methoxy-4-hydroxyphenylacetaldehyde,Tyrosine metabolism
+IK_GPWHCUUIQMGELX-VHQDNGOZSA-N,PC 32:2,Linoleic acid metabolism
+IK_GQQALHZKRGXRTO-AEMURDCYSA-N,"PC(20:0/20:5(5Z,8Z,11Z,14Z,17Z))",Linoleic acid metabolism
+IK_GQQZXRPXBDJABR-XMDONHODSA-N,3-O-Sulfogalactosylceramide (d18:1/18:0),Sphingolipid metabolism
+IK_GRSZFWQUAKGDAV-KQYNXXCUSA-N,Inosinic acid,Purine metabolism
+IK_GTZCVFVGUGFEME-IWQZZHSRSA-N,cis-Aconitic acid,Citrate cycle (TCA cycle)
+IK_GTZCVFVGUGFEME-UHFFFAOYSA-N,aconitic acid,Citrate cycle (TCA cycle)
+IK_GUBGYTABKSRVRQ-CUHNMECISA-N,Cellobiose,Starch and sucrose metabolism
+IK_GUBGYTABKSRVRQ-QKKXKWKRSA-N,lactose,Galactose metabolism
+IK_GUMSBNXGPBAONF-UBRVPYPMSA-N,"PE(20:3(8Z,11Z,14Z)/24:1(15Z))",Glycerophospholipid metabolism
+IK_GURBRQGDZZKITB-VXBMJZGYSA-N,12-KETE,Arachidonic acid metabolism
+IK_GYJSAWZGYQXRBS-GRJZKGIBSA-N,"3beta,7alpha-Dihydroxy-5-cholestenoate",Primary bile acid biosynthesis
+IK_HAEJPQIATWHALX-KQYNXXCUSA-N,Inosine triphosphate,Purine metabolism
+IK_HAFVWTUQBYRPOB-QGGNSXJXSA-N,"11b,17a,21-Trihydroxypreg-nenolone",Steroid hormone biosynthesis
+IK_HDHQZCHIXUUSMK-UHFFFAOYSA-N,"2,4-Quinolinediol",Cysteine and methionine metabolism
+IK_HEBKCHPVOIAQTA-QWWZWVQMSA-N,lyxitol,Pentose and glucuronate interconversions
+IK_HKVGJQVJNQRJPO-VTDDDATNSA-N,Demethyloleuropein,Sphingolipid metabolism
+IK_HLAWVOWADPNAGN-BAHZUFOISA-N,"Delta8,14-Sterol",Steroid biosynthesis
+IK_HMARMWSETGYKDK-AOGVJQIJSA-N,"PE(14:0/18:2(9Z,12Z))",Glycerophospholipid metabolism
+IK_HNDVDQJCIGZPNO-YFKPBYRVSA-N,Histidine,Histidine metabolism
+IK_HNFSZKRUPTYBOQ-ZDYOIFAYSA-N,"PE(18:0/22:4(7Z,10Z,13Z,16Z))",Glycerophospholipid metabolism
+IK_HTZINLFNXLXRBC-CQLBIITFSA-N,PC(P-16:0/0:0),Glycerophospholipid metabolism
+IK_HUQABGDIJUXLRG-QHCPKHFHSA-N,DG(O-18:0/2:0/0:0),Ether lipid metabolism
+IK_HVYWMOMLDIMFJA-DPAQBDIFSA-N,Cholesterol,Steroid hormone biosynthesis
+IK_HWXBTNAVRSUOJR-UHFFFAOYSA-N,2-hydroxyglutaric acid,Butanoate metabolism
+IK_HXACOUQIXZGNBF-UHFFFAOYSA-N,4-Pyridoxic Acid,Vitamin B6 metabolism
+IK_HXEACLLIILLPRG-UHFFFAOYSA-N,Pipecolic acid,Lysine degradation
+IK_HXEACLLIILLPRG-YFKPBYRVSA-N,L-Pipecolic acid,Lysine degradation
+IK_HXXFSFRBOHSIMQ-VFUOTHLCSA-N,glucose-1-phosphate,Starch and sucrose metabolism
+IK_HZAXFHJVJLSVMW-UHFFFAOYSA-N,Ethanolamine,Glycerophospholipid metabolism
+IK_HZCLJRFPXMKWHR-FEBLJDHQSA-N,SM(d18:1/12:0),Sphingolipid metabolism
+IK_HZDLKNOGBSMKRN-UHFFFAOYSA-N,Imidazolone A,Histidine metabolism
+IK_IESVDEZGAHUQJU-ZLBXKVHBSA-N,"PC(16:0/22:6(4Z,7Z,10Z,13Z,16Z,19Z))",Linoleic acid metabolism
+IK_IHNKQIMGVNPMTC-RUZDIDTESA-N,PC(18:0/0:0),Glycerophospholipid metabolism
+IK_IHNKQIMGVNPMTC-UHFFFAOYSA-N,2-Lysophosphatidylcholine,Glycerophospholipid metabolism
+IK_IJBIDDAZNYQSCP-VEHBBKSSSA-N,"PE(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/20:0)",Glycerophospholipid metabolism
+IK_IJLBJBCDNYOWPJ-MVMUGOIMSA-N,Cholesterol glucuronide,Ascorbate and aldarate metabolism
+IK_IJPRFXKJWFQONJ-UHFFFAOYSA-N,Desmethyltetrahydropiperine sulfate,Linoleic acid metabolism
+IK_IKXILDNPCZPPRV-RFMGOVQKSA-N,Drostanolone,Steroid hormone biosynthesis
+IK_IORKBJYFXXCDMP-GMGFYYQASA-N,"PC(18:2(9Z,12Z)/14:0)",Linoleic acid metabolism
+IK_IPCSVZSSVZVIGE-UHFFFAOYSA-N,Palmitic acid,Biosynthesis of unsaturated fatty acids
+IK_IPMVHVDAYPUFKH-WYRBGLKBSA-N,PC(16:1(9Z)/16:0),Linoleic acid metabolism
+IK_IPRPPFIAVHPVJH-UHFFFAOYSA-N,4-Hydroxyphenylacetaldehyde,Tyrosine metabolism
+IK_ISAKRJDGNUQOIC-UHFFFAOYSA-N,Uracil,Pantothenate and CoA biosynthesis
+IK_ISIJQGZVIFYXMD-QMUWONGRSA-M,Adenosyl cobinamide,Porphyrin metabolism
+IK_ITZYGDKGRKKBSN-HKFUITGCSA-N,"3alpha,7alpha-Dihydroxycoprostanic acid",Primary bile acid biosynthesis
+IK_IVYPNXXAYMYVSP-UHFFFAOYSA-N,Indole-3-carbinol,Glycerolipid metabolism
+IK_IWYDHOAUDWTVEP-UHFFFAOYSA-N,p-Hydroxyphenylacetic acid [+C2H4],Arginine biosynthesis
+IK_IXRPKRWXUJOOBZ-AVMVYAPKSA-N,Alpha-Santalyl acetate,Galactose metabolism
+IK_IXYVBZOSGGJWCW-UHFFFAOYSA-N,Glycinexylidide,Drug metabolism - cytochrome P450
+IK_JAVWFBAAZSHHAD-HCYAGMRRSA-N,"PC(16:0/20:4(8Z,11Z,14Z,17Z))",Linoleic acid metabolism
+IK_JAXWMXMFLOWKCW-UHFFFAOYSA-N,4-Hydroxyhexanoycarnitine,Biosynthesis of unsaturated fatty acids
+IK_JAZBEHYOTPTENJ-JLNKQSITSA-N,FFA 20:5,Biosynthesis of unsaturated fatty acids
+IK_JAZBEHYOTPTENJ-RCHUDCCISA-N,Eicosapentaenoic Acid,Biosynthesis of unsaturated fatty acids
+IK_JCCZCUUYYHWRGX-VGMNWLOBSA-N,Leucylhydroxyproline,Sphingolipid metabolism
+IK_JCMUOFQHZLPHQP-BQBZGAKWSA-N,Ophthalmic acid,Cysteine and methionine metabolism
+IK_JDHILDINMRGULE-UHFFFAOYNA-N,3-Methylhistidine,Histidine metabolism
+IK_JDSRHVWSAMTSSN-IRQZEAMPSA-N,13(S)-HpODE,Linoleic acid metabolism
+IK_JFCQEDHGNNZCLN-UHFFFAOYSA-N,Glutaric Acid,Arginine biosynthesis
+IK_JHIWIFRQJXLNEU-GSQAGGHASA-N,"4alpha-carboxy-5alpha-cholesta-8,24-dien-3beta-ol",Steroid biosynthesis
+IK_JHMWTEQGLBMSLG-DMHZMEFUSA-N,GPCho(20:3/20:3),Linoleic acid metabolism
+IK_JHPNVNIEXXLNTR-UHFFFAOYSA-N,DEOXYCARNITINE,Lysine degradation
+IK_JLIPBVWMWUWERT-HNQUOIGGSA-N,Hydroxydesmethylpiperine sulfate,Linoleic acid metabolism
+IK_JOUIQRNQJGXQDC-ZYUZMQFOSA-N,Nicotinic acid mononucleotide,Nicotinate and nicotinamide metabolism
+IK_JPIJQSOTBSSVTP-GBXIJSLDSA-N,isothreonic acid,Linoleic acid metabolism
+IK_JQXBETDGCMQLMK-UHFFFAOYSA-N,"3,4-Dihydroxyphenylacetone","Valine, leucine and isoleucine biosynthesis"
+IK_JRLGPAXAGHMNOL-LURJTMIESA-N,N2-Acetylornithine,Arginine biosynthesis
+IK_JUAPMRSLDANLAS-HOTGVXAUSA-N,Phe Phe,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+IK_JVQYSWDUAOAHFM-UHFFFAOYSA-N,3-Methyl-2-Oxovaleric Acid,"Valine, leucine and isoleucine biosynthesis"
+IK_JVTAAEKCZFNVCJ-UHFFFAOYSA-N,Lactic acid,Pyruvate metabolism
+IK_JVTAAEKCZFNVCJ-UWTATZPHSA-N,D-Lactic acid,Pyruvate metabolism
+IK_JXGLGTFMAQOJBB-HEDKFQSOSA-N,LysoPC(14:1(9Z)/0:0),Glycerophospholipid metabolism
+IK_JYGXADMDTFJGBT-VWUMJDOOSA-N,Hydrocortisone,Steroid hormone biosynthesis
+IK_KABXUUFDPUOJMW-BYPYZUCNSA-N,L-Glutamic gamma-semialdehyde,Arginine and proline metabolism
+IK_KAKZBPTYRLMSJV-UHFFFAOYSA-N,"1,3-Butadiene",Steroid hormone biosynthesis
+IK_KBUNOSOGGAARKZ-KRWDZBQOSA-N,3-Dehydrosphinganine,Sphingolipid metabolism
+IK_KCUYLQDWSWOANO-JHXSWNAYSA-N,TG 46:1,Sphingolipid metabolism
+IK_KDXKERNSBIXSRK-UHFFFAOYNA-N,Lysine,Lysine degradation
+IK_KDXKERNSBIXSRK-YFKPBYRVSA-N,L-Lysine,Lysine degradation
+IK_KDYFGRWQOYBRFD-UHFFFAOYSA-N,Succinic acid,"Alanine, aspartate and glutamate metabolism"
+IK_KEECCEWTUVWFCV-UHFFFAOYSA-N,N-Acetylprocainamide,D-Amino acid metabolism
+IK_KHLRCNXJXSYNCK-ZIEHFRHMSA-N,GPEtn(16:0/20:5),Glycerophospholipid metabolism
+IK_KHPXUQMNIQBQEV-UHFFFAOYSA-N,Oxaloacetate,"Alanine, aspartate and glutamate metabolism"
+IK_KIDHWZJUCRJVML-UHFFFAOYSA-N,"1,4-diaminobutane",Arginine and proline metabolism
+IK_KJPVZTMEFPUZPC-UYQAEJRRSA-N,"SM(d20:1/22:6(5Z,7Z,10Z,13Z,16Z,19Z)-OH(4))",Glycerophospholipid metabolism
+IK_KKADPXVIOXHVKN-UHFFFAOYSA-N,4-Hydroxyphenylpyruvic acid,Tyrosine metabolism
+IK_KKCIOUWDFWQUBT-AWEZNQCLSA-N,L-Thyronine,Tyrosine metabolism
+IK_KLZGKIDSEJWEDW-UHFFFAOYSA-N,N-Acetylputrescine,Arginine and proline metabolism
+IK_KNHXCLGABLNNRN-FFSDQCCLSA-N,PC O-34:4|PC O-16:2_18:2,Linoleic acid metabolism
+IK_KPGXRSRHYNQIFN-UHFFFAOYSA-N,Oxoglutaric acid,Arginine biosynthesis
+IK_KRKNYBCHXYNGOX-UHFFFAOYSA-N,Citric Acid,"Alanine, aspartate and glutamate metabolism"
+IK_KTJAFMBXBPVGGI-LTEAFHAISA-N,PE 36:3;O|PE 18:2_18:1;O,Nicotinate and nicotinamide metabolism
+IK_KTLRWTOPTKGYQY-UHFFFAOYSA-N,N1-Methyl-4-pyridone-5-carboxamide3,Nicotinate and nicotinamide metabolism
+IK_KUYNOZVWCFXSNE-BYNIDDHOSA-N,Indoxyl glucuronide,Ascorbate and aldarate metabolism
+IK_KVMOASQARMCFEX-OBEJFMRTSA-N,PE(16:1(9Z)/P-18:1(9Z)),Glycerophospholipid metabolism
+IK_KVXSPXCUAWCXEI-UHFFFAOYSA-N,(2S)-2-Amino-6-[(3-formylpiperidin-1-yl)amino]hexanoic acid,One carbon pool by folate
+IK_KXGVEGMKQFWNSR-LLQZFEROSA-N,deoxycholic acid,Primary bile acid biosynthesis
+IK_KXSPLNAXPMVUEC-NCOIDOBVSA-N,Uridine - H2O,Pyrimidine metabolism
+IK_KYICBZWZQPCUMO-PSALXKTOSA-N,SM(d18:1/14:0),One carbon pool by folate
+IK_KZSNJWFQEVHDMF-BYPYZUCNSA-N,L-Valine,"Valine, leucine and isoleucine biosynthesis"
+IK_KZSNJWFQEVHDMF-UHFFFAOYNA-N,Valine,"Valine, leucine and isoleucine biosynthesis"
+IK_LAXQYRRMGGEGOH-JXRLJXCWSA-N,"LysoPC(20:4(5Z,8Z,11Z,14Z)/0:0)",Glycerophospholipid metabolism
+IK_LCTONWCANYUPML-UHFFFAOYSA-N,Pyruvic Acid,Arginine and proline metabolism
+IK_LEBBDRXHHNYZIA-LDUWYPJVSA-N,Galactocerebroside,Sphingolipid metabolism
+IK_LEHOTFFKMJEONL-UHFFFAOYSA-N,Uric acid,Purine metabolism
+IK_LEOVWDSHDAVANJ-UHFFFAOYSA-N,4-Hydroxy benzenepropanedioate,Arginine biosynthesis
+IK_LEVWYRKDKASIDU-IMJSIDKUSA-N,L-Cystine,Cysteine and methionine metabolism
+IK_LEVWYRKDKASIDU-UHFFFAOYNA-N,Cystine,Cysteine and methionine metabolism
+IK_LFTRJWKKLPVMNE-RCBQFDQVSA-N,Valyl-prolyl-glycyl-valyl-glycine,Glycerophospholipid metabolism
+IK_LJARBVLDSOWRJT-PSXMRANNSA-N,PC(15:0/15:0),Linoleic acid metabolism
+IK_LJIFHMULTXIFNU-KAMIUYGRSA-N,"PE(18:1(11Z)/20:4(5Z,8Z,11Z,14Z))",Glycerophospholipid metabolism
+IK_LKDRXBCSQODPBY-VRPWFDPXSA-N,D-Fructose,Starch and sucrose metabolism
+IK_LKNPFOZIOWXDQS-UHFFFAOYSA-N,Dehydrochorismic acid,Sphingolipid metabolism
+IK_LLCPFVIBUZJITJ-GVEMAFOVSA-N,2-Methoxy-estradiol-17b 3-glucuronide,Steroid hormone biosynthesis
+IK_LLLPDUXGHXIXIW-UHFFFAOYSA-N,N-formylanthranilic acid,Tryptophan metabolism
+IK_LOIYMIARKYCTBW-OWOJBTEDSA-N,Urocanic acid,Histidine metabolism
+IK_LOJUQFSPYHMHEO-SGHXUWJISA-N,Ubiquinol-8,Ubiquinone and other terpenoid-quinone biosynthesis
+IK_LRFVTYWOQMYALW-UHFFFAOYSA-N,Xanthine,Purine metabolism
+IK_LRTCKJJOUNZFDD-DBHIXKHWSA-N,"PA(20:2(11Z,14Z)/18:1(9Z))",Glycerophospholipid metabolism
+IK_LTCLZQOHPYRNCF-UHFFFAOYSA-N,6-Hydroxyindoxyl sulfate,Arginine biosynthesis
+IK_LVNGJLRDBYCPGB-LDLOPFEMSA-N,PE(18:0/18:0),Glycerophospholipid metabolism
+IK_LWWIYCLYWKAKRR-HSUXUTPPSA-N,"(2R,3R,4R)-Hexane-1,2,3,4,6-pentol",Arginine biosynthesis
+IK_LXNHXLLTXMVWPM-UHFFFAOYSA-N,Pyridoxine,Vitamin B6 metabolism
+IK_LYFMZJCIGLZMJF-IRSYNFPBSA-N,"PE(P-16:0/22:2(13Z,16Z))",Linoleic acid metabolism
+IK_LZCOQTDXKCNBEE-RUTJIGONSA-N,"3-Oxa-9-azoniatricyclo[3.3.1.02,4]nonane, 9-ethyl-7-hydroxy-9-methyl-",Linoleic acid metabolism
+IK_LZLVZIFMYXDKCN-QJWFYWCHSA-N,GPCho(20:4/20:4),Linoleic acid metabolism
+IK_LZRYNUIYHHQTRL-NBZVOYHKSA-N,"Lisinopril, epsilon-biotinamidocaproyl-",Linoleic acid metabolism
+IK_MBMBGCFOFBJSGT-KUBAVDMBSA-N,Docosahexaenoic Acid,Biosynthesis of unsaturated fatty acids
+IK_MCKLJFJEQRYRQT-APGJSSKUSA-N,20alpha-Hydroxycholesterol,Steroid hormone biosynthesis
+IK_MCMLHDBHZRLOED-SFYZADRCSA-N,Ornithine [+CO2],Tyrosine metabolism
+IK_MEZHYUGWUQWXOK-QPPIDDCLSA-N,PGP(i-12:0/i-22:0),Glycerophospholipid metabolism
+IK_MFNAKLLYSPINFZ-UHFFFAOYSA-N,"6-Methylpteridine-2,4-diamine",Glycerophospholipid metabolism
+IK_MFYSYFVPBJMHGN-ZPOLXVRWSA-N,Cortisone,Steroid hormone biosynthesis
+IK_MHDVGSVTJDSBDK-UHFFFAOYSA-N,Dibenzyl ether,Fatty acid degradation
+IK_MJEVTNQRFPLLCH-QECOYPFHSA-N,"DG(18:3(9Z,12Z,15Z)/15:0/0:0)",Glycerophospholipid metabolism
+IK_MJLXQSQYKZWZCB-AKNKGCNLSA-N,Linoelaidylcarnitine,Sphingolipid metabolism
+IK_MJZYBROJFJAPOE-UHFFFAOYSA-N,Stigmastanediol,Glycerophospholipid metabolism
+IK_MNMKDPGRWWQDGI-UHFFFAOYSA-N,Dillanoside,Glycerophospholipid metabolism
+IK_MPSATYYKSWVJNQ-NSZXNXEKSA-N,PA(6 keto-PGF1alpha/14:1(9Z)),Glycerophospholipid metabolism
+IK_MRNRLEVLPFVWRY-UHFFFAOYSA-N,Saringosterol 3-glucoside,Glycerophospholipid metabolism
+IK_MROJXXOCABQVEF-UHFFFAOYSA-N,Actarit,Linoleic acid metabolism
+IK_MRPDHXXPDCVBPQ-AATRIKPKSA-N,"(3S,5R,6S,7E,9x)-7-Megastigmene-3,6,9-triol 9-glucoside",Linoleic acid metabolism
+IK_MRRFMOUCAPXWJC-SSCJOAGESA-N,"PC(18:1(11Z)/18:3(6Z,9Z,12Z))",Glycerophospholipid metabolism
+IK_MRUAUOIMASANKQ-UHFFFAOYSA-N,Cocamidopropyl Betaine,Linoleic acid metabolism
+IK_MSWZFWKMSRAUBD-IVMDWMLBSA-N,D-Glucosamine,Amino sugar and nucleotide sugar metabolism
+IK_MTCFGRXMJLQNBG-REOHCLBHSA-N,L-Serine,"Glycine, serine and threonine metabolism"
+IK_MTCFGRXMJLQNBG-UHFFFAOYNA-N,Serine,"Glycine, serine and threonine metabolism"
+IK_MTCFGRXMJLQNBG-UWTATZPHSA-N,D-serine,"Glycine, serine and threonine metabolism"
+IK_MUFCQFFNARPCRX-DAZBTBHLSA-N,DG(PGE2/16:0/0:0),Glycerophospholipid metabolism
+IK_MUMXFARPYQTTSL-BQBZGAKWSA-N,Met-Gln,Glycerophospholipid metabolism
+IK_MVOYJPOZRLFTCP-UHFFFAOYSA-N,1-Methylxanthine,Caffeine metabolism
+IK_MYVYPSWUSKCCHG-UHFFFAOYSA-N,Tryptophyl-Serine,Steroid biosynthesis
+IK_MYYIAHXIVFADCU-QMMMGPOBSA-N,Anserine,Histidine metabolism
+IK_NANHIUZYPFDGJS-UHFFFAOYSA-N,4-Decan-4-Ylbenzenesulfonic Acid,Sphingolipid metabolism
+IK_NBIIXXVUZAFLBC-UHFFFAOYSA-K,Phosphate,One carbon pool by folate
+IK_NBSCHQHZLSJFNQ-QTVWNMPRSA-N,D-Mannose 6-Phosphate,Amino sugar and nucleotide sugar metabolism
+IK_NCBOXCFFSWALMZ-XTNBEGJDSA-N,Bergenin Pentaacetate,Linoleic acid metabolism
+IK_NCGLTZSBTFVVAW-KNXRZYMVSA-N,Minaxolone,Linoleic acid metabolism
+IK_NHZMQXZHNVQTQA-UHFFFAOYSA-N,Pyridoxamine,Vitamin B6 metabolism
+IK_NIPLIJLVGZCKMP-UHFFFAOYSA-M,Neurine,"Glycine, serine and threonine metabolism"
+IK_NJHKGJJIKOCCMZ-YMIVKDKMSA-N,PE(22:4/0:0),Glutathione metabolism
+IK_NKRLKOMBOSWILK-PLACYPQZSA-N,Kinetensin 4-7,Glutathione metabolism
+IK_NNAIYOXJNVGUOM-UHFFFAOYSA-N,Amperozide,Ascorbate and aldarate metabolism
+IK_NNEIBJNHWVDJBA-GYSLYLNXSA-N,Deoxycholic acid 3-glucuronide,Ascorbate and aldarate metabolism
+IK_NOIIUHRQUVNIDD-UHFFFAOYSA-N,Nialamide,Tryptophan metabolism
+IK_NQPDZGIKBAWPEJ-UHFFFAOYSA-N,Valeric acid,Arginine biosynthesis
+IK_NQRYJNQNLNOLGT-UHFFFAOYSA-N,Piperidine,Lysine degradation
+IK_NRJAVPSFFCBXDT-HUESYALOSA-N,phosphatidylcholine,Linoleic acid metabolism
+IK_NTBDNAWCQLUDHG-CEGBOXLASA-N,PE P-36:4 or PE O-36:5,Sphingolipid metabolism
+IK_NUCLJNSWZCHRKL-UHFFFAOYSA-N,allantoic acid,Purine metabolism
+IK_NUDXOGPEQRPSKT-MVOZTAHOSA-N,FA 18:3 (y-linolenic acid),Sphingolipid metabolism
+IK_NWWJFMCCTZLKNT-UHFFFAOYSA-N,Dihydrothiazine,Sphingolipid metabolism
+IK_NXJAXUYOQLTISD-UHFFFAOYSA-N,O-Glutarylcarnitine,Sphingolipid metabolism
+IK_NXYCBMGKNCJXIC-CNEMSGBDSA-N,Bz-Camp,Glycerophospholipid metabolism
+IK_NYHBQMYGNKIUIF-UUOKFMHZSA-N,Guanosine,Purine metabolism
+IK_NYLNHNDMNOPWAZ-ZLEFDVGRSA-N,Blumenol C glucoside,Glycerophospholipid metabolism
+IK_OAMCCJASDLMTOO-UHFFFAOYSA-N,"3,4-Bis(7-chloroindol-3-yl)pyrrole-2,5-dicarboxylate",Sphingolipid metabolism
+IK_OAQGPAZDRCBBLD-YTCWWFNZSA-N,"17-phenyl-18,19,20-trinor-prostaglandin D2",Sphingolipid metabolism
+IK_ODBLHEXUDAPZAU-UHFFFAOYSA-N,isocitric acid,Citrate cycle (TCA cycle)
+IK_ODHCTXKNWHHXJC-GSVOUGTGSA-N,(R)-(+)-2-Pyrrolidone-5-carboxylic acid,D-Amino acid metabolism
+IK_ODHCTXKNWHHXJC-VKHMYHEASA-N,L-Pyroglutamic acid,Glutathione metabolism
+IK_ODKSFYDXXFIFQN-BYPYZUCNSA-N,L-Arginine,Arginine biosynthesis
+IK_ODKSFYDXXFIFQN-SCSAIBSYSA-N,D-Arginine,D-Amino acid metabolism
+IK_ODKSFYDXXFIFQN-UHFFFAOYSA-N,Arginine,Arginine biosynthesis
+IK_OECTYKWYRCHAKR-UHFFFAOYSA-N,4-Vinylcyclohexene dioxide,Steroid hormone biosynthesis
+IK_OEYIOHPDSNJKLS-UHFFFAOYSA-N,Choline,"Glycine, serine and threonine metabolism"
+IK_OFOBLEOULBTSOW-UHFFFAOYSA-N,Malonic acid,Fatty acid biosynthesis
+IK_OIPILFWXSMYKGL-UHFFFAOYSA-N,Acetylcholine,Glycerophospholipid metabolism
+IK_OIRDTQYFTABQOQ-KQYNXXCUSA-N,Adenosine,One carbon pool by folate
+IK_OISFHODBOQNZAG-IAGOWNOFSA-N,Floionolic acid,Glycerophospholipid metabolism
+IK_OJZPOIMVTVAAOR-LVGJWKLPSA-N,PC O-44:8 or PC 44:8e,Glycerophospholipid metabolism
+IK_OLXZPDWKRNYJJZ-RRKCRQDMSA-N,Deoxyadenosine,Purine metabolism
+IK_OMFXVFTZEKFJBZ-HJTSIMOOSA-N,Corticosterone,Steroid hormone biosynthesis
+IK_OMYMRCXOJJZYKE-UHFFFAOYSA-N,6-Hydroxymelatonin,Tryptophan metabolism
+IK_ONIBWKKTOPOVIA-BYPYZUCNSA-N,L-Proline,Arginine and proline metabolism
+IK_ONIBWKKTOPOVIA-UHFFFAOYNA-N,Proline,Arginine and proline metabolism
+IK_ONWMQORSVZYVNH-UHFFFAOYSA-N,Tyrosyl-Asparagine,Ascorbate and aldarate metabolism
+IK_OSJPPGNTCRNQQC-UHFFFAOYSA-N,3-phosphoglycerate,"Glycine, serine and threonine metabolism"
+IK_OSRWIBSZJTWIKA-JLNKQSITSA-N,LPE 22:5,"Alanine, aspartate and glutamate metabolism"
+IK_OTBMMWCXBVNALT-AMOZBRKMSA-N,"PE-NMe(20:4(8Z,11Z,14Z,17Z)/24:0)","Alanine, aspartate and glutamate metabolism"
+IK_OTCCIMWXFLJLIA-BYPYZUCNSA-N,N-Acetylaspartic acid,"Alanine, aspartate and glutamate metabolism"
+IK_OTKJDMGTUTTYMP-ZWKOTPCHSA-N,Sphinganine,Sphingolipid metabolism
+IK_OTSBKHHWSQYEHK-UHFFFAOYSA-N,"1,3-Dimethylurate",Glycerophospholipid metabolism
+IK_OUDSFQBUEBFSPS-UHFFFAOYSA-N,N-(Carboxymethyl)-N-(2-((carboxymethyl)amino)ethyl)glycine,Glycerophospholipid metabolism
+IK_OUICDHFBMJCDTL-GHRIWEEISA-N,Notoginsenoside T1,Retinol metabolism
+IK_OUYCCCASQSFEME-QMMMGPOBSA-N,L-Tyrosine,Tyrosine metabolism
+IK_OUYCCCASQSFEME-UHFFFAOYNA-N,Tyrosine,Tyrosine metabolism
+IK_OVBKVWSHXDCSTK-UHFFFAOYSA-N,24-Hydroxytetracosanoic acid,Retinol metabolism
+IK_OVBOQVAIYMSUDT-HRYGCDPOSA-N,"All-trans-13,14-dihydroretinol",Retinol metabolism
+IK_OVRNDRQMDRJTHS-OZRXBMAMSA-N,N-acetylmannosamine,Amino sugar and nucleotide sugar metabolism
+IK_OYHQOLUKZRVURQ-HZJYTTRNSA-N,Linoleic acid,Linoleic acid metabolism
+IK_OYIFNHCXNCRBQI-UHFFFAOYSA-N,Aminoadipic acid,Lysine degradation
+IK_PABVKUJVLNMOJP-UHFFFAOYSA-M,Glutamyl-Cysteine,Glycerophospholipid metabolism
+IK_PAHMCFUSNIRFHK-UKPQPXGPSA-N,DG(PGE2/12:0/0:0),Glycerophospholipid metabolism
+IK_PBBWIAQSYZNWPA-UHFFFAOYSA-N,(2S)-2-Amino-5-(diaminomethylideneamino)-4-methylpentanoic acid,Glycerophospholipid metabolism
+IK_PBROMOQAZGFDHQ-GPQOMLTASA-N,SM d43:2,Glycerophospholipid metabolism
+IK_PCBVVHMKRNVSDR-YJNXUYHJSA-N,"PE(18:1(9Z)/18:3(9Z,12Z,15Z))",Pantothenate and CoA biosynthesis
+IK_PCXDJQZLDDHMGX-UHFFFAOYSA-N,3-Aminopropionaldehyde,Glycerophospholipid metabolism
+IK_PDWIQYODPROSQH-PYHARJCCSA-N,Deoxyribose,Pentose phosphate pathway
+IK_PEDCQBHIVMGVHV-UHFFFAOYSA-N,glycerol,Glycerophospholipid metabolism
+IK_PFWLFWPASULGAN-UHFFFAOYSA-N,7-Methylxanthine,Caffeine metabolism
+IK_PHENTZNALBMCQD-UHFFFAOYSA-N,3-ureido-isobutyrate,Glycerophospholipid metabolism
+IK_PHOSLXGWIIWDIE-IUFKAHDJSA-N,SM 20:0;2O/18:2,Glycerophospholipid metabolism
+IK_PLOUQIGEQKCKHG-UHFFFAOYSA-N,3-Methylazelaic acid,Linoleic acid metabolism
+IK_PLSQMGZYOGSOCE-XINAWCOVSA-N,Dihydroneopterin phosphate,Folate biosynthesis
+IK_PMTMAFAPLCGXGK-JMTMCXQRSA-N,12-oxo-PDA,Starch and sucrose metabolism
+IK_PNEJUHLZEPRMHF-UHFFFAOYSA-N,6-Hydroxypentadecanedioic acid,Linoleic acid metabolism
+IK_PNHLMHWWFOPQLK-BKUUWRAGSA-N,GDP-4-Dehydro-6-deoxy-D-mannose,Fructose and mannose metabolism
+IK_POULHZVOKOAJMA-UHFFFAOYSA-N,lauric acid,Fatty acid biosynthesis
+IK_PQSUYGKTWSAVDQ-ZVIOFETBSA-N,Aldosterone,Steroid hormone biosynthesis
+IK_PTGGMPLMNDBPGB-CXISOLTFSA-N,N-methylsphingosine,Nicotinate and nicotinamide metabolism
+IK_PVNIIMVLHYAWGP-UHFFFAOYSA-N,nicotinic acid,Nicotinate and nicotinamide metabolism
+IK_PWSKCIUNCJJBIX-RXDOKCLVSA-N,PG(5-iso PGF2VI/a-13:0),Linoleic acid metabolism
+IK_PXQPEWDEAKTCGB-UHFFFAOYSA-N,Orotic acid,Pyrimidine metabolism
+IK_PXVMEXBCFJTGCL-RCHUDCCISA-N,N-Eicosapentaenoyl Phenylalanine,Linoleic acid metabolism
+IK_PYVRVRFVLRNJLY-MZMPXXGTSA-N,PE(18:1/0:0),Glycerophospholipid metabolism
+IK_PYZZIILDSAJNLZ-QZNPSGCDSA-N,Melibiitol,Galactose metabolism
+IK_PZHOVOCGVTXFSM-DOFZRALJSA-N,LPC 42:4,Glycerophospholipid metabolism
+IK_PZPIQUZUJADGQZ-NSCUHMNNSA-N,Polyanethole-sulfate,Glycerophospholipid metabolism
+IK_PZRFVAHZNWPPAC-VBKSFVIKSA-N,PC(18:1/0:0),Purine metabolism
+IK_QAXHWUAAPKHMGA-UHFFFAOYSA-N,PI 36:4|PI 16:0_20:4,Tryptophan metabolism
+IK_QCDYOIZVELGOLZ-UHFFFAOYSA-N,Salvigenin,Tryptophan metabolism
+IK_QCGTZPZKJPTAEP-REDYYMJGSA-N,2-Aminomuconic acid semialdehyde,Tryptophan metabolism
+IK_QFDRTQONISXGJA-UHFFFAOYSA-N,1-Methyluric acid,Caffeine metabolism
+IK_QGNYWQOMJSTUQZ-BQBZGAKWSA-N,Aspartylysine [-H2O],Purine metabolism
+IK_QHKABHOOEWYVLI-UHFFFAOYSA-N,Ketoisovaleric acid,"Valine, leucine and isoleucine biosynthesis"
+IK_QHVMVGMCKWPDHT-UHFFFAOYSA-N,Fluorescein thiohydantoin,Linoleic acid metabolism
+IK_QHWZTVCCBMIIKE-SHYZEUOFSA-N,DUDP,Pyrimidine metabolism
+IK_QIBZFHLFHCIUOT-NPBIGWJUSA-N,PC 32:1,Glycerophospholipid metabolism
+IK_QIJPWSGHURHDHJ-UHFFFAOYSA-N,2-n-Propylthiazolidine-4-carboxylic acid,Glycerophospholipid metabolism
+IK_QIQXTHQIDYTFRH-UHFFFAOYSA-N,Stearic acid,Biosynthesis of unsaturated fatty acids
+IK_QIVBCDIJIAJPQS-VIFPVBQESA-N,Tryptophan,Tryptophan metabolism
+IK_QKAITYIDZJJULL-UHFFFAOYSA-N,"2-[(5-bromopyridin-2-yl)amino]-4-methyl-N-propyl-1,3-thiazole-5-carboxamide",Linoleic acid metabolism
+IK_QKNCKSQAXGWPIK-FOWTUZBSSA-N,Caffeoylcycloartenol,Linoleic acid metabolism
+IK_QNAYBMKLOCPYGJ-REOHCLBHSA-N,L-Alanine,"Alanine, aspartate and glutamate metabolism"
+IK_QRMZSPFSDQBLIX-UHFFFAOYSA-N,Homovanillic acid,Tyrosine metabolism
+IK_QUNWUDVFRNGTCO-UHFFFAOYSA-N,para-xanthine,Caffeine metabolism
+IK_QVHPTAJAHUONLV-DYKIIFRCSA-N,"5,16-Androstadien-3beta-ol",Glycerophospholipid metabolism
+IK_QVMUHZHZYCDMAI-RYUDHWBXSA-N,Austdiol,Cysteine and methionine metabolism
+IK_QVRLHIRFLRXFIW-MLDHBKOMSA-N,Vertilmicin,Glycerophospholipid metabolism
+IK_QVZHZVWYFNADIO-BATPLZQESA-N,3'-Ketolactose,Cysteine and methionine metabolism
+IK_QWCKQJZIFLGMSD-VKHMYHEASA-N,L-2-Aminobutyric acid,Cysteine and methionine metabolism
+IK_QWUWMCYKGHVNAV-UHFFFAOYSA-N,"1,2-Diphenylethane",Fatty acid degradation
+IK_QXGVRGZJILVMDF-UHFFFAOYSA-N,Tetracosanedioic acid,Sphingolipid metabolism
+IK_QYIXCDOBOSTCEI-KKFSNPNRSA-N,Epi-coprostanol,Sphingolipid metabolism
+IK_QYTPGOPLNFESQC-NUTQULCTSA-N,PE(P-16:0/0:0),Sphingolipid metabolism
+IK_QZAYGJVTTNCVMB-UHFFFAOYSA-N,Serotonin,Tryptophan metabolism
+IK_RAGZUCNPTLULOL-KQJPBSFVSA-N,3-Feruloylquinic acid,Linoleic acid metabolism
+IK_RALVCBWUWHJOGL-OPMJLWCUSA-N,Myricatomentoside I,Linoleic acid metabolism
+IK_RBNPOMFGQQGHHO-UHFFFAOYSA-N,glyceric acid,"Glycine, serine and threonine metabolism"
+IK_RCNSAJSGRJSBKK-NSQVQWHSSA-N,Biliverdin,Porphyrin metabolism
+IK_RDQUQBHPMYFYMX-XIWVQZPPSA-N,Imidazoleacetic acid ribotide,Glycerophospholipid metabolism
+IK_RDZNZFGKEVDNPK-UHFFFAOYSA-N,5-acetylamino-6-formylamino-3-methyluracil,Caffeine metabolism
+IK_REAZZDPREXHWNV-UHFFFAOYSA-N,"Aplysiatoxin, 17-debromo-",Glycerophospholipid metabolism
+IK_RFDAIACWWDREDC-FRVQLJSFSA-N,N-Choloylglycine,Primary bile acid biosynthesis
+IK_RFHSOKOVHMEMLA-JCMJOHBISA-N,TG 46:2,Linoleic acid metabolism
+IK_RFMMMVDNIPUKGG-YFKPBYRVSA-N,N-Acetyl-L-Glutamic Acid,Arginine biosynthesis
+IK_RFPQMVKZNQOUGY-KXYOHKLBSA-N,PE O-16:1_18:1,Linoleic acid metabolism
+IK_RGHMISIYKIHAJW-SSDOTTSWSA-N,Isovanillymandelic acid,Tyrosine metabolism
+IK_RGHNJXZEOKUKBD-SQOUGZDYSA-N,gluconic acid,Pentose phosphate pathway
+IK_RHGKLRLOHDJJDR-BYPYZUCNSA-N,Citrulline,Arginine biosynthesis
+IK_RHQQHZQUAMFINJ-DTDWNVJFSA-N,Tetrahydrocorticosterone,Steroid hormone biosynthesis
+IK_RJMIEHBSYVWVIN-UHFFFAOYSA-N,Indoprofen,Pantothenate and CoA biosynthesis
+IK_RJTYSXVYCZAUHE-UHFFFAOYSA-N,4-hydroxybenzoic acid-4-O-sulphate,Glycerophospholipid metabolism
+IK_RJYQLMILDVERHH-UHFFFAOYSA-N,4-Ipomeanol,Glycerophospholipid metabolism
+IK_RJZVWDTYEWCUAR-JOCHJYFZSA-N,LPC 15:0,Purine metabolism
+IK_ROHFNLRQFUQHCH-UHFFFAOYNA-N,Leucine,"Valine, leucine and isoleucine biosynthesis"
+IK_ROHFNLRQFUQHCH-YFKPBYRVSA-N,L-leucine,"Valine, leucine and isoleucine biosynthesis"
+IK_RRKQXBKNDQFCNC-MTGPGUOHSA-N,"1-alpha-methyl-5-alpha-androstan-3-alpha,17-beta-diol glucuronide",Linoleic acid metabolism
+IK_RRTPYUGIBQLEDN-FPLPWBNLSA-N,LPE O-16:1,Arachidonic acid metabolism
+IK_RRTYEHFGQWNQKK-KIQAWMAPSA-N,12-Keto-tetrahydro-leukotriene B4,Linoleic acid metabolism
+IK_RSRDWHPVTMQUGZ-OZIWPBGVSA-N,Pregnan-20-one,Steroid hormone biosynthesis
+IK_RUDATBOHQWOJDD-BSWAIDMHSA-N,Chenodeoxycholic Acid,Primary bile acid biosynthesis
+IK_RWRDLPDLKQPQOW-UHFFFAOYSA-N,Pyrrolidine,Arginine and proline metabolism
+IK_RWVIMCIPOAXUDG-UHFFFAOYSA-N,"6,7-Dinitro-1,4-dihydroquinoxaline-2,3-dione",Glycerophospholipid metabolism
+IK_RXFPYNAVFFDUJE-UHFFFAOYSA-N,3-hydroxychlorpropamide,Glycerophospholipid metabolism
+IK_RYCNUMLMNKHWPZ-SNVBAGLBSA-N,Lysophosphatidylcholine,Glycerophospholipid metabolism
+IK_RYYVLZVUVIJVGH-UHFFFAOYSA-N,Caffeine,Caffeine metabolism
+IK_SAAVELCIPHKGJE-UHFFFAOYSA-N,"12-[Methyl-(4-nitro-2,1,3-benzoxadiazol-7-yl)amino]octadecanoic acid",Glycerophospholipid metabolism
+IK_SATGKQGFUDXGAX-MYWFJNCASA-N,7alpha-Hydroxy-3-oxo-4-cholestenoate,Primary bile acid biosynthesis
+IK_SBJCUZQNHOLYMD-UHFFFAOYSA-N,"1,5-Naphthalene diisocyanate",Porphyrin metabolism
+IK_SEOVTRFCIGRIMH-UHFFFAOYSA-N,Indole-3-acetic acid,Tryptophan metabolism
+IK_SGLDLWSTFXXDDD-LFSNXOCVSA-N,"PA(14:0/18:1(12Z)-O(9S,10R))",Tyrosine metabolism
+IK_SGNZYJXNUURYCH-UHFFFAOYSA-N,Dopamine [-NH3],Tyrosine metabolism
+IK_SGTFNLMVIRZWTA-LFCBYZEKSA-N,28-Hydroxywithanolide E,Retinol metabolism
+IK_SHGAZHPCJJPHSC-YCNIQYBTSA-N,"all-trans-Retinoic acid1,3",Retinol metabolism
+IK_SHZGCJCMOBCMKK-DHVFOXMCSA-N,fucose,Amino sugar and nucleotide sugar metabolism
+IK_SIKJAQJRHWYJAI-UHFFFAOYSA-N,INDOLE,Tryptophan metabolism
+IK_SKGLAZSLOGYCCA-PEFXOJROSA-N,Neuromedin N (1-4),Glycerophospholipid metabolism
+IK_SNICXCGAKADSCV-JTQLQIEISA-N,pyridoxal 5-phosphate,Vitamin B6 metabolism
+IK_SOLWMULEXULIEQ-OUQHJZBVSA-N,"PS(20:0/18:1(12Z)-2OH(9,10))",Glycerophospholipid metabolism
+IK_SPJAGILXQBHHSZ-UHFFFAOYSA-N,5-Benzylacyclouridine,Glycerophospholipid metabolism
+IK_SPURMHFLEKVAAS-UHFFFAOYSA-N,Docosene,Linoleic acid metabolism
+IK_SRMRDCIUBMNQNC-MUUNZHRXSA-O,PC(22:6),Glycerophospholipid metabolism
+IK_SRRQPVVYXBTRQK-UHFFFAOYSA-N,LPC 17:0,Glycerophospholipid metabolism
+IK_SRRQPVVYXBTRQK-XMMPIXPASA-N,PC(17:0/0:0),Steroid hormone biosynthesis
+IK_SRXKAYJJGAAOBP-UHFFFAOYSA-N,N(5)-Acetylornithine,Steroid hormone biosynthesis
+IK_SSBCZTXGVMMZOT-NBBHSKLNSA-N,"16a-Hydroxyandrost-4-ene-3,17-dione",Steroid hormone biosynthesis
+IK_SUHOQUVVVLNYQR-UHFFFAOYSA-N,Glycerophosphocholine,Glycerophospholipid metabolism
+IK_SUWZHLCNFQWNPE-LATRNWQMSA-N,Ethylhydrocupreine,Linoleic acid metabolism
+IK_SWINWPBPEKHUOD-JPVZDGGYSA-N,2-hydroxyestrone (2-OH-E1),Steroid hormone biosynthesis
+IK_SXFSQZDSUWACKX-UHFFFAOYSA-N,2-Oxo-4-methylthiobutanoic acid,Cysteine and methionine metabolism
+IK_SXHQUGJSTGOXMD-UHFFFAOYSA-N,6-Thiourate,Drug metabolism - other enzymes
+IK_SXKNCCSPZDCRFD-UHFFFAOYSA-N,Betaine aldehyde,"Glycine, serine and threonine metabolism"
+IK_TUHVEAJXIMEOSA-UHFFFAOYSA-N,4-GUANIDINOBUTANOATE,Arginine and proline metabolism
+IK_TUNFSRHWOTWDNC-UHFFFAOYSA-N,Myristic acid,Fatty acid biosynthesis
+IK_TYEYBOSBBBHJIV-UHFFFAOYSA-N,2-Ketobutyric acid,"Valine, leucine and isoleucine biosynthesis"
+IK_UAKTZILOYPPNCD-UHFFFAOYSA-N,Annohexocin,Glycerophospholipid metabolism
+IK_UARKDOLETOEBCU-UHFFFAOYSA-N,"1,9-Dimethyluric acid",Glycerophospholipid metabolism
+IK_UCMIRNVEIXFBKS-UHFFFAOYSA-N,Beta-alanine,Pantothenate and CoA biosynthesis
+IK_UCUNFLYVYCGDHP-BYPYZUCNSA-N,methionine sulfone,Glycerophospholipid metabolism
+IK_UCYPOAPUDLUXQX-VXOKBQSKSA-N,"MG(22:2(13Z,16Z)/0:0/0:0)",Glycerophospholipid metabolism
+IK_UDMBCSSLTHHNCD-KQYNXXCUSA-N,Adenosine 5'-Monophosphate,Purine metabolism
+IK_UFBJCMHMOXMLKC-UHFFFAOYSA-N,"2,4-Dinitrophenol",Citrate cycle (TCA cycle)
+IK_UFSCUAXLTRFIDC-UHFFFAOYSA-N,"Oxalosuccinate2,3",Citrate cycle (TCA cycle)
+IK_UGQMRVRMYYASKQ-KQYNXXCUSA-N,Inosine,Purine metabolism
+IK_UGQMRVRMYYASKQ-UHTZMRCNSA-N,Arabinosylhypoxanthine,Sphingolipid metabolism
+IK_UHDGCWIWMRVCDJ-XVFCMESISA-N,melatonin,Tryptophan metabolism
+IK_UHWVSEOVJBQKBE-UHFFFAOYSA-N,TRIMETAZIDINE,"Alanine, aspartate and glutamate metabolism"
+IK_UIPSRRAMIULCRE-OZKVUCNRSA-N,"PG(22:5(7Z,10Z,13Z,16Z,19Z)/22:5(4Z,7Z,10Z,13Z,19Z)-O(16,17))","Alanine, aspartate and glutamate metabolism"
+IK_UIUJIQZEACWQSV-UHFFFAOYSA-N,Succinic acid semialdehyde,"Alanine, aspartate and glutamate metabolism"
+IK_ULTTYPMRMMDONC-UHFFFAOYSA-N,Lavendustin A,Purine metabolism
+IK_UQZHJQWIISKTJN-QUBZPPHQSA-N,Sulfosuccinimidyl 6-(biotinamido)hexanoate,Glycerophospholipid metabolism
+IK_URGVIWXYPWWBQO-UWEYSURVSA-N,LysoPE(P-18:1(9Z)/0:0),Glycerophospholipid metabolism
+IK_URPXXNCTXCOATD-FXMFQVEGSA-N,PE(P-18:0/20:4),Primary bile acid biosynthesis
+IK_URVGHNOQCRQJTD-MELXFHLESA-N,"2,3-Dinor-TXB1",Primary bile acid biosynthesis
+IK_USFJGINJGUIFSY-XZULNKEGSA-N,"3a,7a,12a-Trihydroxy-5b-cholestan-26-al",Primary bile acid biosynthesis
+IK_UYQGVDXDXBAABN-FQSPHKRJSA-N,13(S)-Hydroperoxylinolenic acid,Arginine and proline metabolism
+IK_UYUXSRADSPPKRZ-SKNVOMKLSA-N,D-Glucuronolactone,Ascorbate and aldarate metabolism
+IK_UYZBRJHRPDMUHS-UHFFFAOYSA-N,Alpha-Carboxy-delta-decalactone,Arginine and proline metabolism
+IK_UZTFMUBKZQVKLK-UHFFFAOYSA-M,4-Acetamidobutanoate,Arginine and proline metabolism
+IK_VCWMRQDBPZKXKG-ZNVDUFQESA-N,Galactinol,Galactose metabolism
+IK_VDYDCVUWILIYQF-CSMHCCOUSA-N,S-Lactoylglutathione,Pyruvate metabolism
+IK_VFLYULAVOFVIAM-RRDRPCBCSA-N,"1-(4-O-beta-D-glucopyranosyl-3-methoxyphenyl)-3,5-dihydroxydecane",Starch and sucrose metabolism
+IK_VGSSUFQMXBFFTM-METNKUIYSA-N,"(3beta,5alpha,6beta,24R)-Stigmastane-3,5,6-triol",Linoleic acid metabolism
+IK_VHMKGBYCXDBNFU-CVWCHQOZSA-N,4'-Methoxymucidin,Linoleic acid metabolism
+IK_VHRUMKCAEVRUBK-WKELIDJCSA-N,PA(2:0/PGJ2),Glycerophospholipid metabolism
+IK_VIHYIVKEECZGOU-UHFFFAOYSA-N,1-Acetylimidazole,Linoleic acid metabolism
+IK_VISAJVAPYPFKCL-UHFFFAOYSA-N,3-Methoxy-4-hydroxyphenylglycolaldehyde,Tyrosine metabolism
+IK_VISUXPRSUNICAX-VYEFPUSRSA-N,PC P-40:1 or PC O-40:2,Glycerophospholipid metabolism
+IK_VJNPDLZENXBRLB-MQEDXBOASA-N,PC ae C38:5,Fatty acid degradation
+IK_VKOBVWXKNCXXDE-UHFFFAOYSA-N,arachidic acid,Biosynthesis of unsaturated fatty acids
+IK_VOBYAKCXGQQFLR-LSJOCFKGSA-N,Ile Gly Val,Sphingolipid metabolism
+IK_VOXZDWNPVJITMN-ZBRFXRBCSA-N,estradiol (E2),Steroid hormone biosynthesis
+IK_VSTZVCJQGSLNLL-UHFFFAOYSA-N,2-aminophenol sulphate,Purine metabolism
+IK_VTXNIAJKDLEHGX-UHFFFAOYSA-N,2-Hydroxyfelbamate,Drug metabolism - cytochrome P450
+IK_VUALREFPJJODHZ-JTCHKQLLSA-N,Chitobiose,Amino sugar and nucleotide sugar metabolism
+IK_VWWQXMAJTJZDQX-UYBVJOGSSA-N,FAD,Riboflavin metabolism
+IK_VWYVABSAUVXYNS-UHFFFAOYSA-N,N-Stearoyl Lysine,Glycerophospholipid metabolism
+IK_VYFYYTLLBUKUHU-UHFFFAOYSA-N,Dopamine,Tyrosine metabolism
+IK_VYZAGTDAHUIRQA-WHFBIAKZSA-N,Ala-Glu,Linoleic acid metabolism
+IK_VZCYOOQTPOCHFL-OWOJBTEDSA-N,fumaric acid,Arginine biosynthesis
+IK_VZJHQHUOVIDRCF-UHFFFAOYSA-N,3-Isolongifolol,Linoleic acid metabolism
+IK_WAAPEIZFCHNLKK-PELKAZGASA-N,"(2R,4S)-2-Aminoformyl-6-fluoro-spiro[chroman-4,4'-imidazolidine]-2',5'-dione",Linoleic acid metabolism
+IK_WBBQTNCISCKUMU-IUQGRGSQSA-N,"13,16,19-Docosatrienoic acid",Glycerophospholipid metabolism
+IK_WBIICVGYYRRURR-UHFFFAOYSA-N,"3-(Aminomethyl)-2,5,9-trimethyl-7H-furo[3,2-g]chromen-7-one",Sphingolipid metabolism
+IK_WBIQQQGBSDOWNP-UHFFFAOYSA-N,2-Dodecylbenzenesulfonic acid,Glycerophospholipid metabolism
+IK_WBYWAXJHAXSJNI-VOTSOKGWSA-N,Cinnamic acid,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+IK_WCFPKRXBSJDTMS-LGVIUEQGSA-N,FA 19:1,Linoleic acid metabolism
+IK_WCRMUYBCGFGNRR-LTFXTMEVSA-N,PC O-42:4,Linoleic acid metabolism
+IK_WDJHALXBUFZDSR-UHFFFAOYSA-M,Acetoacetate,Tyrosine metabolism
+IK_WHBHBVVOGNECLV-OBQKJFGGSA-N,Cortodoxone,Steroid hormone biosynthesis
+IK_WHBMMWSBFZVSSR-UHFFFAOYSA-N,3-Hydroxybutyric acid,"Valine, leucine and isoleucine biosynthesis"
+IK_WHEUWNKSCXYKBU-QPWUGHHJSA-N,2-methoxyestrone (2-ME1),Steroid hormone biosynthesis
+IK_WHOOUMGHGSPMGR-UHFFFAOYSA-N,Indoleacetaldehyde,Tryptophan metabolism
+IK_WHUUTDBJXJRKMK-VKHMYHEASA-N,Glutamic acid,Arginine biosynthesis
+IK_WJHRAVIQWFQMKF-UHFFFAOYSA-N,Alpha-Bisabolol oxide A,Glycerophospholipid metabolism
+IK_WJXQFVMTIGJBFX-UHFFFAOYSA-N,4-Methoxytyramine,Glycerophospholipid metabolism
+IK_WKMBZTIVAJAWBA-UHFFFAOYSA-N,"(R)-1-O-[b-D-Apiofuranosyl-(1->2)-b-D-glucopyranoside]-1,3-octanediol",Glycerophospholipid metabolism
+IK_WKQNRCYKYCKESD-YVHLTTHBSA-N,PC(18:3/0:0),Purine metabolism
+IK_WLJVXDMOQOGPHL-UHFFFAOYSA-N,phenylacetic acid,Tyrosine metabolism
+IK_WNLRTRBMVRJNCN-UHFFFAOYSA-N,Adipic Acid,Tryptophan metabolism
+IK_WOODKECARRKLJJ-DIJRFRLPSA-N,"7alpha,12alpha,26-trihydroxycholest-4-en-3-one",Steroid hormone biosynthesis
+IK_WPMWEFXCIYCJSA-UHFFFAOYSA-N,Tetraethylene glycol monododecyl ether,Steroid hormone biosynthesis
+IK_WPOCIZJTELRQMF-LFRCEIEQSA-N,16b-Hydroxyestrone,Glutathione metabolism
+IK_WPYMKLBDIGXBTP-UHFFFAOYSA-N,Benzoic Acid,Tryptophan metabolism
+IK_WQXXBAWHDQWCKL-XVFCMESISA-N,Phosphoribosylformylglycinamidine,Purine metabolism
+IK_WQXXXHMEBYGSBG-OLQVQODUSA-N,"Cis-3,5-Diethyl-1,2,4-trithiolane",Glutathione metabolism
+IK_WQZGKKKJIJFFOK-GASJEMHNSA-N,glucose,Ascorbate and aldarate metabolism
+IK_WQZGKKKJIJFFOK-SVZMEOIVSA-N,D-Galactose,Galactose metabolism
+IK_WSJBSKRPKADYRQ-UHFFFAOYSA-N,4-Formylaminoantipyrine,Linoleic acid metabolism
+IK_WTDRDQBEARUVNC-LURJTMIESA-N,Levodopa,Tyrosine metabolism
+IK_WTIIULQJLZEHGZ-AWFVSMACSA-L,"(2R,3S)-2,3-dimethylmalate",Linoleic acid metabolism
+IK_WUUWGORPQFKFQN-XDVOZUNOSA-N,TG 54:2|TG 18:0_18:1_18:1,Glycerophospholipid metabolism
+IK_WVBBZEILYLXGFN-RBUKOAKNSA-N,Sphingosine 1-phosphate (d19:1-P),Glycerophospholipid metabolism
+IK_WWEKVOUOQUHVHS-UHFFFAOYSA-N,Phenytoin catechol,Glycerophospholipid metabolism
+IK_WWSWYXNVCBLWNZ-QIZQQNKQSA-N,Fluprostenol,Glycerophospholipid metabolism
+IK_WWUZIQQURGPMPG-KRWOKUGFSA-N,Sphingosine,Sphingolipid metabolism
+IK_WWZKQHOCKIZLMA-UHFFFAOYSA-N,Caprylic acid,Fatty acid biosynthesis
+IK_WXTMDXOMEHJXQO-UHFFFAOYSA-N,Gentisic acid,Tyrosine metabolism
+IK_WYIMORDZGCUBAA-UHFFFAOYSA-N,LPC 19:0,Linoleic acid metabolism
+IK_WYVKPHCYMTWUCW-UHFFFAOYSA-N,Cysteinyl-Threonine,Linoleic acid metabolism
+IK_XBDQKXXYIPTUBI-UHFFFAOYSA-N,Propionic Acid,"Alanine, aspartate and glutamate metabolism"
+IK_XEUPFPHHPCQXFV-UHFFFAOYSA-N,Panaquinquecol 7,Linoleic acid metabolism
+IK_XEVQXKKKAVVSMW-WRWORJQWSA-N,Loliolide,Ether lipid metabolism
+IK_XEVRBOQZSXWGQO-PAUXXPOVSA-N,PE(22:6/0:0),Ether lipid metabolism
+IK_XGILAAMKEQUXLS-UHFFFAOYSA-N,Indolelactic acid,Linoleic acid metabolism
+IK_XHMGEKKHSKIGMI-BDBJOHPESA-N,"(11R,12S,13S)-Epoxy-hydroxyoctadeca-cis-9-cis-15-dien-1-oic acid",Primary bile acid biosynthesis
+IK_XIFCIPQKMAMFGE-QIAWJANFSA-N,"PE-NMe2(22:6(4Z,7Z,10Z,13Z,16Z,19Z)/16:0)",Ether lipid metabolism
+IK_XJODGRWDFZVTKW-UHFFFAOYSA-N,N-Methyl-dl-Leucine,Primary bile acid biosynthesis
+IK_XJZGNVBLVFOSKJ-XZULNKEGSA-N,27-Deoxy-5b-cyprinol,Primary bile acid biosynthesis
+IK_XJZNMEMKZBFUIZ-GWDFKZQESA-N,Etodolac acyl glucuronide,Ether lipid metabolism
+IK_XKBJVQHMEXMFDZ-UHFFFAOYSA-N,LPC O-18:0,"Glycine, serine and threonine metabolism"
+IK_XKYICAQFSCFURC-UHFFFAOYSA-N,3-Methylbutyl formate,Fatty acid biosynthesis
+IK_XMIFBEZRFMTGRL-TURQNECASA-N,5-Taurinomethyl-2-thiouridine,Linoleic acid metabolism
+IK_XMYFJYXXQPMWED-VQHVLOKHSA-N,5-Hydroxydec-6-enoylcarnitine,Linoleic acid metabolism
+IK_XOAAWQZATWQOTB-UHFFFAOYSA-N,Taurine,Primary bile acid biosynthesis
+IK_XOEUHCONYHZURQ-HNUBZJOYSA-N,Flurithromycin,Glycolysis or Gluconeogenesis
+IK_XOMRRQXKHMYMOC-OAQYLSRUSA-N,L-Palmitoylcarnitine,Fatty acid degradation
+IK_XOMRRQXKHMYMOC-UHFFFAOYSA-N,Palmitoylcarnitine,Fatty acid degradation
+IK_XQXPVVBIMDBYFF-UHFFFAOYSA-N,p Hydroxyphenylacetic acid,Tyrosine metabolism
+IK_XSQUKJJJFZCRTK-UHFFFAOYSA-N,Urea,Arginine biosynthesis
+IK_XTWYTFMLZFPYCI-KQYNXXCUSA-N,ADP,Glutathione metabolism
+IK_XUIIKFGFIJCVMT-LBPRGKRZSA-N,Thyroxine,Tyrosine metabolism
+IK_XVIHASZHSRQYCV-YWYYGOADSA-N,"PC(15:0/22:6(5Z,7Z,10Z,13Z,16Z,19Z)-OH(4))",Steroid hormone biosynthesis
+IK_XVQDCCGQSOTQBN-RXCALXPUSA-N,"12'-Apo-b-carotene-3,12'-diol",Lysine degradation
+IK_XWBICGCZKGTPCH-MBNYWOFBSA-N,Prostaglandin M,Arachidonic acid metabolism
+IK_XWHHYOYVRVGJJY-QMMMGPOBSA-N,4-Fluoro-L-phenylalanine,Steroid hormone biosynthesis
+IK_XWYSLMAMRKYUFH-SEYXRHQNSA-N,LPC O-18:1,Lysine degradation
+IK_XXHSJEOGEHODTB-CAGNHHNHSA-N,"PA(14:1(9Z)/18:4(6Z,9Z,12Z,15Z))",Glycerophospholipid metabolism
+IK_XYWRZQQANNOTTD-UHFFFAOYSA-N,Glaucamine,Glycerophospholipid metabolism
+IK_XZOBJEOEOJXQBF-UHFFFAOYSA-N,3-Methyl-5-propyl-2-furanundecanoic acid,Drug metabolism - cytochrome P450
+IK_XZYNWDWRUDTDCH-UHFFFAOYSA-N,Heptanoylcholine,Drug metabolism - cytochrome P450
+IK_XZZMJRBYVRSAOS-UHFFFAOYSA-N,"4-Hydroxy-5-phenyltetrahydro-1,3-oxazin-2-one",Glycerophospholipid metabolism
+IK_YAADMLWHGMUGQL-VOTSOKGWSA-N,Cinnamoylglycine,Glycerophospholipid metabolism
+IK_YACHGFWEQXFSBS-XYERBDPFSA-N,Leptomycin B,Linoleic acid metabolism
+IK_YAICYXFUKKMAKO-DBQWNMKUSA-N,6-allyl-8b-Carboxy-ergoline,Glycerophospholipid metabolism
+IK_YAPQBXQYLJRXSA-UHFFFAOYSA-N,Theobromine,Caffeine metabolism
+IK_YBAFDPFAUTYYRW-YUMQZZPRSA-N,Glutamylleucine,Linoleic acid metabolism
+IK_YBDFPZJQBYCWBA-WMTBOZPISA-N,PE(20:3/0:0),Glycerophospholipid metabolism
+IK_YBGBNHHXOJXFNM-UQCMLMITSA-N,Lucidenic acid N,Glycerophospholipid metabolism
+IK_YCXUCEXEMJPDRZ-UHFFFAOYSA-N,Ganoderic acid H,Glycerophospholipid metabolism
+IK_YDCKQKAUVJTIHE-UHFFFAOYSA-N,"2-(2-Phenylimidazo[1,2-a]pyridin-8-yl)acetamide",Glycerophospholipid metabolism
+IK_YDNKGFDKKRUKPY-TURZORIXSA-N,C16-Ceramide,Glycerophospholipid metabolism
+IK_YEFJYYIIBNWRQV-UHFFFAOYSA-N,3-Diphosphoglyceric acid,Glycerophospholipid metabolism
+IK_YFFIQXNTTVSKJC-NZEOUKRFSA-N,TG 54:1,Glycerophospholipid metabolism
+IK_YGNHGXTZNFXTBH-GQCTYLIASA-N,5'-((Z)-Feruloyl) 3-(2'-methylarabinosylxylose),Sphingolipid metabolism
+IK_YGPSJZOEDVAXAB-QMMMGPOBSA-N,L-Kynurenine,Tryptophan metabolism
+IK_YGPSJZOEDVAXAB-UHFFFAOYSA-N,Kynurenine,Tryptophan metabolism
+IK_YHEDRJPUIRMZMP-ZWKOTPCHSA-N,Sphinganine 1-phosphate,Sphingolipid metabolism
+IK_YHHSONZFOIEMCP-UHFFFAOYSA-N,Choline Phosphate,Glycerophospholipid metabolism
+IK_YLKVIMNNMLKUGJ-BQYQJAHWSA-N,Cardanolmonoene,Glycerophospholipid metabolism
+IK_YMAHRLYIAABQRQ-UHFFFAOYSA-N,"2-(3-fluorophenyl)-4-(4-Methylpiperazin-1-yl)-1H-pyrrolo[3,2-c]pyridine",Glycerophospholipid metabolism
+IK_YMGXOQLWSYJFSD-FALRGZJFSA-N,"LysoPC(22:2(13Z,16Z)/0:0)",Glycerophospholipid metabolism
+IK_YMKZESHNWGNAIE-VNTVABMMSA-N,PE 36:6e,Glycerophospholipid metabolism
+IK_YNLRDTBLEOQPQL-UHFFFAOYSA-N,MJDBISSN00000001,Drug metabolism - cytochrome P450
+IK_YOILXOMTHPUMRG-TZMCWYRMSA-N,"(4Ar,10bR)-rel-4-Propyl-2,3,4,4a,5,10b-hexahydrochromeno[4,3-b][1,4]oxazin-9-ol",Drug metabolism - cytochrome P450
+IK_YPIQXPKZXKWWSZ-UHFFFAOYSA-N,"5-Phenyl-1,3-oxazinane-2,4-dione",Drug metabolism - cytochrome P450
+IK_YSMODUONRAFBET-UHNVWZDZSA-N,5-Hydroxylysine,Lysine degradation
+IK_YTBSYETUWUMLBZ-IUYQGCFVSA-N,Erythrose,Pentose phosphate pathway
+IK_YVPPHAUZYVAQNM-UHFFFAOYSA-N,"2-Piperidinecarboxamide, 1-butyl-N-(4-hydroxy-2,6-dimethylphenyl)-",Linoleic acid metabolism
+IK_YVYMBNSKXOXSKW-HXUWFJFHSA-N,PE(16:0/0:0),Ascorbate and aldarate metabolism
+IK_YYELLDKEOUKVIQ-UHFFFAOYSA-N,Octaethyleneglycol monododecyl ether,Glycerophospholipid metabolism
+IK_YYQVCMMXPIJVHY-ZOIJLGJPSA-N,LPC 20:2,Glycerophospholipid metabolism
+IK_YZQCXOFQZKCETR-UWVGGRQHSA-N,L-Aspartyl-L phenylalanine,Ether lipid metabolism
+IK_YZXBAPSDXZZRGB-DOFZRALJSA-N,Arachidonic acid,Biosynthesis of unsaturated fatty acids
+IK_ZAVCUVYFGQXSRX-FYWRMAATSA-N,Nummularine B,Glycerophospholipid metabolism
+IK_ZBHYMNYETSSWIX-RMKNXTFCSA-N,6-Hydroxynon-4-enoylcarnitine,Ether lipid metabolism
+IK_ZBXYMKUZCWCGPC-BDWKERMESA-N,"(2E,4E)-2,7-Dimethyl-2,4-octadienedioic acid",Ascorbate and aldarate metabolism
+IK_ZDHRSPRSUBAAIO-FNORWQNLSA-N,"2-Nonene-1,4-diol",Ascorbate and aldarate metabolism
+IK_ZDXPYRJPNDTMRX-GSVOUGTGSA-N,D-Glutamine,D-Amino acid metabolism
+IK_ZDXPYRJPNDTMRX-VKHMYHEASA-N,Glutamine,Arginine biosynthesis
+IK_ZEZUHTUTOUOANR-JCGOJSMZSA-N,SM 40:1;2O|SM 18:1;2O/22:0,Linoleic acid metabolism
+IK_ZFACUKICYTXONE-IWDZABBFSA-N,PC(16:1(9Z)/P-18:1(11Z)),Ascorbate and aldarate metabolism
+IK_ZFFFJLDTCLJDHL-JQYCEVDMSA-N,Pregnanediol 3-O-glucuronide,Glycerophospholipid metabolism
+IK_ZFFFJLDTCLJDHL-UHFFFAOYSA-N,"3-alpha,20-alpha-Dihydroxy-5-beta-pregnane 3-glucuronide","Glycine, serine and threonine metabolism"
+IK_ZGKDAEWLTNBSEJ-GHMZBOCLSA-N,"Cyclopropyl-[(3S,4S)-3-(dimethylamino)-4-(hydroxymethyl)piperidin-1-yl]methanone","Glycine, serine and threonine metabolism"
+IK_ZGXJTSGNIOSYLO-UHFFFAOYSA-N,5-Aminolevulinic acid,"Glycine, serine and threonine metabolism"
+IK_ZHCKPJGJQOPTLB-UHFFFAOYSA-N,methylimidazoleacetic acid; aif; ce0; corrdec,Folate biosynthesis
+IK_ZHRLECIZINSPKL-AKGZTFGVSA-N,L-Cysteinylglycine disulfide,Glycerophospholipid metabolism
+IK_ZIYVHBGGAOATLY-UHFFFAOYSA-N,Methylmalonic Acid,"Valine, leucine and isoleucine degradation"
+IK_ZJUKTBDSGOFHSH-WFMPWKQPSA-N,S-Adenosylhomocysteine,One carbon pool by folate
+IK_ZKLLSNQJRLJIGT-UYFOZJQFSA-N,Fructose 1-phosphate,Fructose and mannose metabolism
+IK_ZKMZBAABQFUXFE-UHFFFAOYSA-O,Apigenidin,Glycerophospholipid metabolism
+IK_ZKRFOXLVOKTUTA-KQYNXXCUSA-N,6-Thioinosine-5'-monophosphate,Linoleic acid metabolism
+IK_ZMITXKRGXGRMKS-LUJOEAJASA-N,Epiandrosterone sulfate,Steroid hormone biosynthesis
+IK_ZMJBYMUCKBYSCP-CVYQJGLWSA-N,Garcinia acid,Arachidonic acid metabolism
+IK_ZPVOLGVTNLDBFI-UHFFFAOYSA-N,"(+/-)-2,2,6-Trimethylcyclohexanone",Glycerophospholipid metabolism
+IK_ZQPPMHVWECSIRJ-KTKRTIGZSA-N,Oleic acid,Biosynthesis of unsaturated fatty acids
+IK_ZQRJDNRTBNYEER-NWBJSICCSA-N,Cer-NS d39:1,Glycerophospholipid metabolism
+IK_ZRKZFNZPJKEWPC-UHFFFAOYSA-N,DDAO,Linoleic acid metabolism
+IK_ZSTCZWJCLIRCOJ-DGCLKSJQSA-N,Zilpaterol,Linoleic acid metabolism
+IK_ZTQSAGDEMFDKMZ-UHFFFAOYSA-N,Butanal,Arginine and proline metabolism
+NO_INCHIKEY__pl,PL,Vitamin B6 metabolism
