@@ -7,9 +7,7 @@ studies <- c('S_24058461','S_24167579','S_25390405','S_28880465','S_29518718','S
              'S_34577635','S_35829770','S_37335671','S_37589832','S_37755270','S_38516193',
              'S_38720721','ACS1517','MTBLS1219','MTBLS11904','ST001814','ST003159')
 
-## ---- representative m/z per metabolite: median across whichever studies
-## measured it (handles the pipe-delimited multi-value cells the same way
-## as everywhere else in this project) ----
+#get from cols
 get_mz_values <- function(s) {
   col <- paste0(s, "__mz")
   if (!(col %in% colnames(main))) return(NULL)
@@ -26,11 +24,7 @@ mz_long <- bind_rows(map(studies, get_mz_values)) %>% filter(!is.na(mz))
 mz_rep <- mz_long %>% group_by(entity_id) %>% summarise(mz = median(mz), .groups = "drop")
 cat("Metabolites with a representative m/z:", nrow(mz_rep), "\n")
 
-## ---- bin into 1 Da-wide intervals, then reuse the SAME inverse-group-size
-## weighted projection used for every other layer (Study, Adduct, Platform,
-## Pathway) - a shared bin with few members counts more than one with many.
-## 1 Da is a simple, defensible starting choice: fine enough to separate most
-## unrelated compounds, coarse enough not to require exact-mass agreement.
+
 mz_rep$mz_bin <- round(mz_rep$mz)
 
 build_weighted_edges <- function(df, id_col, group_col) {
