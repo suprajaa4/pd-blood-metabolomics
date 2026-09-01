@@ -1,10 +1,7 @@
 import numpy as np
 import pandas as pd
-
-
 DATA_DIR = "data/processed/"
 OUTPUT_DIR = "results/graph/"
-
 entities = pd.read_csv(DATA_DIR + "entities_full.csv")
 primary_pathway = pd.read_csv(DATA_DIR + "entity_primary_pathway.csv")
 entities = entities.merge(primary_pathway[["entity_id", "primary_pathway"]], on="entity_id", how="left")
@@ -196,6 +193,3 @@ print("Top 15 strongest functional-similarity connections (pathway-sharing + str
 print(functional_sub[["from_name", "to_name", "weight"]].head(15).to_string(index=False))
 functional_sub.to_csv(OUTPUT_DIR + "functional_similarity_pairs.csv", index=False)
 
-print("\nSaved: predicted_class_results.csv, predicted_pathway_results.csv,")
-print("       hidden_hubs.csv, pathway_*.csv,")
-print("       class_ranking.csv, functional_similarity_pairs.csv")
