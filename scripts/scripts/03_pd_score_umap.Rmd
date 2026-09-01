@@ -1,15 +1,12 @@
 ---
-title: "Parkinson's Disease Metabolomics: Integrated PD Score & Multi-Layer Characterization"
-subtitle: "Chemical + Analytical + Biological evidence integration across independent studies"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+title: "Parkinson's Disease Metabolomics- integrated PD Score & multi-layer characterization"
+subtitle: "Chemical + Analytical + Biological evidence integration across the studies"
 output:
   html_document:
     toc: true
     toc_float: true
     toc_depth: 3
     number_sections: true
-    theme: flatly
-    code_folding: hide
     fig_width: 10
     fig_height: 7
 ---
@@ -25,7 +22,7 @@ suppressPackageStartupMessages({
   library(uwot); library(UpSetR); library(corrplot); library(igraph)
   library(plotly); library(htmlwidgets) })
 
-# ---- EDIT THIS: path to the source workbook ----
+
 data_path <- "data/raw/pd_with_adducts.xlsx"
 
 dir.create("figs", showWarnings = FALSE)
@@ -78,13 +75,7 @@ main       <- read_excel(data_path, sheet = "pd-with-adducts")
 classyfire <- read_excel(data_path, sheet = "class of compounds")
 ```
 
-## 1.2 Harmonize the 18 per-study column blocks into one long table
 
-The source sheet stores one wide row per metabolite with a repeated block of ~40 columns per
-study (prefixed `S_<pmid>__`, `ACS1517__`, `MTBLS####__`, `ST######__`). Several cells contain
-multiple `|`-delimited values (e.g. two adduct matches within the same study), and different
-studies report fold-change on different native scales (some already log2, some linear ratios up
-to >200x). The helpers below parse and harmonize all of this.
 
 ```{r harmonize-helpers}
 studies <- c('S_24058461','S_24167579','S_25390405','S_28880465','S_29518718','S_33485385',
@@ -778,7 +769,7 @@ if (nrow(study_mat) >= 4) {
 }
 ```
 
-## 4.3 Study similarity: Jaccard overlap, dendrogram, network & UpSet
+## 4.3 Study similarity: Jaccard overlap, dendrogram, network 
 
 ```{r fig-study-similarity, fig.width=9, fig.height=6}
 study_ids <- colnames(mat2)
@@ -807,34 +798,7 @@ plot(g, vertex.size=8+25*deg/max(deg), vertex.label.cex=0.9, vertex.color="#87BF
      layout=layout_with_fr(g), main="Study similarity network\n(edge width = Jaccard overlap)")
 ```
 
-```{r fig-upset, fig.width=12, fig.height=7}
-membership <- long_df %>% distinct(entity_id, study_id) %>% mutate(present=1) %>%
-  pivot_wider(names_from=study_id, values_from=present, values_fill=0) %>% as.data.frame()
-rownames(membership) <- membership$entity_id; membership$entity_id <- NULL
-upset(membership, sets=colnames(membership), order.by="freq", nsets=ncol(membership),
-      mainbar.y.label="# metabolites shared", sets.x.label="Total metabolites detected", text.scale=1.1)
-```
 
 
 
-## 4.5 (Template) Random-effects meta-analysis per metabolite
 
-Uncomment and adapt if you have (or can derive) a standard error per study x metabolite
-estimate — this upgrades the forest plot in 3.2 into a proper DerSimonian-Laird / REML
-random-effects summary with pooled estimate and I² heterogeneity statistic.
-
-```{r meta-template, eval=FALSE}
-library(metafor)
-# example for one metabolite, assuming columns yi (Log2FC) and sei (SE) per study:
-# res <- rma(yi = yi, sei = sei, data = one_metabolite_df, method = "REML")
-# forest(res, slab = one_metabolite_df$study_id)
-# summary(res)  # gives pooled estimate, CI, I^2, tau^2
-```
-
----
-
-# Session info
-
-```{r session-info}
-sessionInfo()
-```
