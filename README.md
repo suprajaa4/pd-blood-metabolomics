@@ -101,4 +101,4 @@ python scripts/13_multimodal_vae.py \
 
 The project combines recurrence across studies, directional consistency, effect magnitude, statistical significance, identifier completeness, and demographic confounding penalties into an entity-level PD evidence score. The complete implementation and component outputs are in `scripts/03_pd_score_umap.Rmd` and `scripts/06_recompute_pd_score.R`.
 
-
+- Any feedback please write to suprajaav4@gmail.com
