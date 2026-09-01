@@ -1,30 +1,5 @@
 #!/usr/bin/env python3
-"""
-Missing-modality-aware multimodal semi-supervised VAE for metabolite annotation.
 
-Evidence modalities (matched as closely as possible to the graph model):
-  1) Morgan fingerprint (structural evidence; optional)
-  2) Study membership (optional)
-  3) Adduct membership (optional)
-  4) Platform membership (optional)
-  5) Standardized m/z (optional)
-  6) Non-target annotation:
-       - Class task: full pathway-membership multi-hot (optional)
-       - Pathway task: Class one-hot (optional)
-
-Key design points:
-  * Metabolites are NOT dropped when SMILES/fingerprints are missing.
-  * Every modality has an observation mask.
-  * Reconstruction loss is calculated only where a modality is observed.
-  * Binary modalities use BCE-with-logits; m/z uses MSE.
-  * Strict holdout entities are excluded from ALL training losses by default.
-  * Unlabeled, non-holdout entities still contribute reconstruction + KL loss.
-  * Optional modality dropout improves robustness to missing evidence.
-  * Full per-class probabilities are saved for ROC-AUC/PR-AUC/top-k metrics.
-
-Example:
-    python scripts/13_multimodal_vae.py --data-dir data/processed --workbook data/raw/pd_with_adducts.xlsx --out-dir results/vae --epochs 60
-"""
 
 from __future__ import annotations
 import argparse
@@ -55,7 +30,7 @@ except Exception:
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-# ---------------- defaults / reproducibility ----------------
+
 SEED = 42
 LATENT_DIM = 24
 BATCH_SIZE = 64
@@ -84,7 +59,7 @@ def resolve_file(data_dir: Path, candidates, required=True):
         p = data_dir / name
         if p.exists():
             return p
-    # permissive stem matching for uploaded '(1)' style names
+    
     normalized = [c.lower().replace(".csv", "").replace(".xlsx", "") for c in candidates]
     for p in data_dir.iterdir():
         low = p.name.lower()
@@ -101,7 +76,6 @@ def clean_cat(s):
 
 
 def build_multihot(membership_df, entity_ids, group_col, allowed_groups=None):
-    """Return matrix, modality-presence mask, and group columns."""
     df = membership_df[["entity_id", group_col]].dropna().drop_duplicates().copy()
     if allowed_groups is None:
         groups = sorted(df[group_col].astype(str).unique())
@@ -119,7 +93,6 @@ def build_multihot(membership_df, entity_ids, group_col, allowed_groups=None):
 
 
 def build_onehot_from_training(values, training_mask):
-    """Build one-hot vocabulary only from training-visible values."""
     vals = pd.Series(values).astype(object)
     train_vals = vals[training_mask & vals.notna()].astype(str)
     groups = sorted(train_vals.unique())
@@ -222,7 +195,6 @@ class MultiModalVAE(nn.Module):
     def __init__(self, modality_dims, n_classes, latent_dim=LATENT_DIM, dropout=DROPOUT):
         super().__init__()
         self.modality_names = list(modality_dims)
-        # Modality-specific embedding sizes prevent 1024 fingerprint bits from numerically swamping small modalities.
         emb_dims = {}
         for name, d in modality_dims.items():
             if name == "fingerprint": emb_dims[name] = 128
@@ -287,7 +259,6 @@ class MultiModalVAE(nn.Module):
 
 
 def masked_binary_loss(logits, target, modality_mask, sample_train_mask):
-    # Mean per sample, then include only observed modality + train-allowed samples.
     per_sample = F.binary_cross_entropy_with_logits(logits, target, reduction="none").mean(dim=1)
     w = modality_mask.squeeze(1) * sample_train_mask
     denom = w.sum().clamp_min(1.0)
@@ -404,15 +375,14 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
             labels[i] = class_to_idx[str(v)]
 
     eval_mask = is_holdout & known & (labels >= 0)
-    # Strict: holdout entities contribute no reconstruction/KL/classification training signal.
     train_allowed = (~is_holdout) if strict_holdout else np.ones(len(df), dtype=bool)
     labeled_train = training_label_mask & (labels >= 0)
 
-    # Ensure every entity has at least one modality. Entities with zero observed modalities cannot be predicted meaningfully.
+     #nothing avaivalble
     any_modality = np.zeros(len(df), dtype=bool)
     for m in masks.values(): any_modality |= (m[:,0] > 0)
 
-    print(f"\n=== {task.upper()} ===")
+
     print(f"Target classes in training: {len(classes)}")
     print(f"Labeled training entities: {labeled_train.sum()}")
     print(f"Holdout evaluable: {eval_mask.sum()}/{is_holdout.sum()}")
@@ -465,7 +435,7 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
         if epoch == 1 or epoch % 10 == 0 or epoch == epochs:
             print(f"epoch {epoch:>3}/{epochs} total={row['total']:.4f} bin={row['binary']:.4f} mz={row['mz']:.4f} KL={row['kl']:.4f} clf={row['clf']:.4f} beta={beta:.3f}")
 
-    # deterministic evaluation from posterior means
+
     model.eval()
     all_probs = np.full((len(df), len(classes)), np.nan, dtype=np.float32)
     latent = np.full((len(df), LATENT_DIM), np.nan, dtype=np.float32)
@@ -505,7 +475,6 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
         "modality_dropout": modality_dropout,
     })
 
-    # save holdout predictions and all class probabilities
     pred_idx = np.argmax(p_eval, axis=1)
     holdout_df = pd.DataFrame({
         "entity_id": df.loc[eval_idx,"entity_id"].values,
@@ -516,7 +485,6 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
     for j,c in enumerate(classes): holdout_df[f"prob__{c}"] = p_eval[:,j]
     holdout_df.to_csv(out_dir/f"multimodal_vae_{task}_results.csv", index=False)
 
-    # real unknown predictions: target missing, any modality available
     unknown_idx = np.where((~known) & any_modality)[0]
     p_u = all_probs[unknown_idx]
     pred_u = np.argmax(p_u, axis=1) if len(unknown_idx) else np.array([], dtype=int)
@@ -526,7 +494,6 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
         f"predicted_{target_col}": [classes[i] for i in pred_u],
         "confidence": p_u.max(axis=1) if len(unknown_idx) else [],
     })
-    # availability audit per prediction
     for n,m in masks.items(): unknown_df[f"has_{n}"] = m[unknown_idx,0].astype(int)
     unknown_df.to_csv(out_dir/f"multimodal_vae_predicted_{task}_unknowns.csv", index=False)
 
@@ -583,7 +550,7 @@ def main():
     pd.DataFrame(metrics).to_csv(out_dir/"multimodal_vae_metrics_summary.csv", index=False)
     with open(out_dir/"multimodal_vae_feature_metadata.json","w") as f:
         json.dump(meta, f, indent=2, default=str)
-    print("\nSaved outputs to", out_dir)
+
 
 
 if __name__ == "__main__":
