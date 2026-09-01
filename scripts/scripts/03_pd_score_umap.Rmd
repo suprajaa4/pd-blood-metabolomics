@@ -1,5 +1,5 @@
 ---
-title: "Parkinson's Disease Metabolomics- integrated PD Score & multi-layer characterization"
+title: "Parkinson's Disease metabolomics: integrated PD Score & multi-layer characterization"
 subtitle: "Chemical + Analytical + Biological evidence integration across the studies"
 output:
   html_document:
