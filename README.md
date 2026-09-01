@@ -5,7 +5,7 @@ A reproducible analysis repository for integrating Parkinson's disease blood met
 ## Repository structure
 
 ```text
-PD-metabolomics-github/
+pd-blood-metabolomics/
 ├── notebooks/                 # literature extraction and metabolite annotation
 ├── scripts/                   # numbered analysis pipeline
 ├── data/
@@ -27,9 +27,9 @@ PD-metabolomics-github/
 | Step | File | Purpose |
 |---|---|---|
 | 0 | `notebooks/00_pubmed_extraction_pipeline.ipynb` | Extract metabolite information from literature-derived inputs. |
-| 1 | `notebooks/01_metabolite_annotation.ipynb` | Add and harmonize metabolite identifiers/annotations. |
+| 1 | `notebooks/01_metabolite_annotation.ipynb` | Add+harmonize metabolite identifiers/annotations. |
 | 2 | `scripts/01_group_by_inchikey.py` | Group repeated metabolites by InChIKey and clean names. |
-| 3 | `scripts/02_exploratory_analysis.R` | Cross-study exploratory analysis, recurrence, direction consistency, PCA/MDS and report figures. |
+| 3 | `scripts/02_exploratory_analysis.R` | Cross-study exploratory analysis, recurrence, direction consistency, PCA and report figures. |
 | 4 | `scripts/03_pd_score_umap.Rmd` | Compute PD evidence scores and UMAP-based analyses. |
 | 5 | `scripts/04_adduct_matching.R` | Assign candidate adducts from formula-derived monoisotopic mass and observed m/z. |
 | 6 | `scripts/05_rebuild_entities_and_memberships.R` | Rebuild entity tables, study/adduct/platform memberships and graph layers. |
@@ -93,9 +93,7 @@ python scripts/13_multimodal_vae.py \
   --epochs 60
 ```
 
-## Important reproducibility notes
-
-
+## Important notes for reproducibility 
 
 `edges_study.csv` and `edges_platform.csv` are not committed because the generated files are approximately 339 MB and 188 MB, above GitHub's standard 100 MB single-file limit. They are reproducible from `scripts/05_rebuild_entities_and_memberships.R` and are ignored by `.gitignore`.
 
