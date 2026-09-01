@@ -1,4 +1,4 @@
-# Parkinson's Disease Blood Metabolomics Integration
+# Parkinson's Disease Blood (Plasma/Serum) Metabolomics Data Integration
 
 A reproducible analysis repository for integrating Parkinson's disease blood metabolomics studies, harmonizing metabolite identifiers, evaluating cross-study consistency, computing a PD evidence score, constructing a multilayer metabolite graph, and comparing graph-based annotation with a multimodal VAE.
 
