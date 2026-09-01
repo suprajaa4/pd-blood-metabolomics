@@ -1,0 +1,9 @@
+numpy
+pandas
+openpyxl
+scikit-learn
+scipy
+matplotlib
+networkx
+torch
+rdkit
