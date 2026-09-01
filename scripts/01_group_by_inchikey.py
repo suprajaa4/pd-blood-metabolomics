@@ -10,7 +10,7 @@ OUTPUT_FILE = "data/processed/metabolites_grouped_inchikey.xlsx"
 
 
 def clean_string(x):
-    """Basic whitespace/string cleaning."""
+   
     if pd.isna(x):
         return np.nan
 
@@ -26,7 +26,7 @@ def clean_string(x):
 
 
 def clean_inchikey(x):
-    """Standardise InChIKeys."""
+    
     x = clean_string(x)
 
     if pd.isna(x):
@@ -36,12 +36,7 @@ def clean_inchikey(x):
 
 
 def normalize_name_for_grouping(name):
-    """
-    Produce a conservative normalized name used ONLY for grouping
-    compounds that have no InChIKey.
 
-    We deliberately do not use this for compounds with an InChIKey.
-    """
     name = clean_string(name)
 
     if pd.isna(name):
@@ -62,19 +57,15 @@ def normalize_name_for_grouping(name):
 
 
 def pretty_name(name):
-    """
-    Light cleaning for display names.
-    Does NOT aggressively title-case biochemical names.
-    """
+
     name = clean_string(name)
 
     if pd.isna(name):
         return np.nan
 
-    # Fix repeated whitespace
+
     name = re.sub(r"\s+", " ", name).strip()
 
-    # Standardize common leading stereochemical prefix capitalization
     replacements = {
         r"^l-": "L-",
         r"^d-": "D-",
@@ -88,7 +79,7 @@ def pretty_name(name):
 
 
 def unique_join(series, sep=" | "):
-    """Combine unique non-empty values while preserving order."""
+
     output = []
     seen = set()
 
@@ -111,16 +102,13 @@ def unique_join(series, sep=" | "):
 
 
 def unique_numeric_join(series, decimals=6):
-    """
-    For duplicated m/z or RT measurements within a study:
-    keep unique observed values rather than averaging them.
-    """
+
     values = pd.to_numeric(series, errors="coerce").dropna()
 
     if len(values) == 0:
         return np.nan
 
-    # Round only to avoid tiny floating-point duplicates
+
     values = values.round(decimals)
 
     unique_values = pd.unique(values)
@@ -134,7 +122,7 @@ def unique_numeric_join(series, decimals=6):
 
 
 def first_nonmissing(series):
-    """Return first valid value."""
+
     for x in series:
         if pd.notna(x):
             if str(x).strip() != "":
@@ -144,10 +132,7 @@ def first_nonmissing(series):
 
 
 def most_common_nonmissing(series):
-    """
-    Return most commonly occurring non-missing value.
-    Useful for identifiers such as formula/PubChem.
-    """
+
     values = []
 
     for x in series:
@@ -161,7 +146,7 @@ def most_common_nonmissing(series):
 
     counts = Counter(values)
 
-    # If tied, retain first occurrence
+
     max_count = max(counts.values())
 
     tied = {
@@ -177,15 +162,7 @@ def most_common_nonmissing(series):
 
 
 def choose_canonical_name(series):
-    """
-    Choose a representative name for an InChIKey group.
 
-    Logic:
-      1. Clean names
-      2. Treat capitalization variants as equivalent
-      3. Choose the most frequently occurring name
-      4. On ties prefer a shorter, cleaner name
-    """
     names = [
         pretty_name(x)
         for x in series
@@ -202,7 +179,7 @@ def choose_canonical_name(series):
 
         grouped.setdefault(normalized, []).append(name)
 
-    # Frequency of normalized name
+    # frequency 
     best_key = sorted(
         grouped.keys(),
         key=lambda k: (
@@ -255,9 +232,6 @@ def direction_from_fc(fc):
 
 df = pd.read_csv(INPUT_FILE, low_memory=False)
 
-print(f"Input rows: {len(df):,}")
-
-
 
 unnamed = [
     c for c in df.columns
@@ -265,8 +239,6 @@ unnamed = [
 ]
 
 df = df.drop(columns=unnamed, errors="ignore")
-
-
 
 
 text_columns = [
@@ -292,7 +264,7 @@ for col in text_columns:
 df["InChIKey"] = df["InChIKey"].apply(clean_inchikey)
 df["metabolite"] = df["metabolite"].apply(pretty_name)
 
-# Keep study IDs as clean strings
+# ids
 df["study"] = (
     df["study"]
     .astype(str)
@@ -306,9 +278,7 @@ df.loc[
 ] = np.nan
 
 
-# ============================================================
-# DERIVED VARIABLES
-# ============================================================
+
 
 numeric_columns = [
     "m/z ratio",
@@ -331,7 +301,7 @@ for col in numeric_columns:
         )
 
 
-# Log intensities
+# Log2-intensities
 df["log_control_mean"] = df["Intensity mean control"].apply(log2_safe)
 df["log_control_median"] = df["Intensity median control"].apply(log2_safe)
 
@@ -339,7 +309,7 @@ df["log_PD_mean"] = df["Intensity mean PD"].apply(log2_safe)
 df["log_PD_median"] = df["Median Intensity PD"].apply(log2_safe)
 
 
-# Calculate fold change where missing
+# fold change where missing
 fc_missing = df["fold-change"].isna()
 
 valid_intensity = (
@@ -365,9 +335,6 @@ df["Log2FC"] = df["fold-change"].apply(log2_safe)
 df["direction"] = df["fold-change"].apply(direction_from_fc)
 
 
-# ============================================================
-# OPTIONAL WITHIN-STUDY Z SCORES
-# ============================================================
 
 df["z_control"] = np.nan
 df["z_PD"] = np.nan
@@ -401,26 +368,15 @@ df["_clean_name_key"] = df["metabolite"].apply(
 
 
 def make_group_key(row):
-    """
-    Priority:
-        1. Full InChIKey
-        2. Cleaned metabolite name
-        3. Completely unknown -> retain as individual row
-    """
+
 
     inchikey = row["InChIKey"]
     name_key = row["_clean_name_key"]
     metabolite = clean_string(row["metabolite"])
 
-    # -------------------------
-    # Known InChIKey
-    # -------------------------
     if pd.notna(inchikey):
         return f"IK:{inchikey}"
 
-    # -------------------------
-    # Completely unknown
-    # -------------------------
     if (
         pd.isna(metabolite)
         or name_key == ""
@@ -431,10 +387,7 @@ def make_group_key(row):
             f"{row.name}"
         )
 
-    # -------------------------
-    # No InChIKey:
-    # conservative name grouping
-    # -------------------------
+
     return f"NAME:{name_key}"
 
 
@@ -486,9 +439,7 @@ for group_key, group in df.groupby(
     )
 
 
-    # -------------------------
-    # Entity class
-    # -------------------------
+
 
     if pd.notna(inchikey):
 
@@ -534,9 +485,7 @@ for group_key, group in df.groupby(
     ]
 
 
-    # -------------------------
-    # Annotation completeness
-    # -------------------------
+
 
     has_formula = pd.notna(formula)
     has_smiles = pd.notna(smiles)
@@ -584,9 +533,6 @@ for group_key, group in df.groupby(
     }
 
 
-    # ========================================================
-    # STUDY-SPECIFIC COLUMNS
-    # ========================================================
 
     for study, study_data in group.groupby(
         "study",
@@ -596,7 +542,7 @@ for group_key, group in df.groupby(
         prefix = f"S_{study}__"
 
 
-        # Categorical / metadata
+        #metadata
         row[prefix + "repository"] = unique_join(
             study_data["repository"]
         )
@@ -705,16 +651,12 @@ for group_key, group in df.groupby(
     entity_rows.append(row)
 
 
-# ============================================================
-# CREATE FINAL GROUPED DATAFRAME
-# ============================================================
+
 
 grouped = pd.DataFrame(entity_rows)
 
 
-# ============================================================
-# ORDER ROWS LIKE YOUR REFERENCE FILE
-# ============================================================
+
 
 group_order = {
     "Inchi": 0,
@@ -739,9 +681,7 @@ grouped = grouped.drop(
 ).reset_index(drop=True)
 
 
-# ============================================================
-# ORDER STUDY COLUMNS
-# ============================================================
+
 
 core_columns = [
     "entity_group",
@@ -830,9 +770,7 @@ grouped = grouped[
 ]
 
 
-# ============================================================
-# QC SHEET
-# ============================================================
+
 
 summary = pd.DataFrame({
     "metric": [
@@ -862,9 +800,7 @@ summary = pd.DataFrame({
 })
 
 
-# ============================================================
-# SAVE
-# ============================================================
+
 
 with pd.ExcelWriter(
     OUTPUT_FILE,
@@ -885,8 +821,7 @@ with pd.ExcelWriter(
 
 
 print()
-print("DONE")
-print("-----------------------------------")
+print("DONE!")
 print(f"Input rows:        {len(df):,}")
 print(f"Grouped entities:  {len(grouped):,}")
 print(
@@ -902,4 +837,4 @@ print(
     (grouped["entity_group"] == "unknown").sum()
 )
 print()
-print(f"Saved to: {OUTPUT_FILE}")
+print(f"saved {OUTPUT_FILE}")
