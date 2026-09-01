@@ -1,0 +1,16 @@
+Class,n_metabolites,mean_PD_score,max_PD_score,top_metabolite
+Imidazopyrimidines,5,72.7674764474919,94.2225115212875,Theophylline
+Phenols,5,68.99397304862038,96.3638167447431,Vanillylmandelic acid
+Organic sulfuric acids and derivatives,5,68.90346485453264,75.1724068295219,Dopamine 3-O-sulfate
+Organonitrogen compounds,2,67.75077793937385,72.6846470538717,5-Acetylamino-6-amino-3-methyluracil
+Benzene and substituted derivatives,3,65.8598476285003,67.3029677527713,Acetyl-sulfamethoxazole
+Indoles and derivatives,3,65.09448072320826,71.6264411288904,Serotonin
+Fatty Acyls,13,64.27695242849816,96.3285996020924,Docosahexaenoic Acid
+Organooxygen compounds,12,62.55339329133059,86.0298124277939,p-Cresol glucuronide
+Carboxylic acids and derivatives,36,60.69866063087493,84.0704031138307,3-O-Methyl-a-methyldopa
+Glycerophospholipids,18,59.584288364624385,72.2472471547624,PC 32:2
+Sphingolipids,4,59.48797713295965,73.5295205251351,C16-Ceramide
+Steroids and steroid derivatives,7,58.54972750967666,68.0539743307016,Cholesterol
+Lactones,2,58.18111256701775,60.3666437991453,D-Glucuronolactone
+Hydroxy acids and derivatives,2,55.03386341404705,59.3091922425999,malic acid
+Pyrimidine nucleosides,2,54.8121093817051,63.79428942192,melatonin

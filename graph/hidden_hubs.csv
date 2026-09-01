@@ -1,0 +1,28 @@
+entity_id,betweenness,canonical_metabolite,PD_score,annotation_score,has_formula,has_SMILES,has_HMDB,has_KEGG,has_PubChem,Class,degree
+IK_QHZLMUACJMDIAE-UHFFFAOYSA-N,0.21072415699281372,1-Monopalmitin,56.6464427183426,2.0,True,False,False,False,True,Glycerolipids,125
+IK_AQTYXAPIHMXAAV-UHFFFAOYSA-N,0.05793255942509674,2-methoxyphenol sulfate,66.7778278974653,2.0,True,False,False,False,True,Organic sulfuric acids and derivatives,124
+IK_YLWSJLLZUHSIEA-CKSUKHGVSA-N,0.05163073521282477,SM d34:2,53.4994142305986,2.0,True,False,False,False,True,Sphingolipids,121
+IK_JPIJQSOTBSSVTP-GBXIJSLDSA-N,0.043228302929795466,isothreonic acid,53.6621363954326,2.0,True,False,False,False,True,Organooxygen compounds,124
+IK_SRRQPVVYXBTRQK-UHFFFAOYSA-N,0.03582089552238806,LPC 17:0,57.9342795491323,2.0,True,False,False,False,True,Glycerophospholipids,86
+IK_XXEWFEBMSGLYBY-UHFFFAOYSA-N,0.029519071310116086,"Ne,Ne dimethyllysine",41.882037092417,2.0,True,False,False,False,True,Carboxylic acids and derivatives,130
+IK_JPAUCQAJHLSMQW-XPORZQOISA-N,0.029187396351575457,p-Cresol glucuronide,86.0298124277939,2.0,True,False,False,False,True,Organooxygen compounds,81
+IK_GFNYAPAJUNPMGH-QNEBEIHSSA-N,0.0234383637368712,"5,6-dihydroxy-8Z,11Z,14Z-eicosatrienoic acid",47.4866967841469,2.0,True,False,False,False,True,Fatty Acyls,126
+IK_VXUOFDJKYGDUJI-OAQYLSRUSA-N,0.013432835820895522,LPC 14:0,51.2015594804517,2.0,True,False,False,False,True,Glycerophospholipids,128
+IK_GPWHCUUIQMGELX-VHQDNGOZSA-N,0.004201216141514649,PC 32:2,72.2472471547624,2.0,True,False,False,False,True,Glycerophospholipids,98
+IK_YAMUFBLWGFFICM-PTGWMXDISA-N,0.0012161415146489773,LPC 18:1,58.8282912750273,2.0,True,False,False,False,True,Glycerophospholipids,122
+IK_LFUDDCMNKWEORN-ZXEGGCGDSA-N,0.000552791597567717,LPC 16:1,53.6970686847862,2.0,True,False,False,False,True,Glycerophospholipids,75
+IK_BMLMGCPTLHPWPY-REOHCLBHSA-N,0.0001105583195135434,Procysteine,61.3731892088463,2.0,True,False,False,False,True,Carboxylic acids and derivatives,128
+NO_INCHIKEY__ffa 18 0,0.0,FFA 18:0,56.900178661257,0.0,False,False,False,False,False,,77
+IK_YYQVCMMXPIJVHY-ZOIJLGJPSA-N,0.0,LPC 20:2,57.3539509614984,2.0,True,False,False,False,True,Glycerophospholipids,133
+IK_ABXDBVMGRKZFRC-IOSLPCCCSA-N,0.0,3'-O-Methylinosine,57.0218754914361,2.0,True,False,False,False,True,Purine nucleosides,122
+IK_YWDDIWXKFJEMKF-JTZVLWBESA-N,0.0,PC 34:4,65.5726362492756,2.0,True,False,False,False,True,Glycerophospholipids,130
+IK_ADHNYKZHPOEULM-BQBZGAKWSA-N,0.0,Met-Glu,51.886810997459,2.0,True,False,False,False,True,Carboxylic acids and derivatives,128
+IK_USYNZBLVOOXNSN-ARRWHRBTSA-N,0.0,"(23S)-23,25-dihdroxy-24-oxovitamine D3 23-(beta-glucuronide)",51.0878477033741,2.0,True,False,False,False,True,Steroids and steroid derivatives,127
+IK_FHUAYOMRHXZKHT-JUGJLYODSA-N,0.0,PC 40:4,66.3678688600394,2.0,True,False,False,False,True,Glycerophospholipids,129
+IK_IJTJDJOOHZVSAC-NDRUHXFFSA-N,0.0,PC 40:5,47.7198581474583,2.0,True,False,False,False,True,Glycerophospholipids,128
+IK_HAVMVUFJSIMVDG-UHFFFAOYSA-N,0.0,Lucidenic acid J,65.0328019983747,2.0,True,False,False,False,True,Prenol lipids,120
+IK_WGNAKZGUSRVWRH-UHFFFAOYSA-N,0.0,p-Cresol sulfate,62.9122548133833,2.0,True,False,False,False,True,Organic sulfuric acids and derivatives,124
+IK_GOMVPVRDBLLHQC-VEJNOCSESA-N,0.0,LPC 20:4,53.8012841263838,2.0,True,False,False,False,True,Glycerophospholipids,129
+IK_LSOWKZULVQWMLY-APPDJCNMSA-N,0.0,LPC 22:6,58.4881744285175,2.0,True,False,False,False,True,Glycerophospholipids,132
+IK_DKQLZKCYTLXNBN-UHFFFAOYSA-N,0.0,5-Nonyltetrahydro-2-oxo-3-furancarboxylic acid,55.9955813348902,2.0,True,False,False,False,True,Lactones,112
+IK_RZBILUATLYXZLI-SLDNWHAHSA-N,0.0,Ganoderic acid L,58.4518534050904,2.0,True,False,False,False,True,Steroids and steroid derivatives,113

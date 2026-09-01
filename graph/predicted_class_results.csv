@@ -1,0 +1,675 @@
+entity_id,predicted_Class,confidence,canonical_metabolite
+IK_ANVLMUZOIWITMQ-UHFFFAOYSA-N,Organooxygen compounds,0.960602791285583,"3-[(1R,2R,3S)-3-Carboxy-1,2,3-trihydroxypropyl]dioxirane-3-carboxylic acid"
+IK_ASBJGPTTYPEMLP-UWTATZPHSA-N,Carboxylic acids and derivatives,0.9921934612532366,3-Chloro-D-alanine
+IK_ASSAYFMXRNLTCY-UHFFFAOYSA-N,Benzene and substituted derivatives,0.25936897637891454,22-Acetylpriverogenin B
+IK_BBJIPMIXTXKYLZ-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.6432680052299841,3-Aminopentanedioic Acid
+IK_BFZDKPVWJYFECC-OFCLATOASA-N,Glycerophospholipids,0.7365486557720946,PC aa C34:4
+IK_BOUXQAITXDAJSF-UHFFFAOYSA-N,Azobenzenes,0.9914276008565079,Sulfasalazine B
+IK_BXRLWGXPSRYJDZ-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.9958705795800847,3-Cyanoalanine
+IK_BXYPVKMROLGXJI-UHFFFAOYSA-N,Pyridines and derivatives,0.8981645883486572,N'-nitrosoanabasine
+IK_CGFRVKXGZRODPA-UHFFFAOYSA-N,Organic sulfuric acids and derivatives,0.7082902066577207,3-Acetylphenol sulfate
+IK_CNJGWCQEGROXEE-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.8879779332210519,"3,5-dichlorosalicylic acid"
+IK_DHNSTMIMQCKEPC-UHFFFAOYSA-N,Fatty Acyls,0.841620491650119,"3,4-Methyleneazelaic acid"
+IK_DHUAGGSHTKPOHU-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.3703130892942897,"3,4-Dihydro-9-hydroxy-[1]benzothieno[2,3-f]-1,4-thiazepin-5(2H)-one"
+IK_DMNOQQUULVKPTE-UHFFFAOYSA-N,Organic sulfuric acids and derivatives,0.654748837842049,"3,5-dihydroxy-4-(sulfooxy)benzoic acid"
+IK_DZAUWHJDUNRCTF-UHFFFAOYSA-N,Phenols,0.4893067317677041,"3,4-Dihydroxyhydrocinnamic acid"
+IK_FPTSLKCBYZXNAK-UZYVYHOESA-N,Glycerophospholipids,0.7267218512482468,LNAPE 18:1/N-20:0
+IK_FYYIUODUDSPAJQ-XVBQNVSMSA-N,Carboxylic acids and derivatives,0.23557556251114037,"2-Propenoic acid, 2-methyl-, 7-oxabicyclo[4.1.0]hept-3-ylmethyl ester"
+IK_GHOKWGTUZJEAQD-UHFFFAOYSA-N,Organooxygen compounds,0.4003788751089043,"3-[[(2S)-2,4-Dihydroxy-3,3-dimethylbutanoyl]amino]propanoic acid"
+IK_GLUJNGJDHCTUJY-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.7060527335058872,3-Amino-4-methylpentanoic acid
+IK_GNQHFHGLDGEOOU-ZIJFCRNMSA-N,Steroids and steroid derivatives,0.9843716323510728,Desoxycortisone acetate
+IK_HJIKODJJEORHMZ-NNPZUXBVSA-N,Steroids and steroid derivatives,0.9821089487282527,28-Homobrassinolide
+IK_HJJPJSXJAXAIPN-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.5,Arecoline
+IK_HJSJELVDQOXCHO-JGVFFNPUSA-N,Carboxylic acids and derivatives,0.49576106741985176,Heliotridine
+IK_HMNKTRSOROOSPP-UHFFFAOYSA-N,Phenols,0.4939246361803453,3-Ethylphenol
+IK_HOMAGVUCNZNWBC-UHFFFAOYSA-N,Fatty Acyls,0.8601471286996587,2-Propenyl 3-methylbutanoate
+IK_IFNXFIJXYVEYLF-UHFFFAOYSA-N,Fatty Acyls,0.7636239502207862,2-Propylglutaric Acid
+IK_IVOMOUWHDPKRLL-KQYNXXCUSA-N,Purine nucleotides,0.4501350170744711,"3',5'-Cyclic AMP"
+IK_IXVMHGVQKLDRKH-QHBHMFGVSA-N,Steroids and steroid derivatives,0.9882931242689993,24-Epibrassinolide
+IK_IZEZNNYKKNVXNA-UHFFFAOYSA-N,Phenols,0.36115381641457794,"3-(3,5-dihydroxyphenyl)-1-propanoic acid sulphate"
+IK_JFIWEPHGRUDAJN-DYUFWOLASA-N,Pyrimidine nucleosides,0.3872017452405186,3'-C-Ethynylcytidine
+IK_JIQLAAKADXSVTE-HTQZYQBOSA-N,Nucleoside and nucleotide analogues,0.4431199931264608,"3',5'-Dideoxythymidine"
+IK_JPQGSGTYJWWXTH-UHFFFAOYSA-N,Fatty Acyls,0.8193693225651307,"3,3-Bis(carboxymethyl)hexadecanedioic acid"
+IK_JQXBETDGCMQLMK-UHFFFAOYSA-N,Phenols,0.42786345872103226,"3,4-Dihydroxyphenylacetone"
+IK_JVGVDSSUAVXRDY-UHFFFAOYSA-M,Carboxylic acids and derivatives,0.6425272692834746,3-(4-Hydroxyphenyl)lactate
+IK_JVSRRTLCKOVNHJ-UHFFFAOYSA-N,Fatty Acyls,0.24936376169119398,3-Hydroxyindolin-2-one-sulfate
+IK_JYEFAZDBHWGXHI-HWKANZROSA-N,Imidazopyrimidines,0.19850398355562776,3-(5-Methoxy-4-oxocyclohex-2-en-1-yl)prop-2-enoic acid
+IK_KBUNOSOGGAARKZ-KRWDZBQOSA-N,Fatty Acyls,0.48216119470445773,3-Dehydrosphinganine
+IK_KKSDGJDHHZEWEP-SNAWJCMRSA-N,Cinnamic acids and derivatives,0.709459188350315,3-Coumaric Acid
+IK_KLXACYSQYFWVLM-UHFFFAOYSA-N,Benzene and substituted derivatives,0.3064229584281412,"3,5-Dichloro-2,6-dihydroxybenzoic acid"
+IK_KSUBHIPBMPOXPG-FEBLJDHQSA-N,Glycerophospholipids,0.5947405696360413,SM(d14:1/16:0)
+IK_KUVXQAWMEHTXOV-UHFFFAOYSA-N,Hydroxy acids and derivatives,0.4567300228675361,3-Carboxyoxy-2-hydroxypropanoic acid
+IK_KYZSOPIZDMFUBC-QPCGIFMOSA-N,Glycerophospholipids,0.22144802284450923,glucuronide conjugate
+IK_LCJRHAPPMIUHLH-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.49478393786141955,Policapram
+IK_LGHBWDKMGOIZKH-CBZIJGRNSA-N,Steroids and steroid derivatives,0.978089801135943,3-Deoxyestrone
+IK_LOAUVZALPPNFOQ-UHFFFAOYSA-N,Pyridines and derivatives,0.7447822421137056,2-Quinolinecarboxylic acid
+IK_LQQFFJFGLSKYIR-UHFFFAOYSA-M,Phenols,0.4768363561290781,"3-(3,4-Dihydroxyphenyl)pyruvate"
+IK_MCKLJFJEQRYRQT-APGJSSKUSA-N,Steroids and steroid derivatives,0.9301675028113703,20alpha-Hydroxycholesterol
+IK_MFYFKAXYRXODPL-UHFFFAOYSA-N,Organic sulfuric acids and derivatives,0.6521470340786012,"3,4-Dihydroxyphenylglycol O-sulfate"
+IK_MGBKJKDRMRAZKC-UHFFFAOYSA-N,Phenols,0.42337212181232986,"3-Aminobenzene-1,2-diol"
+IK_MXXWOMGUGJBKIW-YPCIICBESA-N,Benzodioxoles,0.9574169001983749,Piperine
+IK_NGBBVGZWCFBOGO-UHFFFAOYSA-N,Benzodioxoles,0.9116039063241258,"3,4-Methylenedioxyamphetamine"
+IK_NIPLIJLVGZCKMP-UHFFFAOYSA-M,Carboxylic acids and derivatives,0.5142672717837798,Neurine
+IK_OAMCCJASDLMTOO-UHFFFAOYSA-N,Glycerophospholipids,0.5274439557505088,"3,4-Bis(7-chloroindol-3-yl)pyrrole-2,5-dicarboxylate"
+IK_OEKUSRBIIZNLHZ-DJDNIQJZSA-N,Steroids and steroid derivatives,0.9962233142648907,3-Dehydrocholic Acid
+IK_OKRAIIIRDYCGGZ-POHAHGRESA-N,Fatty Acyls,0.27463765828153447,"5,8-Dihydro-6-(4-methyl-3-pentenyl)-1,2,3,4-tetrathiocin"
+IK_OSCJFAHVJDDMFL-UHFFFAOYSA-N,Fatty Acyls,0.9682229985487817,"3,4-Dimethyl-5-pentyl-2-furanpropanoic acid"
+IK_OVBKVWSHXDCSTK-UHFFFAOYSA-N,Fatty Acyls,0.8103441279364743,24-Hydroxytetracosanoic acid
+IK_PCXDJQZLDDHMGX-UHFFFAOYSA-N,Organooxygen compounds,0.9522933392487921,3-Aminopropionaldehyde
+IK_PQKFUDVFSOEHDQ-KBBGFLFPSA-N,Steroids and steroid derivatives,0.9324281867087801,"24,24-Difluoro-1alpha,25-dihydroxyvitamin D3"
+IK_PYLPANOYZCSFOX-UCIVWCSPSA-N,Steroids and steroid derivatives,0.9888792502567277,27-Norcholestanehexol
+IK_QAIPRVGONGVQAS-UHFFFAOYSA-N,Cinnamic acids and derivatives,0.7271360706603346,"3-(3,4-Dihydroxyphenyl)prop-2-enoic Acid"
+IK_QCHPKSFMDHPSNR-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.8092379404274048,3-Aminoisobutanoic Acid
+IK_QMLKZGPQQANVQF-HLMRNWPHSA-N,Glycerophospholipids,0.765016402777898,LNAPE 20:3/N-20:0
+IK_QNKGXSIDHDDDHD-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.4418351525950161,"3,7,8,15-Scirpenetetrol"
+IK_QNZZHRCSGTYEAW-UHFFFAOYSA-N,Benzene and substituted derivatives,0.24595557687042852,25-Acetylvulgaroside
+IK_QPYQKHOKNCVKGE-DUXPYHPUSA-N,Carboxylic acids and derivatives,0.2478832724866725,3-(2-propenoic acid)-o-benzoquinone
+IK_QQBKLRXLVRDKEB-UHFFFAOYSA-N,Benzene and substituted derivatives,0.8012787568422813,"3-(Hydroxymethyl)-5,5-diphenylimidazolidine-2,4-dione"
+IK_QVWAEZJXDYOKEH-UHFFFAOYSA-N,Phenols,0.34117864377453316,3-(3-Hydroxyphenyl)propionic acid
+IK_QVZHZVWYFNADIO-BATPLZQESA-N,Organooxygen compounds,0.6565144379371862,3'-Ketolactose
+IK_QZIYZVFIROFZCV-UHFFFAOYSA-N,Organic sulfuric acids and derivatives,0.6391794914149641,3-[4-methoxy-3-(sulfooxy)phenyl]propanoic acid
+IK_RGCBYGZECVEZKC-UHFFFAOYSA-N,Prenol lipids,0.8269508667214209,3-Benzoyloxy-11-oxo-12-ursen-28-oic acid
+IK_RGHMISIYKIHAJW-UHFFFAOYSA-N,Phenols,0.5807808302339147,"3,4-Dihydroxymandelic acid"
+IK_RIJDKRLRDVBUHJ-UHFFFAOYSA-N,Fatty Acyls,0.9181279873219572,3-carboxy-4-methyl-5-pentyl-2-furanpropanoic acid
+IK_RLVAVWQAAQFUOP-UHFFFAOYSA-N,Tetrapyrroles and derivatives,0.8170544899668716,3-Epipapyriferic acid
+IK_RRCGNPRHZQPOOT-FFBSXHGNSA-N,Steroids and steroid derivatives,0.9817380235054011,"20,26-Dihydroxyecdysone"
+IK_RUDATBOHQWOJDD-GCJQIVLTSA-N,Steroids and steroid derivatives,0.9848687069950834,"3,7-Dihydroxycholan-24-oic acid"
+IK_SAWKFRBJGLMMES-UHFFFAOYSA-N,Glycerophospholipids,0.3818897637795276,PC 16:0/9:0 CHO
+IK_SBAJRGRUGUQKAF-UHFFFAOYSA-N,Diazines,0.5,"3,3'-Iminodipropionitrile"
+IK_SGTFNLMVIRZWTA-LFCBYZEKSA-N,Steroids and steroid derivatives,0.6867588848386366,28-Hydroxywithanolide E
+IK_SHXWCVYOXRDMCX-UHFFFAOYSA-N,Benzodioxoles,0.6039642059220126,"3,4-Methylenedioxymethamphetamine"
+IK_SSZYARBRHYOZQM-OWOJBTEDSA-N,Organooxygen compounds,0.40190887143432247,"3,4,5-trihydroxy-6-{3-[(E)-2-(4-hydroxyphenyl)ethenyl]-5-{[3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy}phenoxy}oxane-2-carboxylic acid"
+IK_SVBMASFUJDIDJC-XFJIFGBKSA-N,Steroids and steroid derivatives,0.9962910984943065,3-Dehydroteasterone
+IK_TTZIHUKKIDPTQT-UHFFFAOYSA-N,Flavonoids,0.5228538991676258,"3,3',5,6-Tetrahydroxy-4',7-dimethoxyflavone 3-glucuronide"
+IK_TWEFFSVOCVXBPV-UHFFFAOYSA-N,Organic sulfuric acids and derivatives,0.6997441211950708,3-Allylphenol sulfate
+IK_TXBBUSUXYMIVOS-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.2580899112581491,2-Thenoyltrifluoroacetone
+IK_TYLFLHPQWQQWRD-UHNVWZDZSA-N,Piperidines,0.941828531992089,2R-Hydroxymethyl-3S-hydroxypyrolidine
+IK_UADPGHINQMWEAG-FROQITRMSA-N,Carboxylic acids and derivatives,0.579027395129723,"(S,E)-2-(5-Hydroxy-8,9-dihydro-5H-benzo[7]annulen-6(7H)-ylidene)acetic acid"
+IK_UBCPEZWGUOSYHO-JAPSQKQGSA-N,Steroids and steroid derivatives,0.9977649535711773,"27-Nor-5b-cholestane-3a,7a,12a,24,25-pentol"
+IK_UGRNVLGKAGREKS-UHFFFAOYSA-N,Purine nucleosides,0.36502846865775207,"3-(6-Aminopurin-9-yl)-5-(hydroxymethyl)cyclopentane-1,2-diol"
+IK_UJFWRUHMFNKTTC-UHFFFAOYSA-N,Steroids and steroid derivatives,0.9956521807421662,Cholylserine
+IK_UKAUDTTVOAAZHC-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.27118226600985396,"Itaconate (Itaconic acid)1,3"
+IK_UPISBTVRUJGIRH-HNANJHLJSA-N,Flavonoids,0.6399724658590503,"3,4'-Dimethyquercetin 7-[alpha-L-arabinofuranosyl-(1->6)-glucoside]"
+IK_URTBCBICNCMCPB-CWUOWYQYSA-N,Fatty Acyls,0.9804585869550185,"2-trans,4-cis-decadienoylcarnitine"
+IK_UUILWXIBBZVJDU-UHFFFAOYSA-N,Fatty Acyls,0.26585572661410833,"2-Propyl-2,4-pentadienoic acid"
+IK_UZWWTCBNUQJEPB-WLMOLUCVSA-N,Fatty Acyls,0.9940268122313167,20-Trihydroxy-leukotriene-B4
+IK_VMJGIIURAHPLEX-AVQMFFATSA-N,Carboxylic acids and derivatives,0.6034204133667654,N-Linoleoyl Tryptophan
+IK_VMUNAKQXJLHODT-VAWYXSNFSA-N,Fatty Acyls,0.8373577678533409,2-tridecenal
+IK_VRBFTYUMFJWSJY-UHFFFAOYSA-N,Phenols,0.4957611749068702,Parylene C
+NO_INCHIKEY__10 carbon fatty aldehyde,Carboxylic acids and derivatives,0.32990757297561946,10-carbon fatty aldehyde
+NO_INCHIKEY__11 carbon fatty acid,Carboxylic acids and derivatives,0.1964728308915367,11-carbon fatty acid
+NO_INCHIKEY__12 carbon fatty acid,Carboxylic acids and derivatives,0.1964728308915367,12-carbon fatty acid
+NO_INCHIKEY__13 carbon fatty acid,Carboxylic acids and derivatives,0.24652107272753931,13-carbon fatty acid
+NO_INCHIKEY__14 carbon fatty acid,Phenols,0.20445285145143013,14-carbon fatty acid
+NO_INCHIKEY__16 carbon fatty acid,Carboxylic acids and derivatives,0.36837977517247067,16 carbon fatty acid
+NO_INCHIKEY__16 23 24 25 tetrahydroxydammar 13 17 en 3 one,Prenol lipids,0.39581305196262284,"16,23,24,25-Tetrahydroxydammar-13(17)-en-3-one"
+IK_VUUOTOOJGWQGRY-OEOQYRPPSA-N,Glycerophospholipids,0.7374666860595858,PC(P-18:1(9Z)/PGJ2)
+IK_VUWCGGOBVYCOMA-UHFFFAOYSA-N,Prenol lipids,0.8570995296414279,"3,9-Dimethyl-6-(1-methylethyl)-1,4-dioxaspiro[4.5]decan-2-one"
+IK_VWEHHIHNZFXYIU-NAJHMEIQSA-N,Steroids and steroid derivatives,0.9800668645773019,3-epi-2-Deoxy-25-methyldolichosterone
+NO_INCHIKEY__4 acetyl 2 methoxyphenyl 6 o 6 deoxy l mannopyranosyl d glucopyranoside,Steroids and steroid derivatives,0.3307184411848729,4-Acetyl-2-methoxyphenyl 6-O-(6-deoxy-?-L-mannopyranosyl)-?-D-glucopyranoside
+NO_INCHIKEY__5 hydroxymethyl 4 methoxy 2 5h furanone,Keto acids and derivatives,0.39704642617405467,5-(Hydroxymethyl)-4-methoxy-2(5H)-furanone
+NO_INCHIKEY__5 alpha androstan 3 beta ol 17 one sulfate,Glycerophospholipids,0.3818897637795276,5-alpha-androstan-3-beta-ol-17-one sulfate
+NO_INCHIKEY__5 beta androstan 3 alpha ol 17 one sulfate,Carboxylic acids and derivatives,0.3107569721115538,5-beta-androstan-3-alpha-ol-17-one sulfate
+NO_INCHIKEY__5 isoprostaglandin f2 alpha vi,Carboxylic acids and derivatives,0.3107569721115538,5-isoprostaglandin-F2-alpha-VI
+NO_INCHIKEY__8 10 dihydroxydihydroergotamine,Carboxylic acids and derivatives,0.49584950610187206,"8',10'-Dihydroxydihydroergotamine"
+NO_INCHIKEY__aromatic phytochemical,Benzene and substituted derivatives,0.19402097201582544,Aromatic phytochemical
+NO_INCHIKEY__bile acid or lovastatin,Prenol lipids,0.24320088196865036,bile acid or Lovastatin
+NO_INCHIKEY__brompheniramine didemethylated,Fatty Acyls,0.4404584968403971,Brompheniramine (didemethylated)
+IK_WBIICVGYYRRURR-UHFFFAOYSA-N,Coumarins and derivatives,0.8786326887598702,"3-(Aminomethyl)-2,5,9-trimethyl-7H-furo[3,2-g]chromen-7-one"
+NO_INCHIKEY__cer 40 0 2o cer 18 0 2o 22 0,Glycerophospholipids,0.3818897637795276,Cer 40:0;2O|Cer 18:0;2O/22:0
+NO_INCHIKEY__cer 41 2 2o cer 18 2 2o 23 0,Glycerophospholipids,0.3818897637795276,Cer 41:2;2O|Cer 18:2;2O/23:0
+NO_INCHIKEY__cer 42 0 2o cer 18 0 2o 24 0,Glycerophospholipids,0.3818897637795276,Cer 42:0;2O|Cer 18:0;2O/24:0
+NO_INCHIKEY__cer 43 2 2o cer 19 1 2o 24 1,Glycerophospholipids,0.3818897637795276,Cer 43:2;2O|Cer 19:1;2O/24:1
+IK_WEGYGNROSJDEIW-UHFFFAOYSA-N,Pyridines and derivatives,0.5420236686888825,3-Acetylpyridine
+IK_WHSXTWFYRGOBGO-UHFFFAOYSA-N,Benzene and substituted derivatives,0.5214939361742211,3-Cresotinic acid
+NO_INCHIKEY__dg 36 4 isomer a,Glycerophospholipids,0.3818897637795276,DG 36:4 Isomer A
+IK_WQZRAWSNEARGPQ-UHFFFAOYSA-N,Fatty Acyls,0.7366039533401622,"3,5-Dihydroxydecanoic Acid"
+NO_INCHIKEY__fahfa 18 2 18 1,Glycerophospholipids,0.3818897637795276,FAHFA 18:2/18:1
+NO_INCHIKEY__fahfa 38 4,Glycerophospholipids,0.3818897637795276,FAHFA 38:4
+NO_INCHIKEY__fahfa 38 6,Glycerophospholipids,0.3818897637795276,FAHFA 38:6
+IK_WVMWZWGZRAXUBK-SYTVJDICSA-N,Organooxygen compounds,0.9381898129266673,3-Dehydroquinic acid
+NO_INCHIKEY__ffa 11 1,Organooxygen compounds,0.22433913200312325,FFA 11:1
+NO_INCHIKEY__ffa 18 0,Organooxygen compounds,0.10632935837738246,FFA 18:0
+NO_INCHIKEY__ffa 18 2,Carboxylic acids and derivatives,0.3129936453667646,FFA 18:2
+NO_INCHIKEY__ffa 19 1,Carboxylic acids and derivatives,0.22673482395314226,FFA 19:1
+IK_WWNNZCOKKKDOPX-UHFFFAOYSA-N,Pyridines and derivatives,0.4680518481896369,Trigonelline
+NO_INCHIKEY__flavanoid,Glycerophospholipids,0.24597165880545926,Flavanoid
+NO_INCHIKEY__flavanoid glucuronide,Benzene and substituted derivatives,0.27432787768171984,Flavanoid glucuronide
+NO_INCHIKEY__flavonoid glucuronide,Steroids and steroid derivatives,0.2702718136554205,Flavonoid glucuronide
+NO_INCHIKEY__flavonoid glucuronide se adenosylselenomethionine,Steroids and steroid derivatives,0.2702718136554205,Flavonoid glucuronide; Se-Adenosylselenomethionine
+NO_INCHIKEY__flower extract,Carboxylic acids and derivatives,0.1964728308915367,flower extract
+NO_INCHIKEY__galcer 18 1 24 1,Glycerophospholipids,0.3818897637795276,GalCer 18:1_24:1
+NO_INCHIKEY__gln leu glu lys,Prenol lipids,0.2805726119914361,Gln Leu Glu Lys
+NO_INCHIKEY__glu trp,Fatty Acyls,0.7460542912852459,Glu Trp
+NO_INCHIKEY__gly phe asn thr phe,Tetrapyrroles and derivatives,0.9870133040822111,Gly Phe Asn Thr Phe
+IK_WZYRMLAWNVOIEX-BGPJRJDNSA-N,Lactones,0.9913955457262815,"3,6-anhydro-D-galactose"
+NO_INCHIKEY__gpcho 2 0 18 3,Carboxylic acids and derivatives,0.33257723588954613,GPCho(2:0/18:3)
+IK_XFDUHJPVQKIXHO-UHFFFAOYSA-N,Benzene and substituted derivatives,0.9832129356651597,3-Aminobenzoic acid
+IK_XGWNSZFVLRVRKZ-UHFFFAOYSA-N,Steroids and steroid derivatives,0.3236776666727128,"3-(3,5-Dichlorophenyl)-4-hydroxy-1,3-thiazol-2-one"
+NO_INCHIKEY__lpa 0 018 1 9z lpa 18 1 9z 0 0 dhap 18 0 3,Steroids and steroid derivatives,0.40104963918654374,LPA(0:018:1(9Z)); LPA(18:1(9Z)0:0); DHAP(18:0)3
+NO_INCHIKEY__lpc 16 0 1,Glycerophospholipids,0.3818897637795276,LPC 16:0.1
+NO_INCHIKEY__lpc 16 1 1,Glycerophospholipids,0.3818897637795276,LPC 16:1.1
+NO_INCHIKEY__lpc 17 1 sn1,Glycerophospholipids,0.3818897637795276,LPC 17:1-SN1
+NO_INCHIKEY__lpc 20 1 1,Glycerophospholipids,0.3818897637795276,LPC 20:1.1
+NO_INCHIKEY__lpc p 18 0 or lpc o 18 1,Glycerophospholipids,0.3818897637795276,LPC P-18:0 or LPC O-18:1
+NO_INCHIKEY__lpe n fa 34 0 lpe n fa 16 0 18 0,Glycerophospholipids,0.3818897637795276,LPE-N (FA)34:0|LPE-N (FA 16:0)18:0
+NO_INCHIKEY__lpe n fa 40 6 lpe n fa 18 0 22 6,Glycerophospholipids,0.3818897637795276,LPE-N (FA)40:6|LPE-N (FA 18:0)22:6
+NO_INCHIKEY__lysopc 17 0 lysope 0 020 0 lysope 20 00 0,Glycerophospholipids,0.4804795540283635,LysoPC(17:0); LysoPE(0:020:0); LysoPE(20:00:0)
+IK_XJZGNVBLVFOSKJ-XZULNKEGSA-N,Steroids and steroid derivatives,0.9968272252924621,27-Deoxy-5b-cyprinol
+NO_INCHIKEY__mg 10 0 0 0 0 0,Carboxylic acids and derivatives,0.291321097747784,MG(10:0/0:0/0:0)
+NO_INCHIKEY__pc 16 0 20 5,Glycerophospholipids,0.3818897637795276,PC 16:0_20:5
+NO_INCHIKEY__pc 18 0 22 4,Glycerophospholipids,0.3818897637795276,PC 18:0_22:4
+NO_INCHIKEY__pc 18 2 20 4,Glycerophospholipids,0.3818897637795276,PC 18:2_20:4
+NO_INCHIKEY__pc 31 1 pc 16 0 15 1,Glycerophospholipids,0.3818897637795276,PC 31:1|PC 16:0_15:1
+NO_INCHIKEY__pc 36 1e,Glycerophospholipids,0.3818897637795276,PC 36:1e
+NO_INCHIKEY__pc 36 5 isomer d,Glycerophospholipids,0.3818897637795276,PC 36:5 Isomer D
+NO_INCHIKEY__pc 36 6e,Glycerophospholipids,0.3818897637795276,PC 36:6e
+NO_INCHIKEY__pc 38 4 isomer b,Glycerophospholipids,0.3818897637795276,PC 38:4 Isomer B
+NO_INCHIKEY__pc 38 5 isomer a,Glycerophospholipids,0.3818897637795276,PC 38:5 Isomer A
+NO_INCHIKEY__pc 38 6 pc 18 2 20 4,Glycerophospholipids,0.3818897637795276,PC 38:6|PC 18:2_20:4
+NO_INCHIKEY__pc 40 5 isomer b,Glycerophospholipids,0.3818897637795276,PC 40:5 Isomer B
+NO_INCHIKEY__pc 40 7 isomer a,Glycerophospholipids,0.3818897637795276,PC 40:7 Isomer A
+NO_INCHIKEY__pc ae c42 1,Glycerophospholipids,0.5333333333333333,PC ae C42:1
+NO_INCHIKEY__pc ae c42 4,Glycerophospholipids,0.5333333333333333,PC ae C42:4
+NO_INCHIKEY__pc o 42 7 or pc 42 7e,Glycerophospholipids,0.3818897637795276,PC O-42:7 or PC 42:7e
+NO_INCHIKEY__pc p 42 5 or pc o 42 6 isomer b,Glycerophospholipids,0.3818897637795276,PC P-42:5 or PC O-42:6 Isomer B
+IK_YEFJYYIIBNWRQV-UHFFFAOYSA-N,Carboxylic acids and derivatives,0.17180215955775782,3-Diphosphoglyceric acid
+IK_YFMPSMITLLBENU-UHFFFAOYSA-N,Phenols,0.5147067411368391,"3,4-Dihydroxybenzylamine"
+NO_INCHIKEY__pe 38 4 isomer a,Glycerophospholipids,0.3818897637795276,PE 38:4 Isomer A
+NO_INCHIKEY__pe 38 4 isomer b,Glycerophospholipids,0.3818897637795276,PE 38:4 Isomer B
+NO_INCHIKEY__pe 40 5,Glycerophospholipids,0.3818897637795276,PE 40:5
+NO_INCHIKEY__pe 18 3 0 0,Steroids and steroid derivatives,0.4981506146486954,PE(18:3/0:0)
+IK_ZCDKJIRLFSPIQI-QPJJXVBHSA-N,Fatty Acyls,0.3891481853631848,"3,7-Dimethyl-5-octene-1,7-diol 1-glucoside"
+NO_INCHIKEY__pl,Pyridines and derivatives,0.7200653874309352,PL
+IK_ZEMGGZBWXRYJHK-UHFFFAOYSA-N,Diazines,0.7755012625115757,2-Thiouracil
+IK_ZFFFJLDTCLJDHL-UHFFFAOYSA-N,Steroids and steroid derivatives,0.9652369767604314,"3-alpha,20-alpha-Dihydroxy-5-beta-pregnane 3-glucuronide"
+NO_INCHIKEY__possible bile acid,Carboxylic acids and derivatives,0.1999234579956229,Possible bile acid
+NO_INCHIKEY__possible bile salt,Carboxylic acids and derivatives,0.39403515040743936,possible bile salt
+NO_INCHIKEY__possible flavonoid,Carboxylic acids and derivatives,0.24855586403902205,Possible flavonoid
+NO_INCHIKEY__possible phytochemical,Benzene and substituted derivatives,0.24610514917054976,possible phytochemical
+NO_INCHIKEY__possible prenol lipid,Benzene and substituted derivatives,0.24323498604697985,Possible prenol lipid
+NO_INCHIKEY__possible steroid,Carboxylic acids and derivatives,0.14470273303312411,Possible steroid
+IK_ZGCHLOWZNKRZSN-NTSWFWBYSA-N,Organooxygen compounds,0.6937352718189882,3-Deoxyglucosone
+IK_ZHZKWZJLUNXOSN-LOCIZFEWSA-N,Steroids and steroid derivatives,0.9941584134303979,3-epi-6-deoxocathasterone
+NO_INCHIKEY__ps 22 6,Carboxylic acids and derivatives,0.33112091017553114,PS(22:6)
+NO_INCHIKEY__ser ser oh,Fatty Acyls,0.4555131497294037,Ser-Ser-OH
+NO_INCHIKEY__sm 24 1,Glycerophospholipids,0.3818897637795276,SM 24:1
+NO_INCHIKEY__sm d38 1 1,Glycerophospholipids,0.3818897637795276,SM d38:1.1
+NO_INCHIKEY__sm d41 2 isomer b,Glycerophospholipids,0.3818897637795276,SM d41:2 Isomer B
+NO_INCHIKEY__sm d15 0 2 0,Carboxylic acids and derivatives,0.19998682183549288,SM(d15:0/2:0)
+IK_ZPWVTTHIHKYUQK-UHFFFAOYSA-N,Fatty Acyls,0.5642819641232228,"3,4-Methyleneadipic acid"
+NO_INCHIKEY__tag 12 3 20 6 20 6,Glycerophospholipids,0.17857142857142858,TAG(12:3/20:6/20:6)
+NO_INCHIKEY__tag 14 3 14 3 14 3,Glycerophospholipids,0.17857142857142858,TAG(14:3/14:3/14:3)
+NO_INCHIKEY__tg 54 5 isomer b,Glycerophospholipids,0.3818897637795276,TG 54:5 Isomer B
+NO_INCHIKEY__tripeptide cys cys cys,Fatty Acyls,0.3274348835296249,"Tripeptide: Cys, Cys, Cys"
+NO_INCHIKEY__tripeptide cys his lys,Carboxylic acids and derivatives,0.4887444689186735,"Tripeptide: Cys, His, Lys"
+NO_INCHIKEY__tripeptide cys his trp,Carboxylic acids and derivatives,0.1964728308915367,"Tripeptide: Cys, His, Trp"
+NO_INCHIKEY__tripeptide cys lys his,Carboxylic acids and derivatives,0.4887444689186735,Tripeptide: Cys-Lys-His
+NO_INCHIKEY__tripeptide leu ile tyr lys,Organooxygen compounds,0.16281588456705576,"Tripeptide: Leu/Ile, Tyr, Lys"
+NO_INCHIKEY__tripeptide leu ile asn pro val gln pro,Carboxylic acids and derivatives,0.1964728308915367,"Tripeptide: Leu/Ile,Asn, Pro; Val, Gln, Pro"
+NO_INCHIKEY__tripeptide leu ile asp arg gln gln lys arg val glu val val trp,Glycerophospholipids,0.24424700902774757,Tripeptide: Leu/Ile-Asp-Arg; Gln-Gln-Lys; Arg-Val-Glu; Val-Val-Trp
+NO_INCHIKEY__tripeptide leu ile lys gln,Carboxylic acids and derivatives,0.7395430434206275,Tripeptide: Leu/Ile-Lys-Gln
+NO_INCHIKEY__tripeptide thr pro ala,Carboxylic acids and derivatives,0.4942659175463072,Tripeptide: Thr-Pro-Ala
+UNKNOWN_ROW__24167579__unknown_1,Hydroxy acids and derivatives,0.9864120588006271,unknown_1
+UNKNOWN_ROW__24167579__unknown_2,Pyrrolidines,1.0,unknown_2
+UNKNOWN_ROW__24167579__unknown_3,Carboxylic acids and derivatives,0.75,unknown_3
+UNKNOWN_ROW__24167579__unknown_4,Carboxylic acids and derivatives,0.75,unknown_4
+UNKNOWN_ROW__24167579__unknown_5,Carboxylic acids and derivatives,0.2857142857142857,unknown_5
+UNKNOWN_ROW__24167579__unknown_6,Carboxylic acids and derivatives,0.6666666666666667,unknown_6
+UNKNOWN_ROW__24167579__unknown_7,Carboxylic acids and derivatives,1.0,unknown_7
+UNKNOWN_ROW__24167579__unknown_8,Carboxylic acids and derivatives,0.7777777777777779,unknown_8
+UNKNOWN_ROW__24167579__unknown_9,Carboxylic acids and derivatives,1.0,unknown_9
+UNKNOWN_ROW__24167579__unknown_10,Carboxylic acids and derivatives,0.5,unknown_10
+UNKNOWN_ROW__24167579__unknown_11,Carboxylic acids and derivatives,0.25,unknown_11
+UNKNOWN_ROW__24167579__unknown_12,Carboxylic acids and derivatives,0.6666666666666667,unknown_12
+UNKNOWN_ROW__24167579__unknown_13,Carboxylic acids and derivatives,0.23076923076923078,unknown_13
+UNKNOWN_ROW__24167579__unknown_14,Keto acids and derivatives,0.25,unknown_14
+UNKNOWN_ROW__24167579__unknown_15,Keto acids and derivatives,0.25,unknown_15
+UNKNOWN_ROW__24167579__unknown_16,Benzene and substituted derivatives,0.42857142857142855,unknown_16
+UNKNOWN_ROW__24167579__unknown_17,Phenols,0.33333333333333337,unknown_17
+UNKNOWN_ROW__24167579__unknown_18,Phenols,0.33333333333333337,unknown_18
+UNKNOWN_ROW__24167579__unknown_19,Carboxylic acids and derivatives,0.3846153846153846,unknown_19
+UNKNOWN_ROW__24167579__unknown_20,Carboxylic acids and derivatives,0.5,unknown_20
+UNKNOWN_ROW__24167579__unknown_21,Carboxylic acids and derivatives,0.4285714285714286,unknown_21
+UNKNOWN_ROW__24167579__unknown_22,Carboxylic acids and derivatives,0.5,unknown_22
+UNKNOWN_ROW__24167579__unknown_23,Carboxylic acids and derivatives,0.5,unknown_23
+UNKNOWN_ROW__24167579__unknown_24,Carboxylic acids and derivatives,0.5,unknown_24
+UNKNOWN_ROW__24167579__unknown_25,Organooxygen compounds,0.2857142857142857,unknown_25
+UNKNOWN_ROW__24167579__unknown_26,Carboxylic acids and derivatives,0.5,unknown_26
+UNKNOWN_ROW__24167579__unknown_27,Carboxylic acids and derivatives,0.5,unknown_27
+UNKNOWN_ROW__24167579__unknown_28,Carboxylic acids and derivatives,0.3333333333333333,unknown_28
+UNKNOWN_ROW__24167579__unknown_29,Carboxylic acids and derivatives,0.6,unknown_29
+UNKNOWN_ROW__24167579__unknown_30,Carboxylic acids and derivatives,0.6,unknown_30
+UNKNOWN_ROW__24167579__unknown_31,Carboxylic acids and derivatives,0.5,unknown_31
+UNKNOWN_ROW__24167579__unknown_32,Benzothiazoles,0.33333333333333337,unknown_32
+UNKNOWN_ROW__24167579__unknown_33,Benzothiazoles,0.33333333333333337,unknown_33
+UNKNOWN_ROW__24167579__unknown_34,Carboxylic acids and derivatives,0.25,unknown_34
+UNKNOWN_ROW__24167579__unknown_35,Benzene and substituted derivatives,0.5,unknown_35
+UNKNOWN_ROW__24167579__unknown_36,Benzene and substituted derivatives,0.5,unknown_36
+UNKNOWN_ROW__24167579__unknown_37,Benzene and substituted derivatives,0.2,unknown_37
+UNKNOWN_ROW__24167579__unknown_38,Benzene and substituted derivatives,0.25,unknown_38
+UNKNOWN_ROW__24167579__unknown_39,Carboxylic acids and derivatives,0.4,unknown_39
+UNKNOWN_ROW__24167579__unknown_40,Carboxylic acids and derivatives,0.26666666666666666,unknown_40
+UNKNOWN_ROW__24167579__unknown_41,Benzodioxoles,0.25,unknown_41
+UNKNOWN_ROW__24167579__unknown_42,Benzazepines,0.16666666666666669,unknown_42
+UNKNOWN_ROW__24167579__unknown_43,Benzene and substituted derivatives,0.5,unknown_43
+UNKNOWN_ROW__24167579__unknown_44,Prenol lipids,0.39999999999999997,unknown_44
+UNKNOWN_ROW__24167579__unknown_45,Carboxylic acids and derivatives,0.39999999999999997,unknown_45
+UNKNOWN_ROW__24167579__unknown_46,Fatty Acyls,0.6,unknown_46
+UNKNOWN_ROW__24167579__unknown_47,Benzene and substituted derivatives,0.25,unknown_47
+UNKNOWN_ROW__24167579__unknown_48,Prenol lipids,0.2,unknown_48
+UNKNOWN_ROW__24167579__unknown_49,Prenol lipids,0.2,unknown_49
+UNKNOWN_ROW__24167579__unknown_50,Benzene and substituted derivatives,0.25,unknown_50
+UNKNOWN_ROW__24167579__unknown_51,Carboxylic acids and derivatives,0.25,unknown_51
+UNKNOWN_ROW__24167579__unknown_52,Carboxylic acids and derivatives,0.25,unknown_52
+UNKNOWN_ROW__24167579__unknown_53,Carboxylic acids and derivatives,0.375,unknown_53
+UNKNOWN_ROW__24167579__unknown_54,Fatty Acyls,0.4666666666666667,unknown_54
+UNKNOWN_ROW__24167579__unknown_55,Fatty Acyls,0.4666666666666667,unknown_55
+UNKNOWN_ROW__24167579__unknown_56,Carboxylic acids and derivatives,0.28571428571428575,unknown_56
+UNKNOWN_ROW__24167579__unknown_57,Carboxylic acids and derivatives,0.28571428571428575,unknown_57
+UNKNOWN_ROW__24167579__unknown_58,Carboxylic acids and derivatives,0.3333333333333333,unknown_58
+UNKNOWN_ROW__24167579__unknown_59,Glycerophospholipids,0.25,unknown_59
+UNKNOWN_ROW__24167579__unknown_60,Alkyl halides,0.16666666666666669,unknown_60
+UNKNOWN_ROW__24167579__unknown_61,Prenol lipids,0.3333333333333333,unknown_61
+UNKNOWN_ROW__24167579__unknown_62,Fatty Acyls,1.0,unknown_62
+UNKNOWN_ROW__24167579__unknown_63,Fatty Acyls,1.0,unknown_63
+UNKNOWN_ROW__24167579__unknown_64,Steroids and steroid derivatives,1.0,unknown_64
+UNKNOWN_ROW__24167579__unknown_65,Benzene and substituted derivatives,0.2857142857142857,unknown_65
+UNKNOWN_ROW__24167579__unknown_66,Benzene and substituted derivatives,0.2857142857142857,unknown_66
+UNKNOWN_ROW__24167579__unknown_67,Steroids and steroid derivatives,0.5,unknown_67
+UNKNOWN_ROW__24167579__unknown_68,Steroids and steroid derivatives,0.5,unknown_68
+UNKNOWN_ROW__24167579__unknown_69,Azoles,0.3333333333333333,unknown_69
+UNKNOWN_ROW__24167579__unknown_70,Prenol lipids,0.5,unknown_70
+UNKNOWN_ROW__24167579__unknown_71,Macrolides and analogues,1.0,unknown_71
+UNKNOWN_ROW__24167579__unknown_72,Lignan glycosides,0.5,unknown_72
+UNKNOWN_ROW__24167579__unknown_73,Glycerophospholipids,0.5,unknown_73
+UNKNOWN_ROW__24167579__unknown_74,Glycerophospholipids,0.5,unknown_74
+UNKNOWN_ROW__24167579__unknown_75,Benzene and substituted derivatives,1.0,unknown_75
+UNKNOWN_ROW__24167579__unknown_76,Fatty Acyls,0.5,unknown_76
+UNKNOWN_ROW__24167579__unknown_77,Fatty Acyls,0.5,unknown_77
+UNKNOWN_ROW__24167579__unknown_78,Carboxylic acids and derivatives,1.0,unknown_78
+UNKNOWN_ROW__24167579__unknown_79,Tetrapyrroles and derivatives,1.0,unknown_79
+UNKNOWN_ROW__24167579__unknown_80,Glycerophospholipids,0.39999999999999997,unknown_80
+UNKNOWN_ROW__24167579__unknown_81,Prenol lipids,1.0,unknown_81
+UNKNOWN_ROW__24167579__unknown_82,Carboxylic acids and derivatives,0.248988791671987,unknown_82
+UNKNOWN_ROW__24167579__unknown_83,Carboxylic acids and derivatives,0.2812020691320847,unknown_83
+UNKNOWN_ROW__24167579__unknown_84,Carboxylic acids and derivatives,0.37509105872671217,unknown_84
+UNKNOWN_ROW__24167579__unknown_85,Carboxylic acids and derivatives,0.1673981905104506,unknown_85
+UNKNOWN_ROW__24167579__unknown_86,Carboxylic acids and derivatives,0.1999234579956229,unknown_86
+UNKNOWN_ROW__24167579__unknown_87,Benzene and substituted derivatives,0.19402097201582544,unknown_87
+UNKNOWN_ROW__24167579__unknown_88,Carboxylic acids and derivatives,0.26273359099488686,unknown_88
+UNKNOWN_ROW__24167579__unknown_89,Naphthalenes,0.3821847768701105,unknown_89
+UNKNOWN_ROW__24167579__unknown_90,Carboxylic acids and derivatives,0.5988144906642504,unknown_90
+UNKNOWN_ROW__24167579__unknown_91,Carboxylic acids and derivatives,0.5988144906642504,unknown_91
+UNKNOWN_ROW__24167579__unknown_92,Prenol lipids,0.3890166210119022,unknown_92
+UNKNOWN_ROW__24167579__unknown_93,Carboxylic acids and derivatives,0.4851758636566302,unknown_93
+UNKNOWN_ROW__24167579__unknown_94,Benzene and substituted derivatives,0.2409635162619914,unknown_94
+UNKNOWN_ROW__24167579__unknown_95,Carboxylic acids and derivatives,0.24630277166534878,unknown_95
+UNKNOWN_ROW__24167579__unknown_96,Carboxylic acids and derivatives,0.24630277166534878,unknown_96
+UNKNOWN_ROW__24167579__unknown_97,Fatty Acyls,0.4404584968403971,unknown_97
+UNKNOWN_ROW__24167579__unknown_98,Benzene and substituted derivatives,0.28005280282809614,unknown_98
+UNKNOWN_ROW__24167579__unknown_99,Carboxylic acids and derivatives,0.24801508142626782,unknown_99
+UNKNOWN_ROW__24167579__unknown_100,Carboxylic acids and derivatives,0.24801508142626782,unknown_100
+UNKNOWN_ROW__24167579__unknown_101,Fatty Acyls,0.42793433249922114,unknown_101
+UNKNOWN_ROW__24167579__unknown_102,Fatty Acyls,0.42793433249922114,unknown_102
+UNKNOWN_ROW__24167579__unknown_103,Fatty Acyls,0.44335202703989873,unknown_103
+UNKNOWN_ROW__24167579__unknown_104,Phenol ethers,0.12586244812269154,unknown_104
+UNKNOWN_ROW__24167579__unknown_105,Purine nucleotides,0.9878500434914798,unknown_105
+UNKNOWN_ROW__24167579__unknown_106,Stilbenes,0.3850638811698461,unknown_106
+UNKNOWN_ROW__24167579__unknown_107,Fatty Acyls,0.32537862066221046,unknown_107
+UNKNOWN_ROW__24167579__unknown_108,Fatty Acyls,0.6484144406988553,unknown_108
+UNKNOWN_ROW__24167579__unknown_109,Fatty Acyls,0.6484144406988553,unknown_109
+UNKNOWN_ROW__24167579__unknown_110,Carboxylic acids and derivatives,0.14470273303312411,unknown_110
+UNKNOWN_ROW__24167579__unknown_111,Carboxylic acids and derivatives,0.9783212432142451,unknown_111
+UNKNOWN_ROW__24167579__unknown_112,Carboxylic acids and derivatives,0.9783212432142451,unknown_112
+UNKNOWN_ROW__24167579__unknown_113,Fatty Acyls,0.43281211478967635,unknown_113
+UNKNOWN_ROW__24167579__unknown_114,Glycerophospholipids,0.24354963859242684,unknown_114
+UNKNOWN_ROW__24167579__unknown_115,Carboxylic acids and derivatives,0.24855586403902205,unknown_115
+UNKNOWN_ROW__24167579__unknown_116,Organooxygen compounds,0.32908012359358374,unknown_116
+UNKNOWN_ROW__24167579__unknown_117,Carboxylic acids and derivatives,0.32997440663437605,unknown_117
+UNKNOWN_ROW__24167579__unknown_118,Fatty Acyls,0.3883527989795524,unknown_118
+UNKNOWN_ROW__24167579__unknown_119,Fatty Acyls,0.3883527989795524,unknown_119
+UNKNOWN_ROW__24167579__unknown_120,Prenol lipids,0.47769660936957853,unknown_120
+UNKNOWN_ROW__24167579__unknown_121,Prenol lipids,0.47769660936957853,unknown_121
+UNKNOWN_ROW__24167579__unknown_122,Prenol lipids,0.47769660936957853,unknown_122
+UNKNOWN_ROW__24167579__unknown_123,Steroids and steroid derivatives,0.36208093688786397,unknown_123
+UNKNOWN_ROW__24167579__unknown_124,Steroids and steroid derivatives,0.36208093688786397,unknown_124
+UNKNOWN_ROW__24167579__unknown_125,Benzene and substituted derivatives,0.19610241800033335,unknown_125
+UNKNOWN_ROW__24167579__unknown_126,Benzene and substituted derivatives,0.19610241800033335,unknown_126
+UNKNOWN_ROW__24167579__unknown_127,Steroids and steroid derivatives,0.48278394975492683,unknown_127
+UNKNOWN_ROW__24167579__unknown_128,Steroids and steroid derivatives,0.3189242737233184,unknown_128
+UNKNOWN_ROW__24167579__unknown_129,Steroids and steroid derivatives,0.3189242737233184,unknown_129
+UNKNOWN_ROW__24167579__unknown_130,Fatty Acyls,0.32944820331697744,unknown_130
+UNKNOWN_ROW__24167579__unknown_131,Carboxylic acids and derivatives,0.3299075729756195,unknown_131
+UNKNOWN_ROW__24167579__unknown_132,Carboxylic acids and derivatives,0.3299075729756195,unknown_132
+UNKNOWN_ROW__24167579__unknown_133,Carboxylic acids and derivatives,0.19987323898260653,unknown_133
+UNKNOWN_ROW__24167579__unknown_134,Organooxygen compounds,0.16281588456705576,unknown_134
+UNKNOWN_ROW__24167579__unknown_135,Steroids and steroid derivatives,0.2702718136554205,unknown_135
+UNKNOWN_ROW__24167579__unknown_136,Steroids and steroid derivatives,0.2702718136554205,unknown_136
+UNKNOWN_ROW__24167579__unknown_137,Steroids and steroid derivatives,0.5831955095725898,unknown_137
+UNKNOWN_ROW__24167579__unknown_138,Carboxylic acids and derivatives,0.248988791671987,unknown_138
+UNKNOWN_ROW__24167579__unknown_139,Carboxylic acids and derivatives,0.33112091017553114,unknown_139
+UNKNOWN_ROW__24167579__unknown_140,Prenol lipids,0.48719108405642175,unknown_140
+UNKNOWN_ROW__24167579__unknown_141,Prenol lipids,0.48719108405642175,unknown_141
+UNKNOWN_ROW__24167579__unknown_142,Prenol lipids,0.7363081071496611,unknown_142
+UNKNOWN_ROW__24167579__unknown_143,Prenol lipids,0.9881338481636176,unknown_143
+UNKNOWN_ROW__24167579__unknown_144,Prenol lipids,0.3857819217484469,unknown_144
+UNKNOWN_ROW__24167579__unknown_145,Prenol lipids,0.3857819217484469,unknown_145
+UNKNOWN_ROW__24167579__unknown_146,Steroids and steroid derivatives,0.9652967541389017,unknown_146
+UNKNOWN_ROW__24167579__unknown_147,Steroids and steroid derivatives,0.4935268000761273,unknown_147
+UNKNOWN_ROW__24167579__unknown_148,Fatty Acyls,0.19686408552028414,unknown_148
+UNKNOWN_ROW__24167579__unknown_149,Fatty Acyls,0.19686408552028414,unknown_149
+UNKNOWN_ROW__24167579__unknown_150,Glycerophospholipids,0.48885738458058126,unknown_150
+UNKNOWN_ROW__24167579__unknown_151,Glycerophospholipids,0.48885738458058126,unknown_151
+UNKNOWN_ROW__24167579__unknown_152,Steroids and steroid derivatives,0.48278394975492683,unknown_152
+UNKNOWN_ROW__24167579__unknown_153,Steroids and steroid derivatives,0.48278394975492683,unknown_153
+UNKNOWN_ROW__24167579__unknown_154,Steroids and steroid derivatives,0.48278394975492683,unknown_154
+UNKNOWN_ROW__24167579__unknown_155,Steroids and steroid derivatives,0.7075201877834538,unknown_155
+UNKNOWN_ROW__24167579__unknown_156,Steroids and steroid derivatives,0.7075201877834538,unknown_156
+UNKNOWN_ROW__24167579__unknown_157,Steroids and steroid derivatives,0.7075201877834538,unknown_157
+UNKNOWN_ROW__24167579__unknown_158,Prenol lipids,0.48563840314128687,unknown_158
+UNKNOWN_ROW__24167579__unknown_159,Steroids and steroid derivatives,0.19012630137997927,unknown_159
+UNKNOWN_ROW__24167579__unknown_160,Steroids and steroid derivatives,0.19012630137997927,unknown_160
+UNKNOWN_ROW__24167579__unknown_161,Steroids and steroid derivatives,0.19012630137997927,unknown_161
+UNKNOWN_ROW__24167579__unknown_162,Carboxylic acids and derivatives,0.14432599868334353,unknown_162
+UNKNOWN_ROW__24167579__unknown_163,Fatty Acyls,0.3237366492542875,unknown_163
+UNKNOWN_ROW__24167579__unknown_164,Fatty Acyls,0.3237366492542875,unknown_164
+UNKNOWN_ROW__24167579__unknown_165,Fatty Acyls,0.3237366492542875,unknown_165
+UNKNOWN_ROW__24167579__unknown_166,Benzene and substituted derivatives,0.27432787768171984,unknown_166
+UNKNOWN_ROW__24167579__unknown_167,Glycerophospholipids,0.6564839585457798,unknown_167
+UNKNOWN_ROW__24167579__unknown_168,Carboxylic acids and derivatives,0.24855586403902205,unknown_168
+UNKNOWN_ROW__24167579__unknown_169,Fatty Acyls,0.4849074124359822,unknown_169
+UNKNOWN_ROW__24167579__unknown_170,Fatty Acyls,0.4849074124359822,unknown_170
+UNKNOWN_ROW__24167579__unknown_171,Fatty Acyls,0.4849074124359822,unknown_171
+UNKNOWN_ROW__24167579__unknown_172,Fatty Acyls,0.32944820331697744,unknown_172
+UNKNOWN_ROW__24167579__unknown_173,Carboxylic acids and derivatives,0.1964728308915367,unknown_173
+UNKNOWN_ROW__24167579__unknown_174,Carboxylic acids and derivatives,0.1964728308915367,unknown_174
+UNKNOWN_ROW__24167579__unknown_175,Lignan glycosides,0.4865102527834821,unknown_175
+UNKNOWN_ROW__24167579__unknown_176,Glycerophospholipids,0.7365259105540995,unknown_176
+UNKNOWN_ROW__24167579__unknown_177,Prenol lipids,0.9737013368399037,unknown_177
+UNKNOWN_ROW__24167579__unknown_178,Prenol lipids,0.9737013368399037,unknown_178
+UNKNOWN_ROW__24167579__unknown_179,Glycerophospholipids,0.6564839585457798,unknown_179
+UNKNOWN_ROW__24167579__unknown_180,Fatty Acyls,0.3218190259551039,unknown_180
+UNKNOWN_ROW__24167579__unknown_181,Fatty Acyls,0.3218190259551039,unknown_181
+UNKNOWN_ROW__24167579__unknown_182,Fatty Acyls,0.3218190259551039,unknown_182
+UNKNOWN_ROW__24167579__unknown_183,Fatty Acyls,0.3218190259551039,unknown_183
+UNKNOWN_ROW__24167579__unknown_184,Fatty Acyls,0.6391825006198236,unknown_184
+UNKNOWN_ROW__24167579__unknown_185,Fatty Acyls,0.6391825006198236,unknown_185
+UNKNOWN_ROW__24167579__unknown_186,Fatty Acyls,0.6391825006198236,unknown_186
+UNKNOWN_ROW__24167579__unknown_187,Macrolides and analogues,0.9001627017637769,unknown_187
+UNKNOWN_ROW__24167579__unknown_188,Macrolides and analogues,0.9001627017637769,unknown_188
+UNKNOWN_ROW__24167579__unknown_189,Macrolides and analogues,0.9001627017637769,unknown_189
+UNKNOWN_ROW__24167579__unknown_190,Macrolides and analogues,0.9001627017637769,unknown_190
+UNKNOWN_ROW__24167579__unknown_191,Macrolides and analogues,0.9001627017637769,unknown_191
+UNKNOWN_ROW__24167579__unknown_192,Fatty Acyls,0.48490741243598223,unknown_192
+UNKNOWN_ROW__24167579__unknown_193,Fatty Acyls,0.48490741243598223,unknown_193
+UNKNOWN_ROW__24167579__unknown_194,Fatty Acyls,0.48490741243598223,unknown_194
+UNKNOWN_ROW__24167579__unknown_195,Organooxygen compounds,0.9886815834410266,unknown_195
+UNKNOWN_ROW__24167579__unknown_196,Prenol lipids,0.4935079661324161,unknown_196
+UNKNOWN_ROW__24167579__unknown_197,Steroids and steroid derivatives,0.9881506149216001,unknown_197
+UNKNOWN_ROW__35829770__unknown_198_carbon_number_5_plasma_id_53,Carboxylic acids and derivatives,0.23076923076923078,Unknown_198 (carbon number 5); PlaSMA ID-53
+UNKNOWN_ROW__35829770__unknown_199_carbon_number_12_plasma_id_342,Carboxylic acids and derivatives,0.29411764705882354,Unknown_199 (carbon number 12); PlaSMA ID-342
+UNKNOWN_ROW__35829770__unknown_200_carbon_number_8_plasma_id_119,Carboxylic acids and derivatives,0.375,Unknown_200 (carbon number 8); PlaSMA ID-119
+UNKNOWN_ROW__35829770__unknown_201_carbon_number_8_plasma_id_181,Carboxylic acids and derivatives,0.5,Unknown_201 (carbon number 8); PlaSMA ID-181
+UNKNOWN_ROW__35829770__unknown_202_carbon_number_5_plasma_id_53,Carboxylic acids and derivatives,0.23076923076923078,Unknown_202 (carbon number 5); PlaSMA ID-53
+UNKNOWN_ROW__35829770__unknown_203_carbon_number_9_plasma_id_161,Carboxylic acids and derivatives,0.75,Unknown_203 (carbon number 9); PlaSMA ID-161
+UNKNOWN_ROW__35829770__unknown_204,Organooxygen compounds,0.5,unknown_204
+UNKNOWN_ROW__35829770__unknown_205,Diazanaphthalenes,1.0,unknown_205
+UNKNOWN_ROW__35829770__unknown_206,Carboxylic acids and derivatives,0.25,unknown_206
+UNKNOWN_ROW__35829770__unknown_207,Steroids and steroid derivatives,0.36363636363636365,unknown_207
+UNKNOWN_ROW__35829770__unknown_208,"Allyl-type 1,3-dipolar organic compounds",0.25,unknown_208
+UNKNOWN_ROW__35829770__unknown_209,Organooxygen compounds,0.5,unknown_209
+UNKNOWN_ROW__35829770__unknown_210,Diazanaphthalenes,1.0,unknown_210
+UNKNOWN_ROW__35829770__unknown_211,Phenols,0.15384615384615383,unknown_211
+UNKNOWN_ROW__35829770__unknown_212,Organonitrogen compounds,0.25,unknown_212
+UNKNOWN_ROW__35829770__unknown_213,Carboxylic acids and derivatives,0.22222222222222224,unknown_213
+UNKNOWN_ROW__35829770__unknown_214,Indoles and derivatives,0.30000000000000004,unknown_214
+UNKNOWN_ROW__35829770__unknown_215,Fatty Acyls,0.33333333333333337,unknown_215
+UNKNOWN_ROW__35829770__unknown_216,Benzene and substituted derivatives,0.25,unknown_216
+UNKNOWN_ROW__35829770__unknown_217,Carboxylic acids and derivatives,0.25,unknown_217
+UNKNOWN_ROW__35829770__unknown_218,Carboxylic acids and derivatives,0.125,unknown_218
+UNKNOWN_ROW__35829770__unknown_219,Carboxylic acids and derivatives,0.22222222222222224,unknown_219
+UNKNOWN_ROW__35829770__unknown_220,Fatty Acyls,0.3333333333333333,unknown_220
+UNKNOWN_ROW__35829770__unknown_221,Benzene and substituted derivatives,0.25,unknown_221
+UNKNOWN_ROW__35829770__unknown_222,Phenols,0.21428571428571427,unknown_222
+UNKNOWN_ROW__35829770__unknown_223,Organooxygen compounds,0.5,unknown_223
+UNKNOWN_ROW__35829770__unknown_224,Diazanaphthalenes,1.0,unknown_224
+UNKNOWN_ROW__35829770__unknown_225,Organonitrogen compounds,0.25,unknown_225
+UNKNOWN_ROW__35829770__unknown_226,,,unknown_226
+UNKNOWN_ROW__35829770__unknown_227,Carboxylic acids and derivatives,0.25,unknown_227
+UNKNOWN_ROW__35829770__unknown_228,Organooxygen compounds,0.5,unknown_228
+UNKNOWN_ROW__35829770__unknown_229,Carboxylic acids and derivatives,0.3333333333333333,unknown_229
+UNKNOWN_ROW__35829770__unknown_230,Carboxylic acids and derivatives,1.0,unknown_230
+UNKNOWN_ROW__35829770__unknown_231,Benzene and substituted derivatives,0.3333333333333333,unknown_231
+UNKNOWN_ROW__35829770__unknown_232,,,unknown_232
+UNKNOWN_ROW__35829770__unknown_233,Benzene and substituted derivatives,0.33333333333333337,unknown_233
+UNKNOWN_ROW__35829770__unknown_234,Carboxylic acids and derivatives,0.375,unknown_234
+UNKNOWN_ROW__35829770__unknown_235,Carboxylic acids and derivatives,0.26666666666666666,unknown_235
+UNKNOWN_ROW__35829770__unknown_236,Carboxylic acids and derivatives,0.5833333333333334,unknown_236
+UNKNOWN_ROW__35829770__unknown_237,Carboxylic acids and derivatives,0.3333333333333333,unknown_237
+UNKNOWN_ROW__35829770__unknown_238,Organooxygen compounds,0.5,unknown_238
+UNKNOWN_ROW__35829770__unknown_239,Benzene and substituted derivatives,0.33333333333333337,unknown_239
+UNKNOWN_ROW__35829770__unknown_240,Organonitrogen compounds,1.0,unknown_240
+UNKNOWN_ROW__35829770__unknown_241,Benzene and substituted derivatives,0.125,unknown_241
+UNKNOWN_ROW__35829770__unknown_242,Carboxylic acids and derivatives,0.625,unknown_242
+UNKNOWN_ROW__35829770__unknown_243,Phenol ethers,0.39999999999999997,unknown_243
+UNKNOWN_ROW__35829770__unknown_244,Benzodioxoles,0.25,unknown_244
+UNKNOWN_ROW__35829770__unknown_245,Benzene and substituted derivatives,0.25,unknown_245
+UNKNOWN_ROW__35829770__unknown_246,Benzene and substituted derivatives,0.23076923076923078,unknown_246
+UNKNOWN_ROW__35829770__unknown_247,Benzene and substituted derivatives,0.33333333333333337,unknown_247
+UNKNOWN_ROW__35829770__unknown_248,Benzene and substituted derivatives,0.2857142857142857,unknown_248
+UNKNOWN_ROW__35829770__unknown_249,Fatty Acyls,0.2,unknown_249
+UNKNOWN_ROW__35829770__unknown_250,Carboxylic acids and derivatives,0.2727272727272727,unknown_250
+UNKNOWN_ROW__35829770__unknown_251,Organic carbonic acids and derivatives,1.0,unknown_251
+UNKNOWN_ROW__35829770__unknown_252,Naphthalenes,0.4,unknown_252
+UNKNOWN_ROW__35829770__unknown_253,Benzene and substituted derivatives,0.3333333333333333,unknown_253
+UNKNOWN_ROW__35829770__unknown_254,Fatty Acyls,0.30769230769230765,unknown_254
+UNKNOWN_ROW__35829770__unknown_255,Carboxylic acids and derivatives,0.39999999999999997,unknown_255
+UNKNOWN_ROW__35829770__unknown_256,Carboxylic acids and derivatives,0.6666666666666666,unknown_256
+UNKNOWN_ROW__35829770__unknown_257,Organooxygen compounds,0.2857142857142857,unknown_257
+UNKNOWN_ROW__35829770__unknown_258,Benzene and substituted derivatives,0.3333333333333333,unknown_258
+UNKNOWN_ROW__35829770__unknown_259,Benzene and substituted derivatives,0.125,unknown_259
+UNKNOWN_ROW__35829770__unknown_260,Benzene and substituted derivatives,0.33333333333333337,unknown_260
+UNKNOWN_ROW__35829770__unknown_261,Carboxylic acids and derivatives,0.2727272727272727,unknown_261
+UNKNOWN_ROW__35829770__unknown_262,Carboxylic acids and derivatives,0.2857142857142857,unknown_262
+UNKNOWN_ROW__35829770__unknown_263,Benzene and substituted derivatives,0.3333333333333333,unknown_263
+UNKNOWN_ROW__35829770__unknown_264,Carboxylic acids and derivatives,0.2727272727272727,unknown_264
+UNKNOWN_ROW__35829770__unknown_265,Alkyl halides,0.16666666666666669,unknown_265
+UNKNOWN_ROW__35829770__unknown_266,Benzene and substituted derivatives,0.3333333333333333,unknown_266
+UNKNOWN_ROW__35829770__unknown_267,Benzofurans,0.25,unknown_267
+UNKNOWN_ROW__35829770__unknown_268,Phenols,0.15384615384615383,unknown_268
+UNKNOWN_ROW__35829770__unknown_269,Carboxylic acids and derivatives,0.5,unknown_269
+UNKNOWN_ROW__35829770__unknown_270,Benzodioxoles,0.125,unknown_270
+UNKNOWN_ROW__35829770__unknown_271,Carboxylic acids and derivatives,0.33333333333333337,unknown_271
+UNKNOWN_ROW__35829770__unknown_272,Benzene and substituted derivatives,0.25,unknown_272
+UNKNOWN_ROW__35829770__unknown_273,Benzene and substituted derivatives,0.42857142857142855,unknown_273
+UNKNOWN_ROW__35829770__unknown_274,Benzene and substituted derivatives,0.125,unknown_274
+UNKNOWN_ROW__35829770__unknown_275,Carboxylic acids and derivatives,0.6666666666666666,unknown_275
+UNKNOWN_ROW__35829770__unknown_276,Steroids and steroid derivatives,0.3333333333333333,unknown_276
+UNKNOWN_ROW__35829770__unknown_277,Azoles,1.0,unknown_277
+UNKNOWN_ROW__35829770__unknown_278,Carboxylic acids and derivatives,0.5,unknown_278
+UNKNOWN_ROW__35829770__unknown_279,Carboxylic acids and derivatives,0.625,unknown_279
+UNKNOWN_ROW__35829770__unknown_280,Carboxylic acids and derivatives,0.5833333333333334,unknown_280
+UNKNOWN_ROW__35829770__unknown_281,Fatty Acyls,0.25,unknown_281
+UNKNOWN_ROW__35829770__unknown_282,Azoles,1.0,unknown_282
+UNKNOWN_ROW__35829770__unknown_283,Benzene and substituted derivatives,0.25,unknown_283
+UNKNOWN_ROW__35829770__unknown_284,Azoles,1.0,unknown_284
+UNKNOWN_ROW__35829770__unknown_285,Glycerophospholipids,0.25,unknown_285
+UNKNOWN_ROW__35829770__unknown_286,Carboximidic acids and derivatives,0.25,unknown_286
+UNKNOWN_ROW__35829770__unknown_287,Benzene and substituted derivatives,0.2,unknown_287
+UNKNOWN_ROW__35829770__unknown_288,Carboxylic acids and derivatives,0.7,unknown_288
+UNKNOWN_ROW__35829770__unknown_289,Benzene and substituted derivatives,0.23076923076923078,unknown_289
+UNKNOWN_ROW__35829770__unknown_290,Benzene and substituted derivatives,0.33333333333333337,unknown_290
+UNKNOWN_ROW__35829770__unknown_291,Stilbenes,0.4,unknown_291
+UNKNOWN_ROW__35829770__unknown_292,Phenols,0.33333333333333337,unknown_292
+UNKNOWN_ROW__35829770__unknown_293,Carboxylic acids and derivatives,1.0,unknown_293
+UNKNOWN_ROW__35829770__unknown_294,Carboxylic acids and derivatives,0.4444444444444445,unknown_294
+UNKNOWN_ROW__35829770__unknown_295,Benzene and substituted derivatives,0.19999999999999998,unknown_295
+UNKNOWN_ROW__35829770__unknown_296,Benzene and substituted derivatives,0.23076923076923078,unknown_296
+UNKNOWN_ROW__35829770__unknown_297,Carboxylic acids and derivatives,0.5,unknown_297
+UNKNOWN_ROW__35829770__unknown_298,Benzene and substituted derivatives,0.2857142857142857,unknown_298
+UNKNOWN_ROW__35829770__unknown_299,Fatty Acyls,0.2,unknown_299
+UNKNOWN_ROW__35829770__unknown_300,Azoles,1.0,unknown_300
+UNKNOWN_ROW__35829770__unknown_301,Organooxygen compounds,0.5,unknown_301
+UNKNOWN_ROW__35829770__unknown_302,Carboxylic acids and derivatives,0.3333333333333333,unknown_302
+UNKNOWN_ROW__35829770__unknown_303,Carboxylic acids and derivatives,0.26666666666666666,unknown_303
+UNKNOWN_ROW__35829770__unknown_304,Benzene and substituted derivatives,0.42857142857142855,unknown_304
+UNKNOWN_ROW__35829770__unknown_305,Benzene and substituted derivatives,0.25,unknown_305
+UNKNOWN_ROW__35829770__unknown_306,Fatty Acyls,0.2,unknown_306
+UNKNOWN_ROW__35829770__unknown_307,Benzene and substituted derivatives,0.3333333333333333,unknown_307
+UNKNOWN_ROW__35829770__unknown_308,Carboxylic acids and derivatives,0.2727272727272727,unknown_308
+UNKNOWN_ROW__35829770__unknown_309,Carboxylic acids and derivatives,0.25,unknown_309
+UNKNOWN_ROW__35829770__unknown_310,Carboxylic acids and derivatives,0.375,unknown_310
+UNKNOWN_ROW__35829770__unknown_311,Carboxylic acids and derivatives,0.2727272727272727,unknown_311
+UNKNOWN_ROW__35829770__unknown_312,Carboxylic acids and derivatives,0.4285714285714286,unknown_312
+UNKNOWN_ROW__35829770__unknown_313,Organic carbonic acids and derivatives,1.0,unknown_313
+UNKNOWN_ROW__35829770__unknown_314,Purine nucleosides,0.5,unknown_314
+UNKNOWN_ROW__35829770__unknown_315,Carboxylic acids and derivatives,0.42857142857142855,unknown_315
+UNKNOWN_ROW__35829770__unknown_316,Carboxylic acids and derivatives,0.25,unknown_316
+UNKNOWN_ROW__35829770__unknown_317,Benzene and substituted derivatives,0.25,unknown_317
+UNKNOWN_ROW__35829770__unknown_318,Naphthalenes,0.4,unknown_318
+UNKNOWN_ROW__35829770__unknown_319,Fatty Acyls,0.30769230769230765,unknown_319
+UNKNOWN_ROW__35829770__unknown_320,Azolidines,0.5,unknown_320
+UNKNOWN_ROW__35829770__unknown_321,Benzene and substituted derivatives,0.28571428571428575,unknown_321
+UNKNOWN_ROW__35829770__unknown_322,Benzene and substituted derivatives,0.375,unknown_322
+UNKNOWN_ROW__35829770__unknown_323,Carboxylic acids and derivatives,0.29411764705882354,unknown_323
+UNKNOWN_ROW__35829770__unknown_324,Carboxylic acids and derivatives,0.6666666666666666,unknown_324
+UNKNOWN_ROW__35829770__unknown_325,Benzene and substituted derivatives,0.5,unknown_325
+UNKNOWN_ROW__35829770__unknown_326,Organooxygen compounds,0.2857142857142857,unknown_326
+UNKNOWN_ROW__35829770__unknown_327,Carboxylic acids and derivatives,0.3333333333333333,unknown_327
+UNKNOWN_ROW__35829770__unknown_328,Imidazopyrimidines,0.22222222222222224,unknown_328
+UNKNOWN_ROW__35829770__unknown_329,Alkyl halides,0.16666666666666669,unknown_329
+UNKNOWN_ROW__35829770__unknown_330,Carboxylic acids and derivatives,0.7272727272727273,unknown_330
+UNKNOWN_ROW__35829770__unknown_331,Carboxylic acids and derivatives,0.75,unknown_331
+UNKNOWN_ROW__35829770__unknown_332,Benzene and substituted derivatives,0.25,unknown_332
+UNKNOWN_ROW__35829770__unknown_333,Purine nucleosides,0.5,unknown_333
+UNKNOWN_ROW__35829770__unknown_334,Carboxylic acids and derivatives,0.7272727272727273,unknown_334
+UNKNOWN_ROW__35829770__unknown_335,Benzene and substituted derivatives,0.3333333333333333,unknown_335
+UNKNOWN_ROW__35829770__unknown_336,Carboxylic acids and derivatives,1.0,unknown_336
+UNKNOWN_ROW__35829770__unknown_337,Carboxylic acids and derivatives,0.26666666666666666,unknown_337
+UNKNOWN_ROW__35829770__unknown_338,Fatty Acyls,0.25,unknown_338
+UNKNOWN_ROW__35829770__unknown_339,Naphthalenes,0.4,unknown_339
+UNKNOWN_ROW__35829770__unknown_340,Benzene and substituted derivatives,0.3333333333333333,unknown_340
+UNKNOWN_ROW__35829770__unknown_341,Purine nucleosides,0.6666666666666667,unknown_341
+UNKNOWN_ROW__35829770__unknown_342,Carboxylic acids and derivatives,0.39999999999999997,unknown_342
+UNKNOWN_ROW__35829770__unknown_343,Carboxylic acids and derivatives,0.5,unknown_343
+UNKNOWN_ROW__35829770__unknown_344,Benzene and substituted derivatives,0.19999999999999998,unknown_344
+UNKNOWN_ROW__35829770__unknown_345,Carboxylic acids and derivatives,0.25,unknown_345
+UNKNOWN_ROW__35829770__unknown_346,Fatty Acyls,0.4444444444444445,unknown_346
+UNKNOWN_ROW__35829770__unknown_347,Benzene and substituted derivatives,0.25,unknown_347
+UNKNOWN_ROW__35829770__unknown_348,Organooxygen compounds,0.2857142857142857,unknown_348
+UNKNOWN_ROW__35829770__unknown_349,Carboxylic acids and derivatives,0.5,unknown_349
+UNKNOWN_ROW__35829770__unknown_350,Benzene and substituted derivatives,0.125,unknown_350
+UNKNOWN_ROW__35829770__unknown_351,Benzodioxoles,0.25,unknown_351
+UNKNOWN_ROW__35829770__unknown_352,Carboxylic acids and derivatives,0.29411764705882354,unknown_352
+UNKNOWN_ROW__35829770__unknown_353,Carboxylic acids and derivatives,0.6666666666666666,unknown_353
+UNKNOWN_ROW__35829770__unknown_354,Benzene and substituted derivatives,0.25,unknown_354
+UNKNOWN_ROW__35829770__unknown_355,Carboxylic acids and derivatives,0.6666666666666667,unknown_355
+UNKNOWN_ROW__35829770__unknown_356,Purine nucleosides,0.6666666666666667,unknown_356
+UNKNOWN_ROW__35829770__unknown_357,Carboxylic acids and derivatives,1.0,unknown_357
+UNKNOWN_ROW__35829770__unknown_358,Carboxylic acids and derivatives,0.2727272727272727,unknown_358
+UNKNOWN_ROW__35829770__unknown_359,Fatty Acyls,0.4444444444444444,unknown_359
+UNKNOWN_ROW__35829770__unknown_360,Carboxylic acids and derivatives,0.75,unknown_360
+UNKNOWN_ROW__35829770__unknown_361,Carboxylic acids and derivatives,0.4,unknown_361
+UNKNOWN_ROW__35829770__unknown_362,Benzothiazoles,0.33333333333333337,unknown_362
+UNKNOWN_ROW__35829770__unknown_363,Benzene and substituted derivatives,0.375,unknown_363
+UNKNOWN_ROW__35829770__unknown_364,Benzene and substituted derivatives,0.33333333333333337,unknown_364
+UNKNOWN_ROW__35829770__unknown_365,Carboxylic acids and derivatives,0.6666666666666666,unknown_365
+UNKNOWN_ROW__35829770__unknown_366,Fatty Acyls,0.2,unknown_366
+UNKNOWN_ROW__35829770__unknown_367,Benzimidazoles,0.16666666666666666,unknown_367
+UNKNOWN_ROW__35829770__unknown_368,Benzene and substituted derivatives,0.2857142857142857,unknown_368
+UNKNOWN_ROW__35829770__unknown_369,Carboxylic acids and derivatives,0.25,unknown_369
+UNKNOWN_ROW__35829770__unknown_370,Prenol lipids,0.25,unknown_370
+UNKNOWN_ROW__35829770__unknown_371,Carboxylic acids and derivatives,0.375,unknown_371
+UNKNOWN_ROW__35829770__unknown_372,Carboxylic acids and derivatives,0.7272727272727273,unknown_372
+UNKNOWN_ROW__35829770__unknown_373,Carboxylic acids and derivatives,0.5,unknown_373
+UNKNOWN_ROW__35829770__unknown_374,Carboxylic acids and derivatives,0.5,unknown_374
+UNKNOWN_ROW__35829770__unknown_375,Benzene and substituted derivatives,0.125,unknown_375
+UNKNOWN_ROW__35829770__unknown_376,Carboxylic acids and derivatives,0.2727272727272727,unknown_376
+UNKNOWN_ROW__35829770__unknown_377,Carboxylic acids and derivatives,0.5,unknown_377
+UNKNOWN_ROW__35829770__unknown_378,Benzene and substituted derivatives,0.5,unknown_378
+UNKNOWN_ROW__35829770__unknown_379,Benzene and substituted derivatives,0.5,unknown_379
+UNKNOWN_ROW__35829770__unknown_380,Fatty Acyls,0.2857142857142857,unknown_380
+UNKNOWN_ROW__35829770__unknown_381,Carboxylic acids and derivatives,0.5,unknown_381
+UNKNOWN_ROW__35829770__unknown_382,Carboxylic acids and derivatives,0.375,unknown_382
+UNKNOWN_ROW__35829770__unknown_383,Imidazopyrimidines,0.22222222222222224,unknown_383
+UNKNOWN_ROW__35829770__unknown_384,Carboxylic acids and derivatives,0.5833333333333334,unknown_384
+UNKNOWN_ROW__35829770__unknown_385,Carboxylic acids and derivatives,0.25,unknown_385
+UNKNOWN_ROW__35829770__unknown_386,Carboxylic acids and derivatives,0.2857142857142857,unknown_386
+UNKNOWN_ROW__35829770__unknown_387,Carboxylic acids and derivatives,0.33333333333333337,unknown_387
+UNKNOWN_ROW__35829770__unknown_388,Benzene and substituted derivatives,0.25,unknown_388
+UNKNOWN_ROW__35829770__unknown_389,Carboxylic acids and derivatives,0.33333333333333337,unknown_389
+UNKNOWN_ROW__35829770__unknown_390,Fatty Acyls,0.4444444444444445,unknown_390
+UNKNOWN_ROW__35829770__unknown_391,Carboxylic acids and derivatives,0.5,unknown_391
+UNKNOWN_ROW__35829770__unknown_392,Carboxylic acids and derivatives,0.5,unknown_392
+UNKNOWN_ROW__35829770__unknown_393,Carboxylic acids and derivatives,0.2857142857142857,unknown_393
+UNKNOWN_ROW__35829770__unknown_394,Carboxylic acids and derivatives,0.23076923076923078,unknown_394
+UNKNOWN_ROW__35829770__unknown_395,Carboxylic acids and derivatives,0.29411764705882354,unknown_395
+UNKNOWN_ROW__35829770__unknown_396,Organooxygen compounds,0.2857142857142857,unknown_396
+UNKNOWN_ROW__35829770__unknown_397,Carboxylic acids and derivatives,0.5,unknown_397
+UNKNOWN_ROW__35829770__unknown_398,Benzene and substituted derivatives,0.125,unknown_398
+UNKNOWN_ROW__35829770__unknown_399,Phenol ethers,0.13333333333333333,unknown_399
+UNKNOWN_ROW__35829770__unknown_400,Carboxylic acids and derivatives,0.23076923076923078,unknown_400
+UNKNOWN_ROW__35829770__unknown_401,Carboximidic acids and derivatives,0.25,unknown_401
+UNKNOWN_ROW__35829770__unknown_402,Carboxylic acids and derivatives,0.6666666666666666,unknown_402
+UNKNOWN_ROW__35829770__unknown_403,Benzene and substituted derivatives,0.25,unknown_403
+UNKNOWN_ROW__35829770__unknown_404,Purine nucleosides,0.6666666666666667,unknown_404
+UNKNOWN_ROW__35829770__unknown_405,Imidazopyrimidines,0.22222222222222224,unknown_405
+UNKNOWN_ROW__35829770__unknown_406,Organonitrogen compounds,1.0,unknown_406
+UNKNOWN_ROW__35829770__unknown_407,Benzene and substituted derivatives,0.25,unknown_407
+UNKNOWN_ROW__35829770__unknown_408,Carboxylic acids and derivatives,0.2727272727272727,unknown_408
+UNKNOWN_ROW__35829770__unknown_409,Carboxylic acids and derivatives,0.375,unknown_409
+UNKNOWN_ROW__35829770__unknown_410,Carboxylic acids and derivatives,0.5,unknown_410
+UNKNOWN_ROW__35829770__unknown_411,Carboximidic acids and derivatives,0.25,unknown_411
+UNKNOWN_ROW__35829770__unknown_412,Benzene and substituted derivatives,0.5,unknown_412
+UNKNOWN_ROW__35829770__unknown_413,Purine nucleosides,0.5,unknown_413
+UNKNOWN_ROW__35829770__unknown_414,Benzothiazoles,0.33333333333333337,unknown_414
+UNKNOWN_ROW__35829770__unknown_415,Carboxylic acids and derivatives,0.5,unknown_415
+UNKNOWN_ROW__35829770__unknown_416,Carboxylic acids and derivatives,0.2857142857142857,unknown_416
+UNKNOWN_ROW__35829770__unknown_417,Fatty Acyls,0.75,unknown_417
+UNKNOWN_ROW__35829770__unknown_418,Fatty Acyls,0.39999999999999997,unknown_418
+UNKNOWN_ROW__35829770__unknown_419,Fatty Acyls,0.3333333333333333,unknown_419
+UNKNOWN_ROW__35829770__unknown_420,Fatty Acyls,0.6,unknown_420
+UNKNOWN_ROW__35829770__unknown_421,Fatty Acyls,0.2,unknown_421
+UNKNOWN_ROW__35829770__unknown_422,Fatty Acyls,0.3333333333333333,unknown_422
+UNKNOWN_ROW__35829770__unknown_423,Carboxylic acids and derivatives,0.14285714285714288,unknown_423
+UNKNOWN_ROW__35829770__unknown_424,Prenol lipids,0.25,unknown_424
+UNKNOWN_ROW__35829770__unknown_425,Carboxylic acids and derivatives,0.5,unknown_425
+UNKNOWN_ROW__35829770__unknown_426,Carboxylic acids and derivatives,0.5,unknown_426
+UNKNOWN_ROW__35829770__unknown_427,Benzene and substituted derivatives,0.19999999999999998,unknown_427
+UNKNOWN_ROW__35829770__unknown_428,Benzene and substituted derivatives,0.5,unknown_428
+UNKNOWN_ROW__35829770__unknown_429,Furans,0.33333333333333337,unknown_429
+UNKNOWN_ROW__35829770__unknown_430,Indoles and derivatives,0.30000000000000004,unknown_430
+UNKNOWN_ROW__35829770__unknown_431,Carboxylic acids and derivatives,0.25,unknown_431
+UNKNOWN_ROW__35829770__unknown_432,Carboxylic acids and derivatives,0.5714285714285714,unknown_432
+UNKNOWN_ROW__35829770__unknown_433,Carboxylic acids and derivatives,0.5,unknown_433
+UNKNOWN_ROW__35829770__unknown_434,Benzene and substituted derivatives,0.25,unknown_434
+UNKNOWN_ROW__35829770__unknown_435,,,unknown_435
+UNKNOWN_ROW__35829770__unknown_436,Organonitrogen compounds,0.25,unknown_436
+UNKNOWN_ROW__35829770__unknown_437,Diazines,0.5,unknown_437
+UNKNOWN_ROW__35829770__unknown_438,Benzene and substituted derivatives,0.2,unknown_438
+UNKNOWN_ROW__35829770__unknown_439,Carboxylic acids and derivatives,0.16666666666666669,unknown_439
+UNKNOWN_ROW__35829770__unknown_440,Carboxylic acids and derivatives,0.4,unknown_440
+UNKNOWN_ROW__35829770__unknown_441,Benzene and substituted derivatives,0.2222222222222222,unknown_441
+UNKNOWN_ROW__35829770__unknown_442,Purine nucleosides,0.5,unknown_442
+UNKNOWN_ROW__35829770__unknown_443,Carboxylic acids and derivatives,0.19999999999999998,unknown_443
+UNKNOWN_ROW__35829770__unknown_444,Carboxylic acids and derivatives,0.4444444444444445,unknown_444
+UNKNOWN_ROW__35829770__unknown_445,Benzene and substituted derivatives,0.33333333333333337,unknown_445
+UNKNOWN_ROW__35829770__unknown_446,Sphingolipids,0.5,unknown_446
+UNKNOWN_ROW__35829770__unknown_447,Organooxygen compounds,0.3076923076923077,unknown_447
+UNKNOWN_ROW__35829770__unknown_448,Benzene and substituted derivatives,0.25,unknown_448
+UNKNOWN_ROW__35829770__unknown_449,Carboxylic acids and derivatives,0.42857142857142855,unknown_449
+UNKNOWN_ROW__35829770__unknown_450,Carboxylic acids and derivatives,0.7,unknown_450
+UNKNOWN_ROW__35829770__unknown_451,Phenols,0.33333333333333337,unknown_451
+UNKNOWN_ROW__35829770__unknown_452,Fatty Acyls,0.3333333333333333,unknown_452
+UNKNOWN_ROW__35829770__unknown_453,Organonitrogen compounds,0.25,unknown_453
+UNKNOWN_ROW__35829770__unknown_454,Carboxylic acids and derivatives,0.75,unknown_454
+UNKNOWN_ROW__35829770__unknown_455,Benzene and substituted derivatives,0.2857142857142857,unknown_455
+UNKNOWN_ROW__35829770__unknown_456,Azoles,0.16666666666666666,unknown_456
+UNKNOWN_ROW__35829770__unknown_457,Fatty Acyls,0.22222222222222224,unknown_457
+UNKNOWN_ROW__35829770__unknown_458,Fatty Acyls,0.4444444444444445,unknown_458
+UNKNOWN_ROW__35829770__unknown_459,Carboxylic acids and derivatives,0.2,unknown_459
+UNKNOWN_ROW__35829770__unknown_460,Carboxylic acids and derivatives,0.33333333333333337,unknown_460
+UNKNOWN_ROW__35829770__unknown_461,Carboxylic acids and derivatives,0.5,unknown_461
+UNKNOWN_ROW__35829770__unknown_462,Benzene and substituted derivatives,0.3333333333333333,unknown_462
+UNKNOWN_ROW__35829770__unknown_463,Benzene and substituted derivatives,0.2857142857142857,unknown_463
