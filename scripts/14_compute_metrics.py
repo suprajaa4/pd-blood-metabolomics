@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (precision_recall_fscore_support, roc_auc_score,
-                              precision_recall_curve, roc_curve, auc)
+from sklearn.metrics import (precision_recall_fscore_support, roc_auc_score, precision_recall_curve, roc_curve, auc)
 from sklearn.preprocessing import label_binarize
 
 def evaluate(holdout_name, model_name, probs_file, meta_file, classes_file):
@@ -75,7 +74,6 @@ for (task, model), r in results.items():
     summary_rows.append({"task": task, "model": model, **{k: v for k, v in r.items() if k not in ("pr_curve", "roc_curve")}})
 summary_df = pd.DataFrame(summary_rows)
 summary_df.to_csv("metrics_summary.csv", index=False)
-print("\n\n=== SUMMARY TABLE ===")
 print(summary_df.to_string(index=False))
 
 import pickle
