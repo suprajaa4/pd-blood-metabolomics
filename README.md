@@ -9,7 +9,7 @@ pd-blood-metabolomics/
 ├── notebooks/                 # literature extraction and metabolite annotation
 ├── scripts/                   # numbered analysis pipeline
 ├── data/
-│   ├── raw/                   # source/curated data
+│   ├── raw/                   # source data and curated data
 │   └── processed/             # model-ready tables and graph inputs
 ├── results/
 │   ├── exploratory/           # descriptive tables and plots
