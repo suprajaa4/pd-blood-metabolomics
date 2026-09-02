@@ -2,13 +2,10 @@
 
 library(tidyverse)
 library(dplyr)
-
 input_file <- "data/raw/metabolites_grouped_direction_corrected.csv"
 out_dir    <- "results/exploratory"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(file.path(out_dir, "plots_png"), showWarnings = FALSE, recursive = TRUE)
-
-
 read_final_met <- function(path) {
   readr::read_csv(
     file = path,
@@ -23,14 +20,12 @@ safe_num <- function(x) {
   x <- ifelse(x %in% c("", "NA", "NaN", "NULL", "null"), NA_character_, x)
   suppressWarnings(as.numeric(x))
 }
-
 paste_unique <- function(x, sep = " | ") {
   x <- as.character(x)
   x <- x[!is.na(x) & x != ""]
   if (length(x) == 0) return(NA_character_)
   paste(sort(unique(x)), collapse = sep)
 }
-
 mode_value <- function(x) {
   x <- as.character(x)
   x <- x[!is.na(x) & x != ""]
@@ -69,8 +64,6 @@ plot_theme <- theme_bw(base_size = 12) +
     panel.grid.minor = element_blank(),
     strip.background = element_rect(fill = "#F1F3F5", colour = "#D0D7DE")
   )
-
-
 col_teal   <- "#2A9D8F"
 col_blue   <- "#457B9D"
 col_orange <- "#F4A261"
@@ -80,17 +73,13 @@ col_purple <- "#8E7CC3"
 col_yellow <- "#E9C46A"
 col_grey   <- "#8D99AE"
 col_light  <- "#F7F7F7"
-
 basic_palette <- c(col_teal, col_blue, col_orange, col_red, col_green, col_purple, col_yellow, col_grey)
 direction_palette <- c("Up in PD" = col_red, "Down in PD" = col_blue, "No change" = col_grey, "Unknown" = "#B0B0B0")
 present_palette   <- c("Present" = col_green, "Missing" = "#F2E8CF")
 discord_palette   <- c("FALSE" = col_green, "TRUE" = col_red, "Consistent" = col_green, "Discordant" = col_red)
 mode_palette      <- c("Positive" = col_red, "Negative" = col_blue, "Mixed" = col_purple, "Dual" = col_purple, "Not Reported" = col_grey, "Not reported" = col_grey)
 matrix_palette    <- c("serum" = col_teal, "plasma" = col_orange, "csf" = col_purple, "Not reported" = col_grey, "not reported" = col_grey)
-
-
 wide <- read_final_met(input_file)
-
 base_cols <- c(
   "entity_group", "entity_id", "canonical_metabolite", "all_metabolite_names",
   "n_input_rows", "n_studies", "studies_present", "InChIKey", "formula",
@@ -98,16 +87,11 @@ base_cols <- c(
   "has_formula", "has_SMILES", "has_HMDB", "has_KEGG", "has_PubChem"
 )
 base_cols <- intersect(base_cols, names(wide))
-
 study_cols <- names(wide)[str_detect(names(wide), "__")]
 study_prefixes <- sort(unique(str_replace(study_cols, "__.*$", "")))
 study_ids <- str_remove(study_prefixes, "^S_")
-
 message("Rows/entities: ", nrow(wide))
 message("Study prefixes detected: ", length(study_prefixes), " -> ", paste(study_ids, collapse = ", "))
-
-
-
 long <- wide %>%
   select(any_of(base_cols), all_of(study_cols)) %>%
   pivot_longer(
@@ -125,12 +109,9 @@ long <- wide %>%
   group_by(across(any_of(base_cols)), study_prefix, study_id, measure) %>%
   summarise(value = paste_unique(value), .groups = "drop") %>%
   pivot_wider(names_from = measure, values_from = value)
-
-
 study_measure_cols <- setdiff(names(long), c(base_cols, "study_prefix", "study_id"))
 long <- long %>%
   filter(if_any(all_of(study_measure_cols), ~ !is.na(.x) & .x != ""))
-
 ## numeric conversion
 numeric_cols <- intersect(c(
   "mz", "RT_min", "n_control", "int_mean_control", "int_median_control",
@@ -141,7 +122,6 @@ numeric_cols <- intersect(c(
 ), names(long))
 
 for (cc in numeric_cols) long[[cc]] <- safe_num(long[[cc]])
-
 long <- long %>%
   mutate(
     entity_label = coalesce(canonical_metabolite, entity_id),
