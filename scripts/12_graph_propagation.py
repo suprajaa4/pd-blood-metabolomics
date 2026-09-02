@@ -5,8 +5,6 @@ OUTPUT_DIR = "results/graph/"
 entities = pd.read_csv(DATA_DIR + "entities_full.csv")
 primary_pathway = pd.read_csv(DATA_DIR + "entity_primary_pathway.csv")
 entities = entities.merge(primary_pathway[["entity_id", "primary_pathway"]], on="entity_id", how="left")
-
-
 pd_scores = pd.read_csv(DATA_DIR + "entity_pd_scores.csv")
 entities = entities.merge(
     pd_scores[["entity_id", "PD_score", "consistently_altered", "majority_direction", "is_known_drug",
@@ -24,7 +22,6 @@ LAYER_FILES = {
     "mz": "edges_mz.csv",
 }
 _layer_cache = {}
-
 
 def build_edge_table(relations):
     key = tuple(sorted(relations))
@@ -189,7 +186,7 @@ functional_sub["from_name"] = functional_sub["from"].map(name_lookup)
 functional_sub["to_name"] = functional_sub["to"].map(name_lookup)
 functional_sub = functional_sub.sort_values("weight", ascending=False)
 
-print("Top 15 strongest functional-similarity connections (pathway-sharing + structural), among consistently-altered metabolites:")
+print("top 15 strongest functional-similarity connections (pathway-sharing + structural), among consistently-altered metabolites:")
 print(functional_sub[["from_name", "to_name", "weight"]].head(15).to_string(index=False))
 functional_sub.to_csv(OUTPUT_DIR + "functional_similarity_pairs.csv", index=False)
 
