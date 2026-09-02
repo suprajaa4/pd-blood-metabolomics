@@ -1,5 +1,5 @@
 ---
-title: "Parkinson's Disease metabolomics: integrated PD Score & multi-layer characterization"
+title: "integrated PD Score & multi-layer characterization"
 subtitle: "Chemical + Analytical + Biological evidence integration across the studies"
 output:
   html_document:
@@ -31,11 +31,11 @@ theme_set(theme_minimal(base_size = 11))
 
 # Overview
 
-an integrated **PD score** for every metabolite in the dataset by combining:
+an integrated PD score for every metabolite in the dataset by combining:
 
-* **Chemical evidence** — identifier completeness (HMDB / KEGG / PubChem / SMILES / formula), ClassyFire chemical class
-* **Analytical evidence** — retention time, m/z, adduct, ionization mode, matrix
-* **Biological evidence** — fold-change, direction, significance, and cross-study reproducibility, penalized for age/sex confounds
+* **Chemical evidence** : identifier completeness (HMDB / KEGG / PubChem / SMILES / formula), ClassyFire chemical class
+* **Analytical evidence** :retention time, m/z, adduct, ionization mode, matrix
+* **Biological evidence** :fold-change, direction, significance, and cross-study reproducibility, penalized for age/sex confounds
 
 ```{r evidence-schematic, fig.height=5}
 schematic <- "
@@ -59,7 +59,7 @@ The full pipeline is organized into four parts:
 1. **Data processing + PD score + Excel export**
 2. **Chemical characterization** (ClassyFire distributions, enrichment, annotation coverage, chemical space)
 3. **Biological characterization** (heatmap, forest plot, volcano plot, PD score ranking, confounding checks)
-4. **Advanced analyses** (PCA, UMAP, hierarchical clustering, UpSet, network)
+4. **Advanced analyses** (PCA, UMAP, hierarchical clustering,network)
 
 ---
 
