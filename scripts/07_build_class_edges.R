@@ -2,10 +2,8 @@ suppressPackageStartupMessages({library(readxl); library(dplyr)})
 main <- read_excel("data/raw/pd_with_adducts.xlsx", sheet = "pd-with-adducts")
 classyfire <- read_excel("data/raw/pd_with_adducts.xlsx", sheet = "class of compounds")
 classyfire_dedup <- classyfire %>% select(InChIKey, Class) %>% distinct(InChIKey, .keep_all = TRUE)
-
 met_class <- main %>% select(entity_id, InChIKey) %>%
   left_join(classyfire_dedup, by = "InChIKey") %>% filter(!is.na(Class))
-
 build_weighted_edges <- function(df, id_col, group_col) {
   d <- df %>% filter(!is.na(.data[[group_col]])) %>% distinct(.data[[id_col]], .data[[group_col]])
   colnames(d) <- c("met", "grp")
@@ -21,4 +19,4 @@ build_weighted_edges <- function(df, id_col, group_col) {
 
 edges_class <- build_weighted_edges(met_class, "entity_id", "Class")
 write.csv(edges_class, "data/processed/edges_class.csv", row.names = FALSE)
-cat("edges_class.csv:", nrow(edges_class), "edges\n")
+
