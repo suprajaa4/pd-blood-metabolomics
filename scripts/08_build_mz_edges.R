@@ -23,10 +23,7 @@ get_mz_values <- function(s) {
 mz_long <- bind_rows(map(studies, get_mz_values)) %>% filter(!is.na(mz))
 mz_rep <- mz_long %>% group_by(entity_id) %>% summarise(mz = median(mz), .groups = "drop")
 cat("Metabolites with a representative m/z:", nrow(mz_rep), "\n")
-
-
 mz_rep$mz_bin <- round(mz_rep$mz)
-
 build_weighted_edges <- function(df, id_col, group_col) {
   d <- df %>% filter(!is.na(.data[[group_col]])) %>% distinct(.data[[id_col]], .data[[group_col]])
   colnames(d) <- c("met", "grp")
