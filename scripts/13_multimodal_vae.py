@@ -8,7 +8,6 @@ import os
 import random
 import warnings
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 import torch
@@ -29,8 +28,6 @@ except Exception:
     HAVE_RDKIT = False
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
-
-
 SEED = 42
 LATENT_DIM = 24
 BATCH_SIZE = 64
@@ -53,13 +50,11 @@ def seed_everything(seed: int = SEED):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
 
-
 def resolve_file(data_dir: Path, candidates, required=True):
     for name in candidates:
         p = data_dir / name
         if p.exists():
             return p
-    
     normalized = [c.lower().replace(".csv", "").replace(".xlsx", "") for c in candidates]
     for p in data_dir.iterdir():
         low = p.name.lower()
@@ -74,7 +69,7 @@ def clean_cat(s):
     s = s.astype(object)
     return s.where(pd.notna(s), None)
 
-
+#modalities
 def build_multihot(membership_df, entity_ids, group_col, allowed_groups=None):
     df = membership_df[["entity_id", group_col]].dropna().drop_duplicates().copy()
     if allowed_groups is None:
@@ -383,11 +378,11 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
     for m in masks.values(): any_modality |= (m[:,0] > 0)
 
 
-    print(f"Target classes in training: {len(classes)}")
-    print(f"Labeled training entities: {labeled_train.sum()}")
-    print(f"Holdout evaluable: {eval_mask.sum()}/{is_holdout.sum()}")
-    print(f"Entities with >=1 observed modality: {any_modality.sum()}/{len(df)} ({any_modality.mean():.1%})")
-    print(f"Cross modality: {cross_description}; dims={X_cross.shape[1]}, coverage={M_cross.mean():.1%}")
+    print(f"target classes in training: {len(classes)}")
+    print(f"labeled training entities: {labeled_train.sum()}")
+    print(f"holdout evaluable: {eval_mask.sum()}/{is_holdout.sum()}")
+    print(f"entities with >=1 observed modality: {any_modality.sum()}/{len(df)} ({any_modality.mean():.1%})")
+    print(f"cross modality: {cross_description}; dims={X_cross.shape[1]}, coverage={M_cross.mean():.1%}")
 
     ds = MultiModalDataset(modalities, masks, labels, train_allowed, labeled_train)
     loader = DataLoader(ds, batch_size=BATCH_SIZE, shuffle=True)
@@ -409,14 +404,11 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
             recon, logits, mu, logvar, eff_masks = model(xs, ms, modality_dropout=modality_dropout)
 
             bin_losses = [masked_binary_loss(recon[n], xs[n], eff_masks[n], train_ok) for n in binary_names]
-            # Equal weight per modality (not per individual bit) prevents fingerprint dimensionality dominating.
             binary_loss = torch.stack(bin_losses).mean() if bin_losses else torch.tensor(0., device=device)
             mz_loss = masked_mse(recon["mz"], xs["mz"], eff_masks["mz"], train_ok)
-
             kl_per = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1) / mu.shape[1]
             kl_denom = train_ok.sum().clamp_min(1.0)
             kl_loss = (kl_per * train_ok).sum() / kl_denom
-
             clf_mask = (labeled_ok > 0.5) & (y >= 0)
             if clf_mask.sum() > 0:
                 clf_loss = F.cross_entropy(logits[clf_mask], y[clf_mask])
@@ -503,7 +495,7 @@ def run_task(task, entities, primary, base_modalities, base_masks, data_dir, hol
     pd.DataFrame(history).to_csv(out_dir/f"multimodal_vae_{task}_loss_history.csv", index=False)
     with open(out_dir/f"multimodal_vae_{task}_metrics.json","w") as f: json.dump(metrics,f,indent=2)
 
-    print("Metrics:", {k:round(v,4) if isinstance(v,float) and np.isfinite(v) else v for k,v in metrics.items() if k in ["accuracy","macro_precision","macro_recall","macro_f1","top_3_accuracy","macro_roc_auc_ovr","macro_pr_auc","holdout_coverage"]})
+    print("metrics:", {k:round(v,4) if isinstance(v,float) and np.isfinite(v) else v for k,v in metrics.items() if k in ["accuracy","macro_precision","macro_recall","macro_f1","top_3_accuracy","macro_roc_auc_ovr","macro_pr_auc","holdout_coverage"]})
     return metrics
 
 
@@ -550,7 +542,6 @@ def main():
     pd.DataFrame(metrics).to_csv(out_dir/"multimodal_vae_metrics_summary.csv", index=False)
     with open(out_dir/"multimodal_vae_feature_metadata.json","w") as f:
         json.dump(meta, f, indent=2, default=str)
-
 
 
 if __name__ == "__main__":
