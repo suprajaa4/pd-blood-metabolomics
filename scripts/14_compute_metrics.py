@@ -8,31 +8,19 @@ def evaluate(holdout_name, model_name, probs_file, meta_file, classes_file):
     meta = pd.read_csv(meta_file)
     with open(classes_file) as f:
         classes = f.read().splitlines()
-
     y_true = meta["true_label"].values
     y_pred_idx = probs.argmax(axis=1)
     class_to_idx = {c: i for i, c in enumerate(classes)}
     y_pred = np.array([classes[i] for i in y_pred_idx])
-
-    # only evaluate rows the model actually covered (nonzero prob row for graph;
-    # VAE always covers everyone it has a fingerprint for)
     covered = probs.sum(axis=1) > 0
     y_true_c, y_pred_c, probs_c = y_true[covered], y_pred[covered], probs[covered]
-
     accuracy = (y_true_c == y_pred_c).mean()
-
-    # precision/recall/F1 - macro (unweighted across classes - penalizes
-    # ignoring rare classes) and weighted (accounts for class size)
-    y_true_idx = np.array([class_to_idx.get(t, -1) for t in y_true_c])
-    valid = y_true_idx >= 0  # true label must be a valid known class (it will be, but guard anyway)
+    y_true_idx = np.array([class_to_idx.get(t, -1) for t in y_true_c]) #macro
+    valid = y_true_idx >= 0  # true
     p_macro, r_macro, f1_macro, _ = precision_recall_fscore_support(
         y_true_c[valid], y_pred_c[valid], average="macro", zero_division=0)
     p_weighted, r_weighted, f1_weighted, _ = precision_recall_fscore_support(
         y_true_c[valid], y_pred_c[valid], average="weighted", zero_division=0)
-
-    # ROC-AUC: one-vs-rest, macro-averaged. Only over classes that actually
-    # appear in this holdout's true labels (an OvR AUC is undefined for a
-    # class with zero positive examples to evaluate against)
     present_classes = sorted(set(y_true_c[valid]))
     present_idx = [class_to_idx[c] for c in present_classes]
     y_true_bin = label_binarize(y_true_c[valid], classes=present_classes)
@@ -44,15 +32,13 @@ def evaluate(holdout_name, model_name, probs_file, meta_file, classes_file):
         print(f"  AUC macro failed: {e}")
 
     print(f"\n{holdout_name} / {model_name}")
-    print(f"  Coverage: {covered.sum()} / {len(y_true)}")
-    print(f"  Accuracy: {accuracy:.3f}")
-    print(f"  Precision (macro/weighted): {p_macro:.3f} / {p_weighted:.3f}")
-    print(f"  Recall    (macro/weighted): {r_macro:.3f} / {r_weighted:.3f}")
-    print(f"  F1        (macro/weighted): {f1_macro:.3f} / {f1_weighted:.3f}")
-    print(f"  ROC-AUC (macro, one-vs-rest, {len(present_classes)} classes present in holdout): {auc_macro:.3f}")
-
-    # micro-average PR and ROC curves (flatten all classes into one binary problem)
-    y_true_bin_all = label_binarize(y_true_c[valid], classes=classes)
+    print(f"  coverage: {covered.sum()} / {len(y_true)}")
+    print(f"  accuracy: {accuracy:.3f}")
+    print(f"  precision (macro+weightd): {p_macro:.3f} / {p_weighted:.3f}")
+    print(f"  recall    (macr+oweightd): {r_macro:.3f} / {r_weighted:.3f}")
+    print(f"  F1        (macro+weightd): {f1_macro:.3f} / {f1_weighted:.3f}")
+    print(f"  ROC-AUC (macro, one-vs-rest, {len(present_classes)} classes): {auc_macro:.3f}")
+    y_true_bin_all = label_binarize(y_true_c[valid], classes=classes) #micro
     precision, recall, _ = precision_recall_curve(y_true_bin_all.ravel(), probs_c[valid].ravel())
     fpr, tpr, _ = roc_curve(y_true_bin_all.ravel(), probs_c[valid].ravel())
     roc_auc_micro = auc(fpr, tpr)
@@ -68,7 +54,6 @@ results[("Class", "VAE")] = evaluate("Class", "VAE", "vae_probs_class_v2.npy", "
 results[("Class", "Graph")] = evaluate("Class", "Graph", "graph_probs_class_v2.npy", "graph_holdout_meta_class_v2.csv", "graph_classes_class_v2.txt")
 results[("Pathway", "VAE")] = evaluate("Pathway", "VAE", "vae_probs_pathway_v2.npy", "vae_holdout_meta_pathway_v2.csv", "vae_classes_pathway_v2.txt")
 results[("Pathway", "Graph")] = evaluate("Pathway", "Graph", "graph_probs_pathway_v2.npy", "graph_holdout_meta_pathway_v2.csv", "graph_classes_pathway_v2.txt")
-
 summary_rows = []
 for (task, model), r in results.items():
     summary_rows.append({"task": task, "model": model, **{k: v for k, v in r.items() if k not in ("pr_curve", "roc_curve")}})
