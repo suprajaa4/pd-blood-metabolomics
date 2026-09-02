@@ -2,16 +2,12 @@ suppressPackageStartupMessages({library(readxl); library(dplyr); library(tidyr);
 
 data_path <- "data/raw/pd_with_adducts.xlsx"
 pathway_path <- "data/raw/pathway_results.xlsx"
-
-
 main <- read_excel(data_path, sheet = "pd-with-adducts")
 ent_kegg <- main %>%
   select(entity_id, canonical_metabolite, `KEGG ID`) %>%
   filter(!is.na(`KEGG ID`), `KEGG ID` != "NA") %>%
   distinct()
 cat("Entities with a KEGG ID:", nrow(ent_kegg), "\n")
-
-
 pw <- read_excel(pathway_path, sheet = "pathway_results_kegg")
 pw_long <- pw %>%
   select(Pathway, KEGG) %>%
@@ -42,10 +38,9 @@ build_weighted_edges <- function(df, id_col, group_col) {
     summarise(weight = sum(inv_weight_1 * inv_weight_2), .groups = "drop") %>%
     rename(from = met_1, to = met_2)
 }
-
 edges_pathway <- build_weighted_edges(met_pathway, "entity_id", "Pathway")
 write.csv(edges_pathway, "data/processed/edges_pathway.csv", row.names = FALSE)
-cat("\nedges_pathway.csv:", nrow(edges_pathway), "edges among",
+cat("\nedges_pathway.csv:", nrow(edges_pathway), "edges in",
     n_distinct(c(edges_pathway$from, edges_pathway$to)), "metabolites\n")
 
 
