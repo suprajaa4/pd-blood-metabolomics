@@ -26,22 +26,22 @@ pd-blood-metabolomics/
 
 | Step | File | Purpose |
 |---|---|---|
-| 0 | `notebooks/00_pubmed_extraction_pipeline.ipynb` | Extract metabolite information from literature-derived inputs. |
-| 1 | `notebooks/01_metabolite_annotation.ipynb` | Add+harmonize metabolite identifiers/annotations. |
-| 2 | `scripts/01_group_by_inchikey.py` | Group repeated metabolites by InChIKey and clean names. |
-| 3 | `scripts/02_exploratory_analysis.R` | Cross-study exploratory analysis, recurrence, direction consistency, PCA and report figures. |
-| 4 | `scripts/03_pd_score_umap.Rmd` | Compute PD evidence scores and UMAP-based analyses. |
-| 5 | `scripts/04_adduct_matching.R` | Assign candidate adducts from formula-derived monoisotopic mass and observed m/z. |
-| 6 | `scripts/05_rebuild_entities_and_memberships.R` | Rebuild entity tables, study/adduct/platform memberships and graph layers. |
-| 7 | `scripts/06_recompute_pd_score.R` | Recompute the entity-level PD score used by graph analyses. |
-| 8 | `scripts/07_build_class_edges.R` | Build ClassyFire-class graph edges. |
-| 9 | `scripts/08_build_mz_edges.R` | Build m/z-neighborhood graph edges. |
-| 10 | `scripts/09_build_pathway_edges.R` | Build KEGG pathway edges and pathway membership. |
-| 11 | `scripts/10_build_structural_edges.py` | Build Morgan-fingerprint/Tanimoto structural edges. |
-| 12 | `scripts/11_build_pathway_holdout.py` | Build the pathway label table and basic pathway holdout. |
-| 13 | `scripts/12_graph_propagation.py` | Predict missing class/pathway annotations using the multilayer graph and generate downstream graph analyses. |
-| 14 | `scripts/13_multimodal_vae.py` | Train/evaluate the missing-modality-aware multimodal VAE. |
-| 15 | `scripts/16_plot_train_test_representativeness.py` | Check training/holdout label representativeness. |
+| 0 | notebooks/00_pubmed_extraction_pipeline.ipynb | Extract metabolite information from literature-derived inputs. |
+| 1 | notebooks/01_metabolite_annotation.ipynb | Add+harmonize metabolite identifiers/annotations. |
+| 2 | scripts/01_group_by_inchikey.py | Group repeated metabolites by InChIKey and clean names. |
+| 3 | scripts/02_exploratory_analysis.R | Cross-study exploratory analysis, recurrence, direction consistency, PCA and report figures. |
+| 4 | scripts/03_pd_score_umap.Rmd | Compute PD evidence scores and UMAP-based analyses. |
+| 5 | scripts/04_adduct_matching.R | Assign candidate adducts from formula-derived monoisotopic mass and observed m/z. |
+| 6 | scripts/05_rebuild_entities_and_memberships.R | Rebuild entity tables, study/adduct/platform memberships and graph layers. |
+| 7 | scripts/06_recompute_pd_score.R | Recompute the entity-level PD score used by graph analyses. |
+| 8 | scripts/07_build_class_edges.R | Build ClassyFire-class graph edges. |
+| 9 | scripts/08_build_mz_edges.R | Build m/z-neighborhood graph edges. |
+| 10 | scripts/09_build_pathway_edges.R | Build KEGG pathway edges and pathway membership. |
+| 11 | scripts/10_build_structural_edges.py | Build Morgan-fingerprint/Tanimoto structural edges. |
+| 12 | scripts/11_build_pathway_holdout.py | Build the pathway label table and basic pathway holdout. |
+| 13 | scripts/12_graph_propagation.py | Predict missing class/pathway annotations using the multilayer graph and generate downstream graph analyses. |
+| 14 | scripts/13_multimodal_vae.py | Train/evaluate the missing-modality-aware multimodal VAE. |
+| 15 | scripts/16_plot_train_test_representativeness.py | Check training/holdout label representativeness. |
 
 
 
