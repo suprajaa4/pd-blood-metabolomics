@@ -52,7 +52,7 @@ pd-blood-metabolomics/
 | pubmed_metabolites.xlsx                     | output of list of papers from pubmed_extraction_pipeline.ipynb for manual selection                         |
 | pd_metabolites_annotated.xlsx               | output after 01_metabolite_annotation.ipynb and input to 01_group_by_inchikey.py                          |
 | metabolites_grouped_direction_corrected.csv | output after 01_group_by_inchikey.py, to harmonize dataset, group repeated metabolites across diff. studies |
-| pd_scores.csv                              | output after PD scores was computed                                                                           |
+| pd_scores.xlsx                              | output after PD scores was computed                                                                           |
 | **pd_with_adducts.xlsx**                    | **final curated dataset with class, drug and pathway information**                                            |
 
 
