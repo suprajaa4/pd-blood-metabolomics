@@ -10,7 +10,6 @@ studies <- c('S_24058461','S_24167579','S_25390405','S_28880465','S_29518718','S
 id_cols <- c('entity_group','entity_id','canonical_metabolite','all_metabolite_names',
              'n_studies','studies_present','InChIKey','formula','SMILES','HMDB ID','KEGG ID',
              'PubChem CID','annotation_score','has_formula','has_SMILES','has_HMDB','has_KEGG','has_PubChem')
-
 parse_num_mean <- function(x) map_dbl(x, function(v) {
   if (is.na(v)) return(NA_real_)
   if (is.numeric(v)) return(as.numeric(v))
@@ -92,9 +91,7 @@ long_df <- long_df %>%
   mutate(effect_percentile = percent_rank(abs_log2fc)) %>%
   ungroup() %>%
   mutate(neglog10p = -log10(pmax(p_value, 1e-300)))
-
 minmax <- function(x) { rng <- range(x, na.rm=TRUE); if (diff(rng)==0) return(rep(0,length(x))); (x-rng[1])/diff(rng) }
-
 ent <- long_df %>%
   group_by(entity_id) %>%
   summarise(
@@ -157,10 +154,8 @@ ent <- ent %>%
          PD_score = 100 * minmax(PD_score_raw),
          consistently_altered = (n_studies_detected >= 2) & (!is.na(consistency_frac) & consistency_frac >= 0.7)) %>%
   arrange(desc(PD_score))
-
 export_df <- ent %>% select(entity_id, PD_score, consistently_altered, majority_direction,
                               n_studies_detected, is_known_drug,
                               has_formula, has_SMILES, has_HMDB, has_KEGG, has_PubChem, annotation_score)
 write.csv(export_df, "data/processed/entity_pd_scores.csv", row.names = FALSE)
-cat("Saved entity_pd_scores.csv:", nrow(export_df), "rows\n")
-cat("Consistently altered:", sum(export_df$consistently_altered), "\n")
+
