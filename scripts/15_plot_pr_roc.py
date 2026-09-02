@@ -14,15 +14,10 @@ colors = {
 
 tasks = ["Class", "Pathway"]
 models = ["VAE", "Graph"]
-
-
 fig, axes = plt.subplots(2, 2, figsize=(13, 11))
-
 for i, task in enumerate(tasks):
-
     pr_ax = axes[0, i]
     roc_ax = axes[1, i]
-
     for model in models:
 
         (precision, recall), (fpr, tpr) = curves[(task, model)]
@@ -48,27 +43,21 @@ for i, task in enumerate(tasks):
             color=colors[model]
         )
 
-    # PR plot
+    # PR
     pr_ax.set_title(f"{task} - Precision-Recall")
     pr_ax.set_xlabel("Recall")
     pr_ax.set_ylabel("Precision")
     pr_ax.legend()
-
-    # ROC plot
+    # ROC
     roc_ax.plot([0, 1], [0, 1], "k--")
     roc_ax.set_title(f"{task} - ROC")
     roc_ax.set_xlabel("False Positive Rate")
     roc_ax.set_ylabel("True Positive Rate")
     roc_ax.legend()
-
-
 plt.tight_layout()
 plt.savefig("fig6_pr_roc_curves.png", dpi=200)
 plt.close()
-
-print("Saved fig6")
-
-
+print("fig6,done")
 
 metrics = [
     "accuracy",
@@ -85,20 +74,14 @@ labels = [
 ]
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-
 for ax, task in zip(axes, tasks):
-
     task_data = summary[summary["task"] == task]
-
     vae = task_data[task_data["model"] == "VAE"].iloc[0]
     graph = task_data[task_data["model"] == "Graph"].iloc[0]
-
     vae_values = vae[metrics].values
     graph_values = graph[metrics].values
-
     x = np.arange(len(metrics))
     width = 0.35
-
     ax.bar(
         x - width / 2,
         vae_values,
@@ -122,9 +105,8 @@ for ax, task in zip(axes, tasks):
     ax.set_title(f"{task} Prediction")
     ax.legend()
 
-
 plt.tight_layout()
 plt.savefig("fig7_metric_comparison.png", dpi=200)
 plt.close()
 
-print("Saved fig7")
+print("fig7,done")
