@@ -2,99 +2,61 @@ import pandas as pd
 import numpy as np
 import re
 from collections import Counter
-
-
-
 INPUT_FILE = "data/raw/pd_met_final.csv"
 OUTPUT_FILE = "data/processed/metabolites_grouped_inchikey.xlsx"
-
-
 def clean_string(x):
-   
-    if pd.isna(x):
+     if pd.isna(x):
         return np.nan
-
     x = str(x).strip()
-
     if x == "" or x.lower() in {"nan", "none", "na", "n/a"}:
         return np.nan
-
-    # Collapse repeated spaces
+    #spaces
     x = re.sub(r"\s+", " ", x)
-
     return x
-
-
 def clean_inchikey(x):
-    
+ 
     x = clean_string(x)
-
     if pd.isna(x):
         return np.nan
-
     return str(x).strip().upper()
 
-
 def normalize_name_for_grouping(name):
-
     name = clean_string(name)
-
     if pd.isna(name):
         return ""
-
     x = name.lower()
-
-    # Normalize unicode dashes
-    x = x.replace("–", "-").replace("—", "-")
-
-    # Replace punctuation with spaces
+    x = x.replace("–", "-").replace("—", "-") #formatfix
     x = re.sub(r"[^a-z0-9]+", " ", x)
-
-    # Collapse spaces
     x = re.sub(r"\s+", " ", x).strip()
-
     return x
 
 
 def pretty_name(name):
-
     name = clean_string(name)
-
     if pd.isna(name):
         return np.nan
-
-
     name = re.sub(r"\s+", " ", name).strip()
-
     replacements = {
         r"^l-": "L-",
         r"^d-": "D-",
         r"^dl-": "DL-",
     }
-
     for pattern, repl in replacements.items():
         name = re.sub(pattern, repl, name, flags=re.IGNORECASE)
 
     return name
 
-
 def unique_join(series, sep=" | "):
-
     output = []
     seen = set()
-
     for value in series:
         value = clean_string(value)
-
         if pd.isna(value):
             continue
-
         key = str(value).lower()
-
         if key not in seen:
             output.append(str(value))
             seen.add(key)
-
     if not output:
         return np.nan
 
@@ -104,15 +66,10 @@ def unique_join(series, sep=" | "):
 def unique_numeric_join(series, decimals=6):
 
     values = pd.to_numeric(series, errors="coerce").dropna()
-
     if len(values) == 0:
         return np.nan
-
-
     values = values.round(decimals)
-
     unique_values = pd.unique(values)
-
     if len(unique_values) == 1:
         return float(unique_values[0])
 
@@ -301,10 +258,9 @@ for col in numeric_columns:
         )
 
 
-# Log2-intensities
+# log2-intensities
 df["log_control_mean"] = df["Intensity mean control"].apply(log2_safe)
 df["log_control_median"] = df["Intensity median control"].apply(log2_safe)
-
 df["log_PD_mean"] = df["Intensity mean PD"].apply(log2_safe)
 df["log_PD_median"] = df["Median Intensity PD"].apply(log2_safe)
 
@@ -836,5 +792,4 @@ print(
     "Unknown rows:      ",
     (grouped["entity_group"] == "unknown").sum()
 )
-print()
-print(f"saved {OUTPUT_FILE}")
+
