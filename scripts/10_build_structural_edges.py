@@ -6,7 +6,6 @@ from rdkit.Chem import AllChem, DataStructs
 entities = pd.read_csv("data/processed/entities_full.csv")
 smiles_df = entities[entities["SMILES"].notna() & (entities["SMILES"] != "NA")][["entity_id", "SMILES"]]
 print(f"Metabolites with usable SMILES: {len(smiles_df)}")
-
 fps, ids = [], []
 for _, row in smiles_df.iterrows():
     mol = Chem.MolFromSmiles(str(row["SMILES"]))
