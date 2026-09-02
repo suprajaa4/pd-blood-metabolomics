@@ -1,10 +1,8 @@
 suppressPackageStartupMessages({library(dplyr); library(stringr); library(tidyr); library(readr)})
-
 TOLERANCE_DA <- 0.02
 input_file <- "data/raw/metabolites_grouped_direction_corrected.csv"
 out_dir <- "data/processed"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-
 adducts <- tribble(
   ~matched_adduct, ~mass_shift, ~charge, ~multiplier,
   "[M-H]-", -1.007276, -1, 1,
@@ -38,16 +36,13 @@ formula_mass <- function(formula) {
   }, parts[,2], parts[,3])
   if (any(is.na(vals))) NA_real_ else sum(vals)
 }
-
 parse_numeric_cell <- function(x) {
   if (is.na(x)) return(numeric(0))
   vals <- suppressWarnings(as.numeric(str_trim(str_split(as.character(x), "\\|")[[1]])))
   vals[!is.na(vals)]
 }
-
 df <- read_csv(input_file, show_col_types = FALSE, guess_max = 100000)
 mz_cols <- names(df)[str_detect(names(df), "__mz$")]
-
 df <- df %>%
   rowwise() %>%
   mutate(
@@ -58,7 +53,6 @@ df <- df %>%
     }
   ) %>%
   ungroup()
-
 matches <- df %>%
   select(entity_id, canonical_metabolite, formula, neutral_mass, observed_mz) %>%
   filter(!is.na(neutral_mass), !is.na(observed_mz)) %>%
@@ -74,4 +68,4 @@ matches <- df %>%
 best <- matches %>% group_by(entity_id) %>% slice_min(abs_diff_da, n = 1, with_ties = FALSE) %>% ungroup()
 write_csv(matches, file.path(out_dir, "adduct_matches_all.csv"))
 write_csv(best, file.path(out_dir, "adduct_matches_best.csv"))
-cat("Matched", n_distinct(best$entity_id), "entities within", TOLERANCE_DA, "Da\n")
+
