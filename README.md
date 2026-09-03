@@ -106,10 +106,10 @@ python scripts/13_multimodal_vae.py \
 
 ## Important notes for reproducibility 
 
-`edges_study.csv` and `edges_platform.csv` are not committed because the generated files are approximately 339 MB and 188 MB, above GitHub's standard 100 MB single-file limit. They are reproducible from `scripts/05_rebuild_entities_and_memberships.R` and are ignored by `.gitignore`.
+edges_study.csv and edges_platform.csv are not committed because the generated files are approximately 339 MB and 188 MB, above GitHub's standard 100 MB single-file limit. They are reproducible from scripts/05_rebuild_entities_and_memberships.R and are ignored by `.gitignore`.
 
 ## PD score
 
-The project combines recurrence across studies, directional consistency, effect magnitude, statistical significance, identifier completeness, and demographic confounding penalties into an entity-level PD evidence score. The complete implementation and component outputs are in `scripts/03_pd_score_umap.Rmd` and `scripts/06_recompute_pd_score.R`.
+The project combines recurrence across studies, directional consistency, effect magnitude, statistical significance, identifier completeness, and demographic confounding penalties into an entity-level PD evidence score. The complete implementation and component outputs are in scripts/03_pd_score_umap.Rmd and scripts/06_recompute_pd_score.R.
 
 - Any feedback please write to suprajaav4@gmail.com
