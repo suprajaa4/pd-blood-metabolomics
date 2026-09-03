@@ -43,7 +43,7 @@ pd-blood-metabolomics/
 | 14 | scripts/13_multimodal_vae.py | Train/evaluate the missing-modality-aware multimodal VAE. |
 | 15 | scripts/16_plot_train_test_representativeness.py | Check training/holdout label representativeness. |
 
-##  Main Raw Data files description
+##  Main Raw Data files description (data/raw/)
 
 | File                                          | Description                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
