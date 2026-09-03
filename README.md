@@ -24,7 +24,7 @@ pd-blood-metabolomics/
 ## Pipeline
 
 
-| Step | File | Purpose |
+| step | file name | purpose |
 |---|---|---|
 | 0 | notebooks/00_pubmed_extraction_pipeline.ipynb | Extract metabolite information from literature-derived inputs. |
 | 1 | notebooks/01_metabolite_annotation.ipynb | Add+harmonize metabolite identifiers/annotations. |
