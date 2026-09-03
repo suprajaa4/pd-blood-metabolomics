@@ -45,7 +45,7 @@ pd-blood-metabolomics/
 
 ##  Main Raw Data files description (data/raw/)
 
-| File                                          | Description                                                                                                   |
+| file                                          | description                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | data_collection.xlsx                        | initial data curation and paper links to collected data                                                       |
 | validated_metabolites.xlsx                  | output after parsing through PubMed-NLP parser and PubChem validation                                         |
